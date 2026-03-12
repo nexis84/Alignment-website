@@ -605,10 +605,11 @@ table.MsoNormalTable
 <script>
 (function() {
   var SELECTORS = [
-    '[id*="popup"]','[class*="popup"]',
-    '[id*="overlay"]','[class*="overlay"]',
-    '[id*="newsletter"]','[class*="newsletter"]',
-    '[id*="lightbox"]','[class*="lightbox"]'
+    'div[id*="popup"]','div[class*="popup"]',
+    'div[id*="overlay"]','div[class*="overlay"]',
+    'div[id*="newsletter"]','div[class*="newsletter"]',
+    'div[id*="lightbox"]','div[class*="lightbox"]',
+    'section[id*="popup"]','section[class*="popup"]'
   ];
   function hideEl(el) {
     el.style.setProperty('display', 'none', 'important');
@@ -616,23 +617,20 @@ table.MsoNormalTable
     el.style.setProperty('opacity', '0', 'important');
     el.style.setProperty('pointer-events', 'none', 'important');
   }
-  // Hide anything matching on page load
   function hideAll() {
     SELECTORS.forEach(function(sel) {
       document.querySelectorAll(sel).forEach(hideEl);
     });
   }
-  // Watch for dynamic injection
   var obs = new MutationObserver(function(mutations) {
     mutations.forEach(function(m) {
       m.addedNodes.forEach(function(node) {
-        if (node.nodeType !== 1) return;
+        if (node.nodeType !== 1 || node.tagName === 'BODY' || node.tagName === 'HTML') return;
         var id = (node.id || '').toLowerCase();
         var cls = (node.className || '').toLowerCase();
         var keywords = ['popup','overlay','newsletter','lightbox'];
         var matches = keywords.some(function(k){ return id.indexOf(k)>-1 || cls.indexOf(k)>-1; });
         if (matches) { hideEl(node); }
-        // Check descendants
         SELECTORS.forEach(function(sel) {
           if (node.querySelectorAll) node.querySelectorAll(sel).forEach(hideEl);
         });
@@ -640,11 +638,9 @@ table.MsoNormalTable
     });
   });
   document.addEventListener('DOMContentLoaded', function() {
-    obs.observe(document.body, {childList: true, subtree: true});
+    if (document.body) obs.observe(document.body, {childList: true, subtree: true});
     hideAll();
   });
-  // Also run immediately in case body already exists
-  if (document.body) { obs.observe(document.body, {childList: true, subtree: true}); }
 })();
 </script>
 </body>

@@ -384,10 +384,11 @@ how it works for me..." name="description"/>
 <script>
 (function() {
   var SELECTORS = [
-    '[id*="popup"]','[class*="popup"]',
-    '[id*="overlay"]','[class*="overlay"]',
-    '[id*="newsletter"]','[class*="newsletter"]',
-    '[id*="lightbox"]','[class*="lightbox"]'
+    'div[id*="popup"]','div[class*="popup"]',
+    'div[id*="overlay"]','div[class*="overlay"]',
+    'div[id*="newsletter"]','div[class*="newsletter"]',
+    'div[id*="lightbox"]','div[class*="lightbox"]',
+    'section[id*="popup"]','section[class*="popup"]'
   ];
   function hideEl(el) {
     el.style.setProperty('display', 'none', 'important');
@@ -403,21 +404,22 @@ how it works for me..." name="description"/>
   var obs = new MutationObserver(function(mutations) {
     mutations.forEach(function(m) {
       m.addedNodes.forEach(function(node) {
-        if (node.nodeType !== 1) return;
+        if (node.nodeType !== 1 || node.tagName === 'BODY' || node.tagName === 'HTML') return;
         var id = (node.id || '').toLowerCase();
         var cls = (node.className || '').toLowerCase();
         var keywords = ['popup','overlay','newsletter','lightbox'];
         var matches = keywords.some(function(k){ return id.indexOf(k)>-1 || cls.indexOf(k)>-1; });
         if (matches) { hideEl(node); }
-        if (node.querySelectorAll) SELECTORS.forEach(function(sel) { node.querySelectorAll(sel).forEach(hideEl); });
+        SELECTORS.forEach(function(sel) {
+          if (node.querySelectorAll) node.querySelectorAll(sel).forEach(hideEl);
+        });
       });
     });
   });
   document.addEventListener('DOMContentLoaded', function() {
-    obs.observe(document.body, {childList: true, subtree: true});
+    if (document.body) obs.observe(document.body, {childList: true, subtree: true});
     hideAll();
   });
-  if (document.body) { obs.observe(document.body, {childList: true, subtree: true}); }
 })();
 </script>
 </body>
