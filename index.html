@@ -401,8 +401,17 @@
     .cta > *:not(.bg-carousel) { position: relative; z-index: 1; }
 
     /* ── RESPONSIVE ── */
+    .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+    .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+    .nav-burger:hover span { background:var(--accent); }
     @media (max-width: 600px) {
-      nav .links { display: none; }
+      nav { padding: 1rem 1.4rem; }
+      nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.4rem; z-index:200; }
+      nav .links.open { display:flex; }
+      nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); }
+      nav .links a:last-child { border-bottom:none; }
+      nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; }
+      .nav-burger { display:flex; }
       .hero { padding: 4rem 1.5rem; }
     }
   </style>
@@ -443,6 +452,9 @@
       <a href="blog.html">Blog</a>
       <a href="audio-library.html">Audio Library</a>
     </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -622,6 +634,8 @@
         slides[current].classList.add('active');
       }, 5 * 60 * 1000);
     });
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
   </script>
 </body>
 </html>

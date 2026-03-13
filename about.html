@@ -23,7 +23,10 @@
   nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
     nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
     nav .links a:hover, nav .links a.active { color:var(--accent); }
-  @media (max-width:600px) { nav .links { display:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:1rem 1.4rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.4rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } .nav-burger { display:flex; } }
     .hero { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
     .hero .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
     .hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:normal; line-height:1.25; margin-bottom:1rem; color:var(--text); }
@@ -88,6 +91,9 @@
       <a href="blog.html">Blog</a>
       <a href="audio-library.html">Audio Library</a>
     </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <div class="hero">
@@ -126,6 +132,8 @@
     function togglePalette(){document.getElementById('palette').classList.toggle('open');}
     document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
     (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
   </script>
 </body>
 </html>
