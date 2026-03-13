@@ -274,6 +274,74 @@
   </script>
   <script>
     (function () {
+      function extractDriveIdFromTrack(track, src) {
+        const link = track.querySelector('.track-meta a[href*="/file/d/"]');
+        if (link) {
+          const match = link.getAttribute('href').match(/\/file\/d\/([^/]+)/);
+          if (match && match[1]) return match[1];
+        }
+        if (src) {
+          const idMatch = src.match(/[?&]id=([^&]+)/);
+          if (idMatch && idMatch[1]) return idMatch[1];
+        }
+        return '';
+      }
+
+      function buildDriveCandidates(id, currentSrc) {
+        const candidates = [];
+        if (currentSrc) candidates.push(currentSrc);
+        candidates.push(
+          'https://docs.google.com/uc?export=open&id=' + id,
+          'https://docs.google.com/uc?export=download&id=' + id,
+          'https://drive.google.com/uc?export=download&id=' + id
+        );
+        return Array.from(new Set(candidates));
+      }
+
+      document.querySelectorAll('.track audio').forEach(function (audioEl) {
+        const track = audioEl.closest('.track');
+        if (!track) return;
+
+        const currentSrc = audioEl.getAttribute('src') || '';
+        const driveId = extractDriveIdFromTrack(track, currentSrc);
+        if (!driveId) return;
+
+        const candidateUrls = buildDriveCandidates(driveId, currentSrc);
+        audioEl.dataset.driveCandidates = JSON.stringify(candidateUrls);
+        audioEl.dataset.driveIndex = '0';
+
+        audioEl.addEventListener('error', function () {
+          let urls = [];
+          try {
+            urls = JSON.parse(audioEl.dataset.driveCandidates || '[]');
+          } catch (e) {
+            urls = [];
+          }
+          const idx = Number(audioEl.dataset.driveIndex || '0');
+          if (!urls.length) return;
+
+          const nextIdx = idx + 1;
+          if (nextIdx < urls.length) {
+            audioEl.dataset.driveIndex = String(nextIdx);
+            audioEl.src = urls[nextIdx];
+            audioEl.load();
+            return;
+          }
+
+          const meta = track.querySelector('.track-meta');
+          if (meta && !meta.querySelector('.drive-hint')) {
+            const hint = document.createElement('span');
+            hint.className = 'drive-hint';
+            hint.style.marginLeft = '0.55rem';
+            hint.textContent = 'Playback blocked here. Use the Google Drive link.';
+            meta.appendChild(hint);
+          }
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
       const searchInput = document.getElementById('audio-search');
       const status = document.getElementById('audio-search-status');
       const paginationInfo = document.getElementById('audio-pagination-info');
