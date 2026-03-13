@@ -1,248 +1,166 @@
-<!DOCTYPE html>
-
-<html class="touch-styles" lang="en-US">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta charset="utf-8"/>
-<title>Site Contents | Amanda Maney Alignment Coaching</title>
-<link href="assets/static1_squarespace_com__static_sitecss_5775605de6f2e1265b0e6666_204_52a74dafe4b073a80cd253c5_58f51f1fd482e9a19a30104c_1055_site.css" rel="stylesheet" type="text/css"/>
-<style>
-  .nav-page-wrap {
-    max-width: 900px;
-    margin: 60px auto 80px;
-    padding: 0 24px;
-  }
-  .nav-page-wrap h1 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .nav-page-wrap > p.intro {
-    text-align: center;
-    color: #666;
-    margin-bottom: 50px;
-    font-size: 1.05em;
-  }
-  .nav-section {
-    margin-bottom: 44px;
-  }
-  .nav-section h2 {
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 8px;
-    margin-bottom: 18px;
-    font-size: 1.15em;
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    color: #555;
-  }
-  .nav-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 10px 24px;
-  }
-  .nav-grid a, .nav-list a {
-    display: block;
-    padding: 9px 14px;
-    border: 1px solid #e5e5e5;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.93em;
-    line-height: 1.3;
-    transition: background .15s, border-color .15s;
-  }
-  .nav-grid a:hover, .nav-list a:hover {
-    background: #f5f0eb;
-    border-color: #c8bfb4;
-    color: #111;
-  }
-  .nav-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  @media (max-width: 550px) {
-    .nav-grid { grid-template-columns: 1fr; }
-  }
-</style><link href="assets/modern.css" rel="stylesheet" type="text/css"/>
-
-<style>#sqs-popup-overlay, .sqs-popup-overlay, [id*="popup-overlay"], [class*="popup-overlay"], .popup-overlay-background { display:none /* sqs-popup-overlay-hide */ !important; visibility:hidden !important; }</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Contents — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+    nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo span { color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover { color:var(--accent); }
+    @media (max-width:600px) { nav .links { display:none; } }
+    .hero { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .hero .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:normal; line-height:1.25; color:var(--text); }
+    .contents-section { max-width:760px; margin:0 auto; padding:4rem 2rem 5rem; }
+    .contents-group { margin-bottom:3.5rem; }
+    .contents-group h2 { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; padding-bottom:0.6rem; border-bottom:1px solid var(--warm); }
+    .contents-group ul { list-style:none; }
+    .contents-group li { border-bottom:1px solid var(--warm); }
+    .contents-group li:last-child { border-bottom:none; }
+    .contents-group a { display:block; padding:0.7rem 0; color:var(--text); text-decoration:none; font-size:0.96rem; transition:color 0.2s; }
+    .contents-group a::after { content:' →'; color:var(--accent); opacity:0; transition:opacity 0.2s; }
+    .contents-group a:hover { color:var(--accent); }
+    .contents-group a:hover::after { opacity:1; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+  </style>
 </head>
-<body class="collection-type-page" id="collection-site-contents">
-<div id="sidecarNav">
-<div class="nav-wrapper" id="mobileNavWrapper">
-<nav id="mobileNavigation">
-<div class="collection"><a href="index.html">Home</a></div>
-<div class="collection"><a href="blog.html">Blog</a></div>
-<div class="collection"><a href="alignment-coaching.html">Alignment Coaching</a></div>
-<div class="collection"><a href="audio-library.html">Audio Library</a></div>
-<div class="collection"><a href="about.html">About</a></div>
-<div class="collection"><a href="contact.html">Contact</a></div>
-</nav>
-</div>
-</div>
-<div class="clearfix" id="siteWrapper">
-<header class="show-on-scroll" id="header" role="banner">
-<div class="header-inner">
-<div class="wrapper" id="logoWrapper">
-<h1 id="logoImage"><a href="index.html"><img alt="Amanda Maney Alignment Coaching" src="assets/images_squarespace-cdn_com__content_v1_5775605de6f2e1265b0e6666_1496412307862-TUVEMGA455OLV2Y21Z9E_Untitled+design-6.png_format-1500w"/></a></h1>
-</div>
-<div class="mobile-nav-toggle"><div class="top-bar"></div><div class="middle-bar"></div><div class="bottom-bar"></div></div>
-<div id="headerNav">
-<div class="nav-wrapper" id="mainNavWrapper">
-<nav id="mainNavigation">
-<div class="collection"><a href="index.html">Home</a></div>
-<div class="collection"><a href="blog.html">Blog</a></div>
-<div class="collection"><a href="alignment-coaching.html">Alignment Coaching</a></div>
-<div class="collection"><a href="audio-library.html">Audio Library</a></div>
-<div class="collection"><a href="about.html">About</a></div>
-<div class="collection"><a href="contact.html">Contact</a></div>
-</nav>
-</div>
-<style>.mobile-nav-toggle-label { display: inline-block !important; }</style>
-</div>
-</div>
-</header>
-<main id="page" role="main">
-<div class="nav-page-wrap">
-<h1>Everything on This Site</h1>
-<p class="intro">A full index of all pages, blog posts and audio on this site.</p>
-<!-- ── Main Pages ── -->
-<div class="nav-section">
-<h2>Main Pages</h2>
-<div class="nav-grid">
-<a href="index.html">Home</a>
-<a href="alignment-coaching.html">Alignment Coaching</a>
-<a href="audio-library.html">Audio Library</a>
-<a href="blog.html">Blog</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
-<!-- ── Coaching Techniques ── -->
-<div class="nav-section">
-<h2>Coaching Techniques</h2>
-<div class="nav-grid">
-<a href="belief-reversal.html">Belief Reversal</a>
-<a href="clean-language-and-systemic-modelling.html">Clean Language and Systemic Modelling</a>
-<a href="energy-techniques.html">Energy Techniques</a>
-<a href="meta-health-coaching.html">Meta-Health Coaching</a>
-<a href="personality-profiling.html">Personality Profiling</a>
-</div>
-</div>
-<!-- ── Blog Posts ── -->
-<div class="nav-section">
-<h2>Blog Posts</h2>
-<div class="nav-list">
-<a href="blog/2020/10-finding-joy-in-everyday-things.html">Finding Joy in Everyday Things</a>
-<a href="blog/2020/12/connecting-with-joy.html">Connecting with Joy — 3 Practices for Enjoying the Heck out of Life</a>
-<a href="blog/2020/12/how-to-be-in-the-right-place.html">How to be in the Right Place at the Right Time — Living on Liquid Luck</a>
-<a href="blog/2021/01/duck-duck-dare.html">Duck, Duck, Dare… Finding Confidence to Play in the Snow</a>
-<a href="blog/2021/01/learning-to-be-inappropriate.html">Learning to be Inappropriate!</a>
-<a href="blog/2021/01/lessons-from-a-life-un-lived.html">Lessons from a Life Un-lived — Making Friends with Our Fears</a>
-<a href="blog/2021/01/looking-beyond-behaviour.html">Making Peace with our Mothers — Looking Beyond Behaviour</a>
-<a href="blog/2021/01/the-perils-of-vision-quests.html">The Perils of Vision Quests…</a>
-<a href="blog/2021/02/how-to-make-the-most-of-our-flaws.html">Making the Most of our Flaws — Notes from a Kintsugi Coach</a>
-<a href="blog/2021/02/the-problem-of-wanting.html">The Problem of Wanting What we Haven't Got — and How to Alleviate It</a>
-<a href="blog/2021/03/love-means.html">"Love Means Never Having to Say You're Sorry"… Unless It's NOT Your Fault</a>
-<a href="blog/2021/03/who-do-you-think-you-are.html">Who Do You Think You Are? — How to Take on Your Inner Critic</a>
-<a href="blog/2021/04/if-failure-fills-your-rearview.html">If Failure Fills Your Rearview Mirror — Check for Impostor Syndrome</a>
-<a href="blog/2021/04/is-your-to-do-list-torturing-you.html">Is Your To Do List Torturing You?</a>
-<a href="blog/2021/04/lessons-in-compassion.html">Lessons in Compassion From the Wisdom of the Enneagram</a>
-<a href="blog/2021/04/mind-the-gap.html">Mind The Gap — One Way of Connecting With a Traumatised Kid</a>
-<a href="blog/2022/05/in-filling-the-well.html">"In Filling the Well, Think Magic"</a>
-<a href="blog/2022/05/trusting-the-flow.html">Trusting the Flow</a>
-<a href="blog/2022/13/07/joy-arises-when-you-come-home.html">"Joy Arises When You Come Home"</a>
-<a href="blog/2022/20/07/facing-our-reality-might-seem-sensible.html">Facing Our Reality Might Seem Sensible — But it Stops Us Imagining a Better One</a>
-<a href="blog/https/wwwamandamaneycom/blog/07/22/what-if-there-were-no-past.html">What if There Were No Past, No Future? Only Now?</a>
-<a href="blog/https/wwwamandamaneycom/blog/27/07/22/a-life-of-magic.html">A Life of M.A.G.I.C — Me And God In Cahoots</a>
-<a href="blog/06/2022/you-cannot-prevent.html">You Cannot Prevent Birds of Sorrow From Flying Over Your Head…</a>
-<a href="blog/21/06/2022/a-mantra-can-save-you.html">A Mantra Can Save You From a Mind Run Amok</a>
-<a href="blog/31/07/2022/take-your-mind-where-you-want-it-to-go.html">Take Your Mind Where YOU Want It to Go</a>
-<a href="blog/17/08/2022/the-rule-to-grieving.html">The Rule to Grieving Is… There IS No Rule</a>
-<a href="blog/10/08/2022/when-your-mind-tries-to-scam-you.html">When Your Mind Tries to Scam You…</a>
-<a href="blog/24/08/2022/why-you-may-struggle.html">Why You May Struggle to Enjoy Life — Even When You Know You've Got It Good…</a>
-<a href="blog/31/08/2022/want-to-get-at-the-goodies.html">Want to Know How to Get at Life's Goodies?</a>
-<a href="blog/07/09/2022/have-you-arrived.html">Have You Arrived? Are You Home?</a>
-<a href="blog/14/09/2022/reality-consists-of-two-dimensions.html">Reality Consists of Two Dimensions — The Finite and The Infinite</a>
-<a href="blog/21/09/2022/trust-the-universe.html">Trust the Universe — It's Got Your Back</a>
-<a href="blog/do-you-ache.html">Do You Ache to Enjoy Life More?</a>
-<a href="blog/lest-ye-become.html">Lest Ye Become As Little Children…</a>
-<a href="blog/what-does-it-take.html">What Does it Take to Enjoy Life More?</a>
-<a href="blog/what-kind-of-knowing.html">What Kind of Knowing Keeps Us Upright?</a>
-<a href="blog/this-week-carrots.html">"This week, I ar' be mostly eatin' carrots!"</a>
-</div>
-</div>
-<!-- ── Audio Library ── -->
-<div class="nav-section">
-<h2>Audio Library</h2>
-<div class="nav-grid">
-<a href="audio-library.html">🎧 Browse All 121 Audio Tracks →</a>
-</div>
-</div>
-</div>
-</main>
-<footer id="footer" role="contentinfo">
-<div class="footer-inner">
-<div class="nav-wrapper back-to-top-nav"><nav><div class="back-to-top"><a href="#">Back to Top</a></div></nav></div>
-<div class="nav-wrapper" id="secondaryNavWrapper">
-<nav id="secondaryNavigation">
-<div class="folder">
-<div class="folder-toggle">Coaching Techniques</div>
-<div class="subnav">
-<div class="collection"><a href="belief-reversal.html"><span>Belief Reversal</span></a></div>
-<div class="collection"><a href="clean-language-and-systemic-modelling.html"><span>Clean Language and Systemic Modelling</span></a></div>
-<div class="collection"><a href="energy-techniques.html"><span>Energy Techniques</span></a></div>
-<div class="collection"><a href="meta-health-coaching.html"><span>Meta-Health Coaching</span></a></div>
-<div class="collection"><a href="personality-profiling.html"><span>Personality Profiling</span></a></div>
-</div>
-</div>
-</nav>
-</div>
-<div class="sqs-block-content"><p>© Amanda Maney Alignment Coaching 2017</p></div>
-</div>
-</footer>
-</div>
-<script>
-(function() {
-  var SELECTORS = [
-    'div[id*="popup"]','div[class*="popup"]',
-    'div[id*="overlay"]','div[class*="overlay"]',
-    'div[id*="newsletter"]','div[class*="newsletter"]',
-    'div[id*="lightbox"]','div[class*="lightbox"]',
-    'section[id*="popup"]','section[class*="popup"]'
-  ];
-  function hideEl(el) {
-    el.style.setProperty('display', 'none', 'important');
-    el.style.setProperty('visibility', 'hidden', 'important');
-    el.style.setProperty('opacity', '0', 'important');
-    el.style.setProperty('pointer-events', 'none', 'important');
-  }
-  function hideAll() {
-    SELECTORS.forEach(function(sel) {
-      document.querySelectorAll(sel).forEach(hideEl);
-    });
-  }
-  var obs = new MutationObserver(function(mutations) {
-    mutations.forEach(function(m) {
-      m.addedNodes.forEach(function(node) {
-        if (node.nodeType !== 1 || node.tagName === 'BODY' || node.tagName === 'HTML') return;
-        var id = (node.id || '').toLowerCase();
-        var cls = (node.className || '').toLowerCase();
-        var keywords = ['popup','overlay','newsletter','lightbox'];
-        var matches = keywords.some(function(k){ return id.indexOf(k)>-1 || cls.indexOf(k)>-1; });
-        if (matches) { hideEl(node); }
-        SELECTORS.forEach(function(sel) {
-          if (node.querySelectorAll) node.querySelectorAll(sel).forEach(hideEl);
-        });
-      });
-    });
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    if (document.body) obs.observe(document.body, {childList: true, subtree: true});
-    hideAll();
-  });
-})();
-</script>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <a href="index.html" class="logo">Amanda <span>Maney</span></a>
+    <div class="links">
+      <a href="index.html#process">How It Works</a>
+      <a href="blog.html">Blog</a>
+      <a href="audio-library.html">Audio Library</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <p class="tag">Navigation</p>
+    <h1>Site Contents</h1>
+  </div>
+
+  <div class="contents-section">
+    <div class="contents-group">
+      <h2>Main Pages</h2>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="audio-library.html">Audio Library</a></li>
+          <li><a href="about.html">About Amanda</a></li>
+          <li></li>
+          <li><a href="alignment-coaching.html">Alignment Coaching</a></li>
+          <li><a href="energy-techniques.html">Energy Techniques</a></li>
+          <li><a href="clean-language-and-systemic-modelling.html">Clean Language & Systemic Modelling</a></li>
+          <li><a href="meta-health-coaching.html">Meta Health Coaching</a></li>
+          <li><a href="personality-profiling.html">Personality Profiling</a></li>
+          <li><a href="belief-reversal.html">Belief Reversal</a></li>
+      </ul>
+    </div>
+    <div class="contents-group">
+      <h2>Blog Posts (35)</h2>
+      <ul>
+          <li><a href="blog/10-finding-joy-in-everyday-things.html">Finding Joy in Everyday Things</a></li>
+          <li><a href="blog/a-mantra-can-save-you.html">A Mantra Can Save You From a Mind Run Amok</a></li>
+          <li><a href="blog/connecting-with-joy.html">Connecting with Joy - 3 Practices for Enjoying the Heck out of Life</a></li>
+          <li><a href="blog/do-you-ache.html">Do You Ache to Enjoy Life More?</a></li>
+          <li><a href="blog/duck-duck-dare.html">Duck, Duck, Dare… Finding confidence to play in the snow</a></li>
+          <li><a href="blog/facing-our-reality-might-seem-sensible.html">Facing Our Reality Might Seem Sensible - But it Stops Us Imagining a Better One</a></li>
+          <li><a href="blog/have-you-arrived.html">Have You Arrived? Are You Home?</a></li>
+          <li><a href="blog/how-to-be-in-the-right-place.html">How to be in the Right Place at the Right Time, Doing the Right Thing - Living on Liquid Luck</a></li>
+          <li><a href="blog/how-to-make-the-most-of-our-flaws.html">Making the Most of our Flaws —  Notes from a Kintsugi Coach</a></li>
+          <li><a href="blog/if-failure-fills-your-rearview.html">If Failure Fills Your Rearview Mirror —  Check for Impostor Syndrome</a></li>
+          <li><a href="blog/in-filling-the-well.html">"In Filling the Well, Think Magic"</a></li>
+          <li><a href="blog/is-your-to-do-list-torturing-you.html">Is Your To Do List Torturing You?</a></li>
+          <li><a href="blog/joy-arises-when-you-come-home.html">"Joy Arises When You Come Home."</a></li>
+          <li><a href="blog/learning-to-be-inappropriate.html">Learning to be Inappropriate!</a></li>
+          <li><a href="blog/lessons-from-a-life-un-lived.html">Lessons from a Life Un-lived – Making friends with our fears</a></li>
+          <li><a href="blog/lessons-in-compassion.html">Lessons in Compassion From the Wisdom of the Enneagram</a></li>
+          <li><a href="blog/lest-ye-become.html">Lest Ye Become As Little Children...</a></li>
+          <li><a href="blog/looking-beyond-behaviour.html">Making Peace with our Mothers  - Looking Beyond Behaviour</a></li>
+          <li><a href="blog/love-means.html">“Love Means Never Having to Say You’re Sorry”… Unless It’s NOT Your Fault  Then, saying sorry is worthwhile</a></li>
+          <li><a href="blog/mind-the-gap.html">Mind The Gap - One Way of Connecting With a Traumatised Kid</a></li>
+          <li><a href="blog/reality-consists-of-two-dimensions.html">Reality Consists of Two Dimensions - The Finite and The Infinite</a></li>
+          <li><a href="blog/take-your-mind-where-you-want-it-to-go.html">Take Your Mind Where YOU Want It to Go</a></li>
+          <li><a href="blog/the-perils-of-vision-quests.html">The Perils of Vision Quests...</a></li>
+          <li><a href="blog/the-problem-of-wanting.html">The Problem of Wanting What we Haven’t Got — and How to Alleviate it</a></li>
+          <li><a href="blog/the-rule-to-grieving.html">The Rule to Grieving Is... There IS No Rule</a></li>
+          <li><a href="blog/this-week-carrots.html">"This week, I ar' be mostly eatin' carrots!"</a></li>
+          <li><a href="blog/trust-the-universe.html">Trust the Universe - It's Got Your Back</a></li>
+          <li><a href="blog/trusting-the-flow.html">Trusting the Flow</a></li>
+          <li><a href="blog/want-to-get-at-the-goodies.html">Want to Know How to Get at Life's Goodies?</a></li>
+          <li><a href="blog/what-does-it-take.html">What Does it Take to Enjoy Life More?</a></li>
+          <li><a href="blog/what-kind-of-knowing.html">What Kind of Knowing Keeps Us Upright?</a></li>
+          <li><a href="blog/when-your-mind-tries-to-scam-you.html">When Your Mind Tries to Scam You…</a></li>
+          <li><a href="blog/who-do-you-think-you-are.html">Who Do You Think You Are? - How to take on your Inner Critic</a></li>
+          <li><a href="blog/why-you-may-struggle.html">Why You May Struggle to Enjoy Life - Even When You Know You’ve Got It Good…</a></li>
+          <li><a href="blog/you-cannot-prevent.html">You Cannot Prevent Birds of Sorrow From Flying Over Your Head...</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+  </script>
 </body>
 </html>

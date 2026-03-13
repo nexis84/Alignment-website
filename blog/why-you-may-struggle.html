@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why You May Struggle to Enjoy Life - Even When You Know You’ve Got It Good… — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+    nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo span { color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+    @media (max-width:600px) { nav .links { display:none; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <a href="../index.html" class="logo">Amanda <span>Maney</span></a>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Why You May Struggle to Enjoy Life - Even When You Know You’ve Got It Good…</h1>
+    <p class="meta">24 August 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>How loss can bring joy in its wake…</h3>
+    <p>When faced with loss of any kind — loss of a loved one, loss of direction, loss of function or identity…</p>
+    <p>…We find ourselves in a world gone grey. A world without meaning, without sweetness, a world where problems are the only reality and we’re too worn down to face them.</p>
+    <p>If we have lost our power to imagine, we have nothing to bring to a landscape of loss. We’ve no hope of rainbows… or so we think.</p>
+    <blockquote><p>“A rainbow is a prism that sends shards of multicoloured light in various directions. It lifts our spirits and makes us think of what is possible. Hope is the same — a personal rainbow of the mind.” Charles Richard Snyder</p></blockquote>
+    <p>I think joy works likewise. I think joy is more accessible than we imagine, when facing the infinite grey… I think joy works like a prism of the mind.</p>
+    <p>Pristine focus is the prism. Align it with the light and a rainbow forms. Brilliant. Shimmering. Heavenly.</p>
+    <p>But the slightest misalignment and the rainbow is gone. As if it had never existed. And never will again.</p>
+    <p>The focus required is absolute.</p>
+    <p>Absolute like the life-or-death absolute of walking the high wire. Place this foot precisely, or die. Whole body. Mind. Spirit. No wave or particle disengaged.</p>
+    <h3>Where does this absolute, pristine focus come from?</h3>
+    <p>For a small child, it may come from an earthworm; from a cobweb; from the preparations for a beloved cousin’s visit:</p>
+    <p>Menu:</p>
+    <p>Choice 1: Beans on toast</p>
+    <p>Choice 2: Beans by toast…</p>
+    <p>Choice 3: Nothing</p>
+    <p>— (extract from a menu written by an 8 year old for her 4 year-old cousin)</p>
+    <p>For me, at the moment, the prism of joy comes from its opposite. Anguish creates it. Grief compels it.</p>
+    <p>The truth is, the decades I spent struggling to enjoy life didn’t force me to focus.</p>
+    <p>Even with my beautiful husband in physical form beside me, I found much to fuss and worry about. I struggled to actually enjoy life.</p>
+    <p>I loved pieces of it. Time with friends, absolutely. Time with Michael, of course.</p>
+    <p>But all the thoughts in between — and the stress of my self-destructive working mindset — meant that life as a whole was a quagmire actually. Especially as I knew better.</p>
+    <p>I knew it could have been much more joyful.</p>
+    <p>I should have been so much happier…</p>
+    <p>The problem?</p>
+    <p>I had it too good.</p>
+    <p>Yes, I was super-stressed by work, with strong undercurrents of PTSD and powerlessness, but every day I came home to Heaven.</p>
+    <p>Honestly, one moment in my husband’s company and I was Home.</p>
+    <p>In Heaven. Instantly. Every time.</p>
+    <p>Which was glorious.</p>
+    <p>But it made me lazy. I didn’t need to find my own joy. I simply hooked up to his. He was my rainbow prism.</p>
+    <p>And then he died.</p>
+    <p>To say I’ve longed to follow him would be an understatement. Wishing for death after the loss of a loved one is a common experience, I know.</p>
+    <p>I still have moments of anguish. Of feeling unbearably alone.</p>
+    <p>But the extremes of this experience have been agents of inner change.</p>
+    <p>How is it that I feel MORE joy now, in my better moments, than I did when Michael was physically here?</p>
+    <p>Because without his tangible presence, I’ve been forced to do the work.</p>
+    <h3>Forced to learn the art of pristine focus</h3>
+    <p>Hopefully, you’re not living through an experience this extreme. But wherever you are on life’s great landscape, may you find some benefit here…</p>
+    <p>Whatever you might be currently distressed about, however great or slight, you might like to apply a little pristine focus.</p>
+    <p>Whatever the topic, hold it at the right angle in the light and a rainbow will appear.</p>
+    <p>What do I mean? Let’s mine the metaphor…</p>
+    <p>Holding a topic at the right angle requires stillness and focus. Every topic has two angles — I can turn it to face what is wanted or to face the lack of it.</p>
+    <p>When I am focused on lack… of Michael, of health, of ideas for a blog… the angle prevents the rainbow, the topic’s not aligned to the light. I have to turn the topic, to allow the light through.</p>
+    <p>I do that by imagining an attitude of love. Love and trust. I don’t have to feel those emotions, simply to imagine them. I set the intention to hold this topic in love and trust. I focus my energy that way.</p>
+    <p>And keep still. Stillness in my mind is crucial. I can’t keep going back to the topic, turning it over in my mind, picking at the parts that hurt in some perverse attempt to resolve it.</p>
+    <p>Focus and stillness. That’s it. Part one, done.</p>
+    <p>Then, for joy’s rainbow, Part two light is required. We have to hold the topic at the right angle in the light.</p>
+    <p>I seek light, from any source. I search for subjects and objects of joy. For topics that might bring a smile. For any excuse to feel a bit better. For ease, for flow, for relief.</p>
+    <p>There’s no struggle required here.</p>
+    <h3>Set the intention for the light to find you — and it will</h3>
+    <p>I’ll give you a real-time example…</p>
+    <p>Today, I had a scheduled buddy-writing slot with a dear friend. She’d told me to let myself into her house and that, by 8am, she’d be established in the room we’d used before. My intention was to join her without disrupting the whole household — dogs and children and husband.</p>
+    <p>I was a-bit-of-a-wobble this morning. Reaching for more awareness of Michael had me holding this precious topic at an angle that hurts.</p>
+    <p>So, I set the intention to hold the subject in love and trust. I breathed love and trust in… and out… as I drove to my friend’s house.</p>
+    <p>I then turned my thoughts towards the sources of the light. I wasn’t feeling the sunshine of my soul. I was shivering in the chill of the tear-filled clouds obscuring it.</p>
+    <p>Time was getting on, so I set the intention to allow light. I stated what I wanted — to feel ease and enjoyment, to smile and be enthused… Though it was a stretch in that moment to imagine ever feeling that way again.</p>
+    <p>I arrived at my friend’s house feeling calm, but no rainbows.</p>
+    <p>I let myself in. Walked quietly through the house, up the stairs — great, no deluge of dogs, no one disturbed, I could sneak in to join my hostess at her desk.</p>
+    <p>I opened the door to find the room in darkness. It contained a bed, as well as a desk and a flip-chart on a stand.</p>
+    <p>It didn’t surprise me to find a room in darkness, I didn’t think for a moment that the bed might have an occupant…</p>
+    <p>Ah well, my friend’s not here yet, I thought, no worries, I’ll get started without her. Let’s put the kettle on and open the curtains…</p>
+    <p>At which point the bed and its contents erupted. The husband had been tucked up in bed, sound asleep!</p>
+    <p>Standing in the doorway, mumbling my apologies, I was consumed with little-girl giggles. How HILARIOUS! Laughter was insuppressible. I couldn’t feel embarrassed — these people were far too laid back for that. I know they’d not bat an eyelid… no trauma here, just laughter. And plenty of it.</p>
+    <p>I’m writing this now, bathed in rainbows and loving it!</p>
+    <p>Hold the subject and turn it to the angle of what is wanted — simple intention is enough.</p>
+    <p>Seek light. From any Source.</p>
+    <p>The rainbow will happen by itself.</p>
+    <p>Sending love, light and rainbows of joy, from my heart to yours, Dear One.</p>
+    <h3>A Native American Prayer, from the Marie Curie website</h3>
+    <blockquote><p>“May the sun bring you energy every day, bringing light into the darkness of your soul. May the moon softly restore you by night, bathing you in the glow of restful sleep and peaceful dreams. May the rain wash away your worries and cleanse the hurt that sits in your heart. May the breeze blow new strength into your being, and may you believe in the courage of yourself. May you walk gently through the world, keeping your loved one with you always, knowing that you are never parted in the beating of your heart.” — Apache grief blessing, by unknown author(s)</p></blockquote>
+  </div>
+<footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+  </script>
+</body>
+</html>

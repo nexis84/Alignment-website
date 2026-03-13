@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facing Our Reality Might Seem Sensible - But it Stops Us Imagining a Better One — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:1rem; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo span { color:var(--accent); }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.35rem 0.7rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  @media (max-width:600px) { nav .links { display:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo">Amanda <span>Maney</span></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Facing Our Reality Might Seem Sensible - But it Stops Us Imagining a Better One</h1>
+    <p class="meta">20 July 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <p>No wonder we feel so stuck!</p>
+    <p>There’s a time for acknowledging current reality, for sure. But what happens when we focus on a reality we don’t like and don’t know how to resolve?</p>
+    <p>Every system in our world is geared towards magnifying the problem.</p>
+    <p>We obsess over it.</p>
+    <p>We tell and retell the story of it.</p>
+    <p>It becomes all-consuming in our efforts to resolve it.</p>
+    <p>We’re scolded if we don’t ‘face reality’. We’re branded ‘Pollyanna’ with eye-rolling and exasperation if we dare to defy the advice of those rooted in problem-focused thinking.</p>
+    <p>The problem soon becomes huge in our experience. Our power diminishes as we try taking action to fix the ugly issue, or distance ourselves from it — the thorn in our side.</p>
+    <p>How often do we act and fail, only to set ourselves up for more of the same misery, or worse?</p>
+    <p>Or perhaps we become utterly hopeless like dogs so repeatedly punished that they no longer attempt to leave their cage, even when the door is left wide open…</p>
+    <p>And then, after a life time of disempowerment, of ‘knowing’ our innate futility, loss finds us, in some major form. Loss of a loved one, loss of health or wealth, loss of direction, loss of anima.</p>
+    <p>We find ourselves in a world gone grey. A world without meaning, without sweetness, a world where problems are the only reality and we’re too worn down to face them.</p>
+    <p>If we have lost our power to imagine, we have nothing to bring to a landscape of loss.</p>
+    <p>We believe ourselves lacking in the outer effects; but our greatest lack is our inability to imagine ourselves whole.</p>
+    <p>What stops us deploying the greatest power we have, our power to imagine? Watching a talk by the late, great Sir Ken Robinson, these statements struck home with me today.</p>
+    <blockquote><p>“Imagination is the source of every form of human achievement. And it’s the one thing that I believe we are systematically jeopardising in the way we educate our children and ourselves.”</p></blockquote>
+    <p>These words really hit home. As one who struggled to work in the education system for 30 years, I can see this core truth as one of the main reasons I could never align fully with what school was meant to be about.</p>
+    <p>How many of us have been educated away from our imagining?</p>
+    <p>How often have we been told that facing reality is the only ‘responsible’ course of action?</p>
+    <p>How old were you when you first gave up on a dream?</p>
+    <p>If you’re anything like me, you’ve struggled to dream for a long, long time, so convinced are you that there’s no hope of fulfilling it.</p>
+    <p>When we’ve lost touch with the power of imagining our reservoir of hope runs low. When loss strikes, our capacity to recover is reduced. Our dependency on the outer trappings of reality to feel safe, loved, and in control makes us vulnerable to losing all that makes life worth living.</p>
+    <p>I’ve felt the sharp end of that acutely since my husband made his transition to non physical last year….</p>
+    <p>A life devoted to problems and the fixing of them becomes a life run dry, a land of cracked and brittle soil.</p>
+    <p>Facing loss with only reality to focus upon, it’s easy to spiral into despair. If we’re going to find meaning to sustain us, we have to find joy beyond loss. When there’s no joy to be found in the ‘real’ world around us, imagination is all we have.</p>
+    <p>We don’t overcome loss by facing it. We find joy beyond loss by replacing it.</p>
+    <blockquote><p>“The way to get rid of darkness is with light; the way to overcome cold is with heat; the way to overcome the negative thought is to substitute the good thought. Affirm the good, and the bad will vanish.” — Joseph Murphy, The Power of Your Subconscious Mind</p></blockquote>
+    <p>I hope this finds you before you face great loss. But wherever you are in relation to that land of sadness, now is the perfect time to find your way Home.</p>
+    <p>Nurture your imagining now. Come Home to your Self often each day. Spend time daily nourishing your dreams, savouring them, loving them deeply.</p>
+    <p>But one key awareness separates false hope from true joy.</p>
+    <p>Use your imagining to replace unwanted reality with its opposite or better, solely to feel better now.</p>
+    <p>That’s it.</p>
+    <p>No trying to use imagining to create future improvement.</p>
+    <p>No trying to fix your now by the power of fierce focus.</p>
+    <p>No efforting to push away grief from the past.</p>
+    <p>Focus your energy on feeling better now.</p>
+    <p>Now is all there is.</p>
+    <p>Imagining what pleases you in this moment now, then releasing it — job done, smile rediscovered — that’s the key to a joyful life experience.</p>
+    <p>This I am discovering and rediscovering each day.</p>
+    <p>When I feel bereft — and at times so intensely there are no words to reach into it — I know I can find comfort in my vibrational reality, the world of my imagining.</p>
+    <p>I have only to close my eyes and summon the sea in my mind’s eye and Michael is here, beside me, dancing me into the surf. Our energies fly with the gannets, plunging with them into deep waters…</p>
+    <p>The more I do this, imagining a self co-mingled with this vibrational world of swirling energy, the easier it gets to let go of the, ‘But it’s not REAL!’ objections in my mind.</p>
+    <p>I replace them instead with the delight I feel at connecting with the essence of my soul and the love of my soulmate, here, in my imaginings. Here, joy plays in the sand with teachers and loved ones and masters and more.</p>
+    <p>And joy begets joy, begets joy…</p>
+    <p>It gets easier each day — and more and more delicious — to spend pockets of time basking on that beach in the fulfilment of my dreams.</p>
+    <p>In my imaginings, I can delight in my desires. I can revel in the loveliness that I am calling forth. Because it feels good.</p>
+    <p>Now.</p>
+    <p>End of.</p>
+    <p>As I play, day to day, with more daring to imagine, I am prompted to pick up a book I had previously struggled to read. It had felt like hard work. Very scientific!</p>
+    <p>I am stunned by what I find now, reading differently, with a mind opened by daydreaming and infinite possibilities.</p>
+    <p>‘The Field’, Lynne McTaggart’s fascinating presentation of the pioneering work of quantum physicists grappling with the essence of what is real, makes a few core tenets supremely clear.</p>
+    <p>• We are energy. Pulsing, broadcasting, intense fields of energy. Matter is not different from energy, matter is energy, condensed. • We are one. I’ve heard this so often, but had no way to comprehend it. McTaggart brings us to the level of the energy that exists in all spaces — even a vacuum is teaming with energy. We are literally one, in the ocean of energy that is All That Is. • We are creating our reality. By our focus of attention. Literally.</p>
+    <p>This last one’s the zinger for me.</p>
+    <p>I’ve long loved and believed in the Law of Attraction and the premise that we create our reality by our thoughts and emotions. It makes sense to me that we create our vibrational frequency — mostly unintentionally and absolutely NOT our fault when trauma subconsciously begets more trauma.</p>
+    <p>But we see it all the time, the cycle, whether ‘vicious’ or ‘virtuous’ — the universe must, by law, match our vibration with people, places, events and experiences that match it.</p>
+    <p>McTaggart explores the concept of creating our own reality from the work of eminent scientists. Offering a narrative summary of their findings, she helps us understand what is known of the fundamental particles that constitute observable reality.</p>
+    <p>Quantum physicists have found that when you look at the tiniest particles of what is, they behave in ways that sometimes look like particles and sometimes like waves. I’ve been vaguely aware of this awhile, perhaps you have too.</p>
+    <p>There appears to be a state of all possibilities for any quantum particle that can be predicted to some degree of probability, but sometimes gives one type of reading when measured and other times gives a completely different one.</p>
+    <p>This gets more wondrous still…</p>
+    <p>McTaggart says:</p>
+    <blockquote><p>“ — these particles could only be considered as ‘probably’ existing in space and time until they were ‘perturbed’ and the act of observing and measuring them forced them into a set state — an act akin to solidifying jelly.”</p></blockquote>
+    <p>This is an extraordinary finding. It suggests that,</p>
+    <blockquote><p>“…. the consciousness of the observer brought the observed object into being. Nothing in the universe existed as an actual ‘thing’ independently of our perception of it. Every minute of every day we were creating our world.”</p></blockquote>
+    <p>All the new age philosophies and eastern wisdoms, the teachings of the spiritual masters over millennia are found in sharp focus in the laboratories of current, pioneering scientific minds.</p>
+    <p>If ever I wanted more tangible evidence of the truth I long to fully believe, that,</p>
+    <blockquote><p>“Reality is merely an illusion, albeit a very persistent one.” — Albert Einstein</p></blockquote>
+    <p>and</p>
+    <blockquote><p>“We are shaped by our thoughts, we become what we think. When the mind is pure, joy follows like a shadow that never leaves.” — Buddha</p></blockquote>
+    <p>and</p>
+    <blockquote><p>“Ask and it will be given to you; seek and you will find; knock, and the door will be opened to you.” — Matthew, 7:7</p></blockquote>
+    <p>— the writing of McTaggart brings tangibles to my intuition.</p>
+    <p>Regardless of how this little piece of writing might sit with you, my encouragement to you is this: spend more time each day imagining.</p>
+    <p>Imagine for the sheer pleasure of it.</p>
+    <p>Whether your current reality is joyous for the most part or filled with sorrow and dread, give yourself frequent mini-breaks as often as you can.</p>
+    <p>Take a holiday from reality. Not to escape it, not to fix or change it, but to show yourself that you have the power to feel ever more joy in this moment. Which is all we ever want from our outer reality anyway.</p>
+    <p>Your future will improve as a result, of this I am in no doubt. But no more will you cling to your need for different outcomes. That need has tripped me up repeatedly in the past.</p>
+    <p>I knew the key lay in imagining, but I couldn’t detach myself from taking measurements in the ‘real’ world, ‘facing reality.’ Every awareness that, no, my outer world’s no different at all, in fact if anything, it’s worse than before, was enough to extinguish my dreaming.</p>
+    <p>Now it feels so different. The transformation is so simple.</p>
+    <p>The only measurement that matters, the one that holds all the power, the one that changes our life experience profoundly and almost instantaneously is this one:</p>
+    <blockquote><p>How much better do I feel right now?</p></blockquote>
+    <p>If you’re anything like I was; ‘facing reality’ brings pain and has you searching for some fix, some antidote to life… If that’s you, take a moment, right now, to:</p>
+    <p>Stop.</p>
+    <p>Breathe.</p>
+    <p>Go on holiday in your mind. You don’t need to see it, hear it, feel it clearly. Just the intention to go somewhere lovely is enough.</p>
+    <p>Imagine being able to feel the way you’d like to be feeling. Don’t force it if it doesn’t come first time you try it. Reach for the name, at least, of the feeling you would like.</p>
+    <p>Simply tune your imagining, like a radio receiving dial, to the frequencies you’d like to pick up.</p>
+    <p>It might be fuzzy and unclear at first, that’s okay. It takes time and practice to nail the nuances.</p>
+    <p>Think — relief. How would relief feel in this moment now?</p>
+    <p>Imagine the relief you would feel if you could take this little holiday many times in the day, if you could pick up on the frequency of joy, or simple contentment, at will.</p>
+    <p>Wouldn’t that be lovely?</p>
+    <p>There you go. That’s all it takes.</p>
+    <p>If you enjoyed it, even a little, do it again. As often as you can.</p>
+    <p>You’ll be amazed at how soon facing reality softens its grip on you.</p>
+    <p>Instead, you’ll be delighting in the magic of your mind, feasting on your power to feel good now anyway, no matter what, come what may.</p>
+    <p>That’s the power of imagining. That’s where freedom lies. Inspired action is great, when we can change what’s outside us, but in our stillness we revel in our inner world of joy.</p>
+    <p>I send you encouragement always, as you allow yourself ever more joy.</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+  </script>
+</body>
+</html>

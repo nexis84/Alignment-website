@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Take Your Mind Where YOU Want It toÂ Go â€” Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+    nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo span { color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+    @media (max-width:600px) { nav .links { display:none; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'â†'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <a href="../index.html" class="logo">Amanda <span>Maney</span></a>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+      <a href="../audio-library.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Take Your Mind Where YOU Want It toÂ Go</h1>
+    <p class="meta">31 July 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>No more letting it ride roughshodâ€¦</h3>
+    <p>So, here I am, itâ€™s 3 am and fear is playing its game with me again.</p>
+    <p>Tears. Worry. Anxiety.</p>
+    <p>Powerlessness presses the air from my lungs.</p>
+    <p>My puppy dog mind has diarrhoea, I think to myself.</p>
+    <p>The reframe brings some relief. I imagine a â€˜looseâ€™ pooping puppy making a heck of a mess in my mindâ€¦</p>
+    <p>I sit on the side of the bed and let the tears flow.</p>
+    <blockquote><p>Itâ€™s ok. Itâ€™s ok. Youâ€™re safe. Weâ€™ve got you.</p></blockquote>
+    <p>â€œReally?â€ I say to the voices Iâ€™ve practised imagining in my head. â€œBecause, Iâ€™ve got to say it feels FAR from ok and I SO donâ€™t feel safe!</p>
+    <p>Do you know what itâ€™s like to be alone, without Michael here beside me? To be lost in the world, with money running out? No idea how itâ€™s all going to work out?</p>
+    <p>Do you actually KNOW what thatâ€™s like?â€</p>
+    <p>I all but spit the words out to the Dream Team of my mindâ€™s creating...</p>
+    <p>Fortunately, they can cope.</p>
+    <blockquote><p>â€œNot really, no, Amanda. You have us there. But thatâ€™s because weâ€™re here, where love is. Where Michael lives on, in pure, positive energy form. Where abundance is a given. Where there is no shortage, no lack. We canâ€™t feel your fear because we know that itâ€™s all working out for you.Love, connection, all the resources youâ€™ll ever need. Theyâ€™re all here. Flowing to you.The stream of abundance is real but you must lift your spirits to receive it.</p></blockquote>
+    <p>Iâ€™d better back up a bit, before you start to worryâ€¦ No, I havenâ€™t lost the plot!</p>
+    <p>Let me explain.</p>
+    <p>A bout of grief-fuelled despair some weeks ago brought me a profound realisation. After 33 years of relying on my physical soulmate to bring me back into balance I found myself thinking:</p>
+    <p>I really canâ€™t do this on my own.</p>
+    <p>Now that Michaelâ€™s particles have returned to what quantum physics describes as â€˜waveâ€™ form, Iâ€™ve got to find my wave-connection to find joy beyond that loss...</p>
+    <p>Truth is, Iâ€™d become reliant on Michaelâ€™s lovely particles â€” with his sweet face to kiss and his arms to enfold me.</p>
+    <p>To find my connection now, Iâ€™ve got to reach for Michael where his essence hangs out: in wave energy form.</p>
+    <p>Michaelâ€™s transition has forced me to focus. Seeking joy beyond loss has its own gifts to bring.</p>
+    <p>One of the best ways Iâ€™ve found to return myself to balance is a combination of two great coaching tools. Tools Iâ€™ve used for years, that are now truly showing me their power.</p>
+    <h3>Tool One: Self-Coaching</h3>
+    <p>First, a tool I used with myself in my teens. I donâ€™t know what made me do it â€” isolation and overwhelm most likely. I started coaching myself. Out loud. In second person.</p>
+    <p>I coached myself through exam syllabi. And through the death of my father. My motherâ€™s depression and drinkingâ€¦ Whatever came my way, really.</p>
+    <p>It may sound bizarre, but I vividly remember talking myself through what I needed to do. I remember the calming effect that it had.</p>
+    <p>I didnâ€™t feel so alone.</p>
+    <p>Now, scientific studies are showing the benefits of doing just that. Using second person pronouns â€” saying â€˜youâ€™, not I, has proven benefits, reassuring the system and focusing the mind.</p>
+    <p>Brought to despair a while back by my lost connection with Michael, I made a decision. I would imagine myself in constant communication with the teachers, loved ones, guides Iâ€™ve long admired. Michael included. Michael in the company of, well, angels...</p>
+    <p>Let me reiterate, this was a decision. Not a visceral experience. No apparitions or psychic phenomena or whatnot. No religious notions either.</p>
+    <p>No. Just a decision.</p>
+    <p>To get to joy, I need company.</p>
+    <p>Not the kind of company beloved friends and sibs can bring. Exquisite though that is.</p>
+    <p>No. The kind of company thatâ€™s here in the middle of the night, when Iâ€™m sobbing again.</p>
+    <p>So, I started talking to the imagined Dream Team in my head. A lot.</p>
+    <p>More importantly, I started actively listening.</p>
+    <p>Itâ€™s easier to do because Iâ€™ve been listening to Abraham** for years. Itâ€™s easy to imagine their flow of focused thought.</p>
+    <p>The most important premise is: Iâ€™m listening to infinite intelligence, divine love, all-power. Iâ€™m talking to the energy that holds our atoms together, the source of all that is.</p>
+    <p>Iâ€™m imagining my guides to be where all dreams are realised. In a vibrational source energy stream where thoughts, intensified, become things. A place I call Home.</p>
+    <p>So when they talk back to me, they canâ€™t join me where I am, in the low energy frequencies that tell me Iâ€™ve wandered off.</p>
+    <p>They call to me from Home. They talk to me of what I do want, not what I donâ€™t. They guide me with thoughts that will lead me back to relief, and then blissâ€¦</p>
+    <p>More than coaching me out of despair, my inner conversation pours reassurance and encouragement through the quiet moments of my day.</p>
+    <p>What a difference it makes to imagine living with divine counsel from wise ones and loved ones and more!</p>
+    <p>I am living with pure positive energy beings. Of my own imagining, maybe, but powerful nonetheless. Effective enough to have me tucked up and sleeping soundly within an hour of my 3 am, weeping bluesâ€¦</p>
+    <h3>Tool Two: The Focus Wheel*</h3>
+    <p>The second tool I find helpful here, feeds into the self coaching. Iâ€™ve used it so often on paper I do it easily in my head and itâ€™s incorporated into my imagined divine coaching. Thereâ€™s a worked exemplar of mine here.</p>
+    <p>This is a great exercise for taking the puppy dog mind where YOU want it to go. Itâ€™s hugely helpful and highly enjoyable.</p>
+    <p>It works best on paper to start with.</p>
+    <p>It goes like this: take a subject that doesnâ€™t feel good. Where your puppy dog mind is making an unholy mess in your living room.</p>
+    <p>Imagine a magic wand moment. The whole issue is resolved. What would you be thinking/feeling/believing then?</p>
+    <p>Draw a circle in the centre of the page, like the hub of a wheel, inside which you write a sentence to describe that magic wand thinking. A desired, â€˜hubâ€™ thought.</p>
+    <p>For me, if Iâ€™m feeling lost and alone, I might write something like:</p>
+    <p>I feel connected, loved and supported â€” I am divinely guided.</p>
+    <p>Then, trace the biggest circle possible on the page. Start writing in a spiral from the outer rim, inwards.</p>
+    <p>The outermost statements summarise the specifics of how you actually feel as you start the wheel. Donâ€™t get caught up in the storyline, though you might mention it. Focus on the way you feel.</p>
+    <p>So mine might be:</p>
+    <p>I feel lost and alone. Bereft. I canâ€™t bear life without Michael.</p>
+    <p>Then, write a more general negative statement or twoâ€¦</p>
+    <p>I am so tired of feeling like this.</p>
+    <p>As soon as you can, write a general positive statement or two. Statements that feel true to you. Words that bring a little relief.</p>
+    <p>I really want to feel better. I know I can feel better â€” I mostly do feel better than this.</p>
+    <p>Then edge your way in with more positive statements.</p>
+    <p>With each one, check that it feels aligned. Youâ€™ll know if it doesnâ€™t. Abraham likens it to a playground roundabout â€” if you try getting on it when itâ€™s going too fast, you get thrown off into the bushes.</p>
+    <p>With the focus wheel, if you try reaching for a thought thatâ€™s too far above how youâ€™re currently feeling, youâ€™ll take an emotional hit as your system spits it out. Thatâ€™s ok. Just reach for a softer thought, slightly more general.</p>
+    <p>So, for me, statements like:</p>
+    <p>I know emotions come from thoughts. I donâ€™t have to control every thought I think, but I can reach for thoughts that bring relief.</p>
+    <p>I do love the feeling of relief. I have found my way to relief many a time before. This is no different. I can find my way back Home.</p>
+    <p>Itâ€™s ok to be where I am. I know how to do this. I am doing really well. Every thought I think that feels just a little bit better is taking me right where I want to go.</p>
+    <p>My puppy-dog mind really likes to be shown where to go. It just needs training, thatâ€™s all. Any puppy left to its own devices will get into trouble. My mindâ€™s no different. It just needs to be reassured and lovingly bossed back into line.</p>
+    <p>The tone is warm and reassuring. The words can be as repetitive as you like. When I find a thought that feels good, I often reiterate it more than once in slightly different ways.</p>
+    <p>You can see that the thoughts are not directly hitting the topic in the centre of my page. I donâ€™t go near that until I know I can do it and feel completely in alignment with it.</p>
+    <p>As Iâ€™m approaching the centre of this wheel, I might write statements like:</p>
+    <p>I am already feeling so much better than I was when I started this wheel. I love showing myself that I can get myself feeling better, no matter where I start. I love the idea of feeling connected and divinely guided. I can imagine how that might feel â€” and imagining is where all creation begins. I donâ€™t need to make anything happen here. Wouldnâ€™t it be lovely if I really could feel my connection to source, the way Abraham talk about it?</p>
+    <p>If I donâ€™t think Iâ€™m quite close enough to my innermost statement by the time space runs out on my spiral, I either continue over the page, creating a new shape to write in, or, if I feel Iâ€™ve done enough for the time-being, I might write a few bridging statements:</p>
+    <p>Iâ€™ve done SO well to get this far. I feel so much better than I did. I know reaching my hub thought is only a matter of revisiting this subject. I like doing these focus wheels â€” I always feel better for doing them. Iâ€™m happy to do more on this another time. I know Iâ€™ve done a great job of lifting my emotions this much.</p>
+    <p>Because theyâ€™re enjoyable in themselves, Focus Wheels are a really powerful puppy training tool for those wayward minds of ours. The more we do them, the easier it gets to coach ourselves in similar ways.</p>
+    <p>Hence the splicing of the two tools. I find that as I coach myself from my imagined, divine perspective, I have my coaches talk to me the way I talk to myself on a Focus Wheel. Only it feels more powerful because of the use of the pronoun â€˜Youâ€™.</p>
+    <p>In addition, I have my Dream Team saying things to me all day long like:</p>
+    <p>Youâ€™re doing so well to tune into our voices Amanda. You can feel how much better you feel each time you do it. Wonâ€™t it be wonderful when this all comes so easily to you that you wonâ€™t need to give it a second thought?</p>
+    <p>If youâ€™re finding yourself pulled off balance by a situation you canâ€™t control, give this combination a goâ€¦</p>
+    <p>Coach yourself consciously &amp; Focus Wheel your puppy-dog mind.</p>
+    <p>If it can work for my early morning melt down, I guarantee it can bring you some relief.</p>
+    <p>Iâ€™ve used these tools with clients over the years and found they bring profound benefit immediately. No matter where you start, you always feel better in the doing of them. And the compound interest builds over time. Iâ€™ve seen depression clear and physical symptoms release.</p>
+    <p>If youâ€™d like to work through a specific situation together, whether youâ€™re working through loss or any other life challenge, book in for a FREE half hour. Starting out with tools like these can be the trickiest thing. Getting the nuances right will set you up for life.</p>
+    <p>Mornings GMT</p>
+    <p>Afternoon/evenings GMT</p>
+    <p>Iâ€™ll gladly show you how Iâ€™d frame your experience to soothe your troubled soul.</p>
+    <p>Sending you love and every encouragement, as ever,</p>
+    <p>Amanda</p>
+    <p>*Focus Wheel â€” a tool from Abrahamâ€™s fabulous â€˜Ask and It Is Givenâ€™</p>
+    <p>**Abraham â€” my â„–1 teacher of all time. (Google: Abraham-hicks)</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Contact Amanda</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+      <a href="../audio-library.html">Contact</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+  </script>
+</body>
+</html>

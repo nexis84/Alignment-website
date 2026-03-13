@@ -1,692 +1,374 @@
 <!DOCTYPE html>
-
-<html class="touch-styles" lang="en-US">
+<html lang="en">
 <head>
-<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta charset="utf-8"/>
-<title>Audio Library | Amanda Maney Alignment Coaching</title>
-<link href="assets/static1_squarespace_com__static_sitecss_5775605de6f2e1265b0e6666_204_52a74dafe4b073a80cd253c5_58f51f1fd482e9a19a30104c_1055_site.css" rel="stylesheet" type="text/css"/>
-<style>
-  /* ── Audio Library page styles ── */
-  .audio-library-header {
-    text-align: center;
-    padding: 60px 20px 30px;
-  }
-  .audio-library-header h1 {
-    font-size: 2.2em;
-    margin-bottom: 10px;
-  }
-  .audio-library-header p {
-    font-size: 1.1em;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .audio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-    max-width: 1100px;
-    margin: 40px auto 60px;
-    padding: 0 24px;
-  }
-  .audio-card {
-    background: #fafafa;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    padding: 18px 20px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .audio-card h3 {
-    margin: 0;
-    font-size: 0.95em;
-    line-height: 1.35;
-    color: #222;
-    word-break: break-word;
-  }
-  .audio-card audio {
-    width: 100%;
-    height: 36px;
-  }
-  .audio-section-title {
-    max-width: 1100px;
-    margin: 40px auto 0;
-    padding: 0 24px;
-    font-size: 1.25em;
-    color: #888;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
-  }
-  @media (max-width: 600px) {
-    .audio-grid { grid-template-columns: 1fr; }
-  }
-</style><link href="assets/modern.css" rel="stylesheet" type="text/css"/>
-
-<style>#sqs-popup-overlay, .sqs-popup-overlay, [id*="popup-overlay"], [class*="popup-overlay"], .popup-overlay-background { display:none /* sqs-popup-overlay-hide */ !important; visibility:hidden !important; }</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audio Library — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:1rem; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo span { color:var(--accent); }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.35rem 0.7rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  @media (max-width:600px) { nav .links { display:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } }
+    .hero { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .hero .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:normal; line-height:1.25; margin-bottom:1rem; color:var(--text); }
+    .hero p.sub { font-size:1rem; color:var(--muted); max-width:480px; margin:0 auto; }
+    .audio-section { max-width:740px; margin:0 auto; padding:4rem 2rem 5rem; }
+    .audio-search { margin-bottom:2.25rem; }
+    .audio-search label { display:block; margin-bottom:0.55rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
+    .audio-search input { width:100%; padding:0.95rem 1rem; border:1px solid var(--warm); border-radius:999px; background:var(--white); color:var(--text); font-family:'Arial',sans-serif; font-size:0.95rem; outline:none; transition:border-color 0.2s, box-shadow 0.2s; }
+    .audio-search input:focus { border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent); }
+    .audio-search-status { margin-top:0.65rem; min-height:1.2rem; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }
+    .audio-pagination { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 2rem; padding-bottom:1rem; border-bottom:1px solid var(--warm); }
+    .audio-pagination-info { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+    .audio-pagination-controls { display:flex; gap:0.7rem; }
+    .audio-pagination button { border:1px solid var(--warm); background:var(--white); color:var(--text); padding:0.7rem 1rem; border-radius:999px; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:border-color 0.2s, color 0.2s, opacity 0.2s; }
+    .audio-pagination button:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); }
+    .audio-pagination button:disabled { opacity:0.45; cursor:default; }
+    @media (max-width:640px) { .audio-pagination { flex-direction:column; align-items:stretch; } .audio-pagination-controls { justify-content:space-between; } }
+    .section-title { font-size:1.1rem; font-weight:normal; color:var(--text); letter-spacing:0.05em; margin:3rem 0 1.2rem; padding-bottom:0.6rem; border-bottom:1px solid var(--warm); font-family:'Arial',sans-serif; text-transform:uppercase; font-size:0.8rem; letter-spacing:0.18em; }
+    .audio-section .section-title:first-child { margin-top:0; }
+    .track { margin-bottom:1rem; padding:0.9rem 1rem; border:1px solid var(--warm); border-radius:12px; background:var(--white); content-visibility:auto; contain-intrinsic-size:120px; }
+    .track-title { font-family:'Arial',sans-serif; font-size:0.73rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:0.55rem; line-height:1.4; }
+    .player-shell { border:1px solid var(--warm); border-radius:8px; overflow:hidden; background:var(--cream); padding:0.45rem 0.55rem; }
+    .player-shell audio { width:100%; height:42px; }
+    .track-meta { margin-top:0.45rem; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; }
+    .track-meta a { color:var(--accent); text-decoration:none; }
+    .track-meta a:hover { text-decoration:underline; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
 </head>
-<body class="collection-type-page" id="collection-audio-library">
-<div id="sidecarNav">
-<div class="nav-wrapper" data-content-field="navigation-mobileNav" id="mobileNavWrapper">
-<nav id="mobileNavigation">
-<div class="collection"><a href="index.html">Home</a></div>
-<div class="collection"><a href="blog.html">Blog</a></div>
-<div class="collection"><a href="alignment-coaching.html">Alignment Coaching</a></div>
-<div class="collection"><a href="audio-library.html">Audio Library</a></div>
-<div class="collection"><a href="about.html">About</a></div>
-<div class="collection"><a href="contact.html">Contact</a></div>
-</nav>
-</div>
-</div>
-<div class="clearfix" id="siteWrapper">
-<header class="show-on-scroll" id="header" role="banner">
-<div class="header-inner">
-<div class="wrapper" data-content-field="site-title" id="logoWrapper">
-<h1 id="logoImage"><a href="index.html"><img alt="Amanda Maney Alignment Coaching" src="assets/images_squarespace-cdn_com__content_v1_5775605de6f2e1265b0e6666_1496412307862-TUVEMGA455OLV2Y21Z9E_Untitled+design-6.png_format-1500w"/></a></h1>
-</div>
-<div class="mobile-nav-toggle"><div class="top-bar"></div><div class="middle-bar"></div><div class="bottom-bar"></div></div>
-<div id="headerNav">
-<div class="nav-wrapper" id="mainNavWrapper">
-<nav id="mainNavigation">
-<div class="collection"><a href="index.html">Home</a></div>
-<div class="collection"><a href="blog.html">Blog</a></div>
-<div class="collection"><a href="alignment-coaching.html">Alignment Coaching</a></div>
-<div class="collection active"><a href="audio-library.html">Audio Library</a></div>
-<div class="collection"><a href="about.html">About</a></div>
-<div class="collection"><a href="contact.html">Contact</a></div>
-</nav>
-</div>
-<style>.mobile-nav-toggle-label { display: inline-block !important; }</style>
-</div>
-</div>
-</header>
-<main id="page" role="main">
-<div class="main-content" id="content">
-<div class="audio-library-header">
-<h1>Audio Library</h1>
-<p>A collection of guided meditations, focus wheels, alignment audios and coaching tracks. Press play and enjoy.</p>
-</div>
-<!-- ── Meditations & Settling ── -->
-<div class="audio-section-title">Meditations &amp; Settling</div>
-<div class="audio-grid">
-<div class="audio-card">
-<h3>7 Minutes Stop and Breathe Colour</h3>
-<iframe src="https://drive.google.com/file/d/11vqtknZIzZnjm3GxdDeEfeRJzgAPh27L/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Basic Meditation</h3>
-<iframe src="https://drive.google.com/file/d/126h5RP-MrXvH8WKzRHewx0BZC99kvsYQ/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Stop Breathe Be Here Now</h3>
-<iframe src="https://drive.google.com/file/d/1FoXj1LKPDL80R4pFOTQB8YNu6mfEQcur/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Stop to Breathe</h3>
-<iframe src="https://drive.google.com/file/d/1ZK_rhiWWPm9PPWN91N5N7bYbu0TKoqca/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Breathe, Just Breathe</h3>
-<iframe src="https://drive.google.com/file/d/1iQGYqF9cpQgqF-p7ydVxXwF40fVTg5b2/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Ocean of Blue</h3>
-<iframe src="https://drive.google.com/file/d/1We45e458fJrmI2Z8hZIXqw0Au3jHt92D/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Morning Connection with Your Inner Being</h3>
-<iframe src="https://drive.google.com/file/d/10Z-uaHVwwpE2htahv75S5Pnso3hjE26v/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Starting the Day with Your Inner Being</h3>
-<iframe src="https://drive.google.com/file/d/1Ie-08uKYOU2smGc2bBpZ1P6mG8-hxmRf/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Five Minutes Focus</h3>
-<iframe src="https://drive.google.com/file/d/1TAtHabCWLA0ihxbbku3spsqePO1SJ9FK/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – 5 Minutes Resourceful State Focus</h3>
-<iframe src="https://drive.google.com/file/d/1kViRCLb29tl2Dc60OzEENBV330GHkIMl/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Stopping after Busy Segment of the Day</h3>
-<iframe src="https://drive.google.com/file/d/1YIGefAoMW7ZePB9gqI7r7FLdwqfFNywR/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Start the Day</h3>
-<iframe src="https://drive.google.com/file/d/1UaucVjKQbEqGdGs8J1KhPtK75x0ACKfm/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-</div>
-<!-- ── Sleep & Bedtime ── -->
-<div class="audio-section-title">Sleep &amp; Bedtime</div>
-<div class="audio-grid">
-<div class="audio-card">
-<h3>Settling to Sleep</h3>
-<iframe src="https://drive.google.com/file/d/1T6i-EyBWeHydvNlApmF5bqlzFVOP-fLn/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Settle to Sleep</h3>
-<iframe src="https://drive.google.com/file/d/1GmsFIOhfHj2p_9YROzkqBlv9f6ilhU7c/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Before Sleep – Soaking in Your New Self Awareness</h3>
-<iframe src="https://drive.google.com/file/d/13fFF1zlXvmUsDGAYCCGbFC3RmLzpZr_j/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Putting the Storyline Down – On Paper as You Settle to Sleep</h3>
-<iframe src="https://drive.google.com/file/d/1KTQvQMGx1XHWfm6Gidm5f8i40BjjCCkj/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Strengthen Your Imagining as You Sleep</h3>
-<iframe src="https://drive.google.com/file/d/1DK6b9EPLwOZAOPhKC9jyolFoaHW9OKAL/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Sue – Track for Night Time</h3>
-<iframe src="https://drive.google.com/file/d/12g2BlkN32O7KKj0vEUD1sFZ7EU8oIGn0/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-</div>
-<!-- ── Alignment & Focus Wheels ── -->
-<div class="audio-section-title">Alignment &amp; Focus Wheels</div>
-<div class="audio-grid">
-<div class="audio-card">
-<h3>Alignment Coaching Audio Track for Website</h3>
-<iframe src="https://drive.google.com/file/d/1JZ73YwgkD2tv5g0YIwW7sxVwH2zsFk51/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Aligning Energy</h3>
-<iframe src="https://drive.google.com/file/d/1R2wxmNyKWqA_Z_DYY5dIow6V8DVW6_IL/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Aligning with "I"</h3>
-<iframe src="https://drive.google.com/file/d/1oJrCVWjS_HYQVJ4MVjd4Q96aXd1PBX0A/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Aligned and Happy to Stop</h3>
-<iframe src="https://drive.google.com/file/d/1QfmFuwz0oeYPlMdlCBpQMYbdAErFHJCe/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Focus Wheel – Following Your Feel Good Rule</h3>
-<iframe src="https://drive.google.com/file/d/1gDQaFsGwDB_EYicH8RtfN5PTDM6VfrQ6/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Focus Wheel – Waking Up Happy in the Morning</h3>
-<iframe src="https://drive.google.com/file/d/1J3HAGl508SU2chr1vA-nG365eNsO6zqP/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Focus Wheel – Loving What I Do</h3>
-<iframe src="https://drive.google.com/file/d/1W5W3Iup6mHga9mZVxkdiM0_8wvhnSgT7/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Lou – Focus Wheel 1</h3>
-<iframe src="https://drive.google.com/file/d/1bFZ88ftxRrk-lfHYOmFYVVGAVVXNco_C/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>CT Scan Focus Wheel</h3>
-<iframe src="https://drive.google.com/file/d/1f9SR7xurv9fEP5TupvExLqynh6xlLMFi/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Using a Focus Wheel in Real Time (mp3)</h3>
-<iframe src="https://drive.google.com/file/d/1WkqfQ6_I2-fCvRmsQnRpizYfNKHQqFFt/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Daily Dreaming Begins…!</h3>
-<iframe src="https://drive.google.com/file/d/1jlauSgjM9qa85vtc-8p__OPQ4sEqT0nr/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Download. Distil. Dream.</h3>
-<iframe src="https://drive.google.com/file/d/1MfdPK-9fncuVSqIbfJ_D12sfCZ0jmtfC/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Future Me – The Power of Now</h3>
-<iframe src="https://drive.google.com/file/d/1m4fBR0YkrwGau2SMmNMDyuGrExsvV6I2/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Pre-paving Conversations</h3>
-<iframe src="https://drive.google.com/file/d/1O_XM28E7Ekbl3ZNtEH00kWBmNblqAM8Y/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Pre-paving Under Pressure</h3>
-<iframe src="https://drive.google.com/file/d/1LTVSOxY5y5nMyVzMpyEkXa_jo-SvORvz/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Evening Pre-paving</h3>
-<iframe src="https://drive.google.com/file/d/1WB6DmjDyp2oRGv7jHI3XnDQQ189JVlMU/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Jean – Pre-paving End of September</h3>
-<iframe src="https://drive.google.com/file/d/1Sf6GtOTxK9d2dPJu7EMtwJVjjVg8ofVL/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blissful Thinking</h3>
-<iframe src="https://drive.google.com/file/d/1AoyyIezjl91o-uyDoqGAvZy7lsdnktim/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Hot Tub Dreaming – Let it Go!</h3>
-<iframe src="https://drive.google.com/file/d/1lKMhEnud-gd9a73s59McENQakyAqvXJm/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-</div>
-<!-- ── Emotional Wellbeing ── -->
-<div class="audio-section-title">Emotional Wellbeing</div>
-<div class="audio-grid">
-<div class="audio-card">
-<h3>Allowing Wellbeing</h3>
-<iframe src="https://drive.google.com/file/d/1SRV2zV68YrTWzXj6S1TAP3bhnvsvF0JJ/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Tuning to Emotions</h3>
-<iframe src="https://drive.google.com/file/d/1XO5vgK6AIN4uv3yBW95TuWyd01GC_D2Z/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Focusing with Emotions</h3>
-<iframe src="https://drive.google.com/file/d/1gAgEDYN87BM_gbq5gr7CH9edLyso1uh4/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Colour Breathing with Emotions</h3>
-<iframe src="https://drive.google.com/file/d/1pSsLAYZy4VCio6RK8c2XAmRvsDvaQ-w6/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Pre-paving with Colour</h3>
-<iframe src="https://drive.google.com/file/d/1SEDEue4idIdcckCKXhDRaD_1XeYnRIR1/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>IRP and Colour Breathing</h3>
-<iframe src="https://drive.google.com/file/d/1qipfTSd88O0rDahnBGlwqpLfNwOODo-x/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Tipping into Relief – and Beyond</h3>
-<iframe src="https://drive.google.com/file/d/1lXXVGPVW7Lbx1ITD48czCIXM0rhK671Z/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>In Grief and Anger</h3>
-<iframe src="https://drive.google.com/file/d/11coZVOCv9tUkKHfn-J5zoQrCKa1AwHIt/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Reaching for Calm AP</h3>
-<iframe src="https://drive.google.com/file/d/1BvIpsFJYqoXxYRAa6E7u0ift15-uXGMW/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Transforming Triggers</h3>
-<iframe src="https://drive.google.com/file/d/1llI3ZHmKLMAgMQq8pyZtUxL_JCKmzo3Z/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Trigger Place Triumph</h3>
-<iframe src="https://drive.google.com/file/d/1XIe6XlcGp1Tyarfoyc3Yy9PR34-ku0G_/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Replacing Tearing Up Trigger</h3>
-<iframe src="https://drive.google.com/file/d/1yoIN-BDQtUtuIMEwH1Vq_Kur16doeWEz/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>All is Well Here – Struggle Included</h3>
-<iframe src="https://drive.google.com/file/d/1tfJXe9DaGm3Ppc65K1yS8wYM3qkf80IM/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Download after Difficult Conversations – 9 Minutes</h3>
-<iframe src="https://drive.google.com/file/d/1494wx2MiFh7a210nseLCayIbOyv3vo8M/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Soothing Physical Pain</h3>
-<iframe src="https://drive.google.com/file/d/1Iik-f04nSVZagWyEcBrD9DQhYarZfZfG/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Soothing the Body</h3>
-<iframe src="https://drive.google.com/file/d/1U4YJLgsC8tqQ5KUcilp5NM_U4x7nD17f/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Soothing – Tania Prince's Mindfulness Based Inner Re-Patterning</h3>
-<iframe src="https://drive.google.com/file/d/15b9V_JV60tUkaFdGVmtElE7Pw94I0zF5/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Extended Tania Prince Re-Patterning</h3>
-<iframe src="https://drive.google.com/file/d/1wyJMHmBomImAb-vvez-AeIzb9FDhgpnw/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Being Authentic</h3>
-<iframe src="https://drive.google.com/file/d/1XyA-t-wcyvWvnHR7SqDwjHF1XscDT782/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-</div>
-<!-- ── Joy, Appreciation & Feel Good ── -->
-<div class="audio-section-title">Joy, Appreciation &amp; Feel Good</div>
-<div class="audio-grid">
-<div class="audio-card">
-<h3>Relishing Good Moments</h3>
-<iframe src="https://drive.google.com/file/d/1q668dFzZHy591-WXRAew1sxkptEB7bYb/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Feel Good Now – Money</h3>
-<iframe src="https://drive.google.com/file/d/1Ab2OvAn-fGD0f8-0Sm9CsO8xMNnXvhku/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Feeling Good in My Body</h3>
-<iframe src="https://drive.google.com/file/d/1no5eJxhpkk84XxfJBBJry4eM3w_hocv4/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Feeling Clear, Happy, Spacious in Your Decisions</h3>
-<iframe src="https://drive.google.com/file/d/1PlYt0UG8nIrwSns2VRmfipVmFVKnp82I/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>A Little More Joy</h3>
-<iframe src="https://drive.google.com/file/d/1K4nuaNfK-kBbvOqwiyDAgrQPuYXkx7RI/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Feeling Free!</h3>
-<iframe src="https://drive.google.com/file/d/1rPcQl10A_wbHCKCM3tynxvOfD8zE3_MQ/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>#BeMoreJolly</h3>
-<iframe src="https://drive.google.com/file/d/1D67rAahWkTWPZqVNg9rcYO_m4cspHilO/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Energy of Life</h3>
-<iframe src="https://drive.google.com/file/d/1h_Mr1iPNVSqmn0xFAoGx4KPDYunme3Ew/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Expansion</h3>
-<iframe src="https://drive.google.com/file/d/1lmpEB1JRYbAlApj_Uy4bCA5ADWnJgktH/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Get ME! 7 Minutes</h3>
-<iframe src="https://drive.google.com/file/d/1sM_dheQ_9Rno342hMNleeFD0Ghcm0LaB/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Powerful You!</h3>
-<iframe src="https://drive.google.com/file/d/1Hmx2wJEZh8t3XvXz__1kroGRCbx24XF5/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Confidence</h3>
-<iframe src="https://drive.google.com/file/d/1EulxUr9F8AAV9V63oBkOgfTkJWiXduiq/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Looking and Feeling FANTASTIC!</h3>
-<iframe src="https://drive.google.com/file/d/1p90y08ZjjouZxXZnLUgkWCGT4hdOz3nP/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>This Girl CAN!</h3>
-<iframe src="https://drive.google.com/file/d/1JNciECSqpvB1yE6ZMOEqyiP3fCylBjsE/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>This Bear Dares…!</h3>
-<iframe src="https://drive.google.com/file/d/1TTKrj_meFqIRCWG28tpkRTQVVsn7fSh_/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Courageous Knowing</h3>
-<iframe src="https://drive.google.com/file/d/1ml5pSkXLaEI3I3L9AjJFiJBeJL3k38qk/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Nourishing the Creator – Max-Mode Engaged!</h3>
-<iframe src="https://drive.google.com/file/d/12LN4BjrT2PgWLeuH11lNDJBFsv8ime9C/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Pleasing Myself Today!</h3>
-<iframe src="https://drive.google.com/file/d/1w4DKXduEHZukK19XZoFWT68KxeroHSSE/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Secure, Free, Playful</h3>
-<iframe src="https://drive.google.com/file/d/1l4MVdkjn5apcFb9l4I20J8GPBQ2_9LMy/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-</div>
-<!-- ── Love & Relationships ── -->
-<div class="audio-section-title">Love &amp; Relationships</div>
-<div class="audio-grid">
-<div class="audio-card">
-<h3>Love from Within</h3>
-<iframe src="https://drive.google.com/file/d/1eQPFfjmxrDzQ9b3m317VyPjf-XSC5Do-/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Love Wanting What I Want</h3>
-<iframe src="https://drive.google.com/file/d/1d_pJB50C_IMXbG5dO0R6E54CEeQUFkAA/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Bridging the Gap with Love</h3>
-<iframe src="https://drive.google.com/file/d/1-UE180_ihO_k5s1CljzsX4Qxq3fFXrns/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Coming Home – Tricky Relationships</h3>
-<iframe src="https://drive.google.com/file/d/1gKVLew0124ePOk2yE4_m755GnSsHiLnI/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Uplifting a Loved One</h3>
-<iframe src="https://drive.google.com/file/d/1q3di2fmG6nd7_XZOiH-3UM4pC9NXiGlb/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Being Listened To…</h3>
-<iframe src="https://drive.google.com/file/d/1XNGFtyZR5ETyx6_AgZVyRTyHnQ3A1zQt/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>For My Child…</h3>
-<iframe src="https://drive.google.com/file/d/1K81qDiQtVx2iaYQ5VwT3oUOLLz2FYhzc/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Welcome Home!</h3>
-<iframe src="https://drive.google.com/file/d/1fpA5QNt4mZdSYrOyruDXB3_WAaRn0eHc/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-</div>
-<!-- ── Belief & Mind Repatterning ── -->
-<div class="audio-section-title">Belief &amp; Mind Repatterning</div>
-<div class="audio-grid">
-<div class="audio-card">
-<h3>Belief Planting Soul Garden 1</h3>
-<iframe src="https://drive.google.com/file/d/1u5rDw6W8aC0kmFxuX5SrGO9ac_ikdGt-/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Training the Puppy Mind – Stage 1</h3>
-<iframe src="https://drive.google.com/file/d/13VjzCrUfVlkAbfZvm3wkrts18mT62BMm/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Freedom – Focusing Appreciation</h3>
-<iframe src="https://drive.google.com/file/d/16s1yBLeQ5O8LK-vfB6bgiMhgrn2nswuG/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Freedom Calls – Acknowledging Resistance</h3>
-<iframe src="https://drive.google.com/file/d/1_6Rns2p4gh9LViEoLF-JJ0W7X2RlS_Gu/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Audio – Freedom – Food and Weight Alignment</h3>
-<iframe src="https://drive.google.com/file/d/1ykbI1h6VJ2hkmqiuLTFhps0Nqf9V4yCo/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Amplifying the Third D!</h3>
-<iframe src="https://drive.google.com/file/d/1pPw-RUC4XZC8yhM3vwL8gV2ToCgNMYtD/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>3Ds – Sue's Kids</h3>
-<iframe src="https://drive.google.com/file/d/1tRCpgp6hlNHwOi_b2M7qqFn6Nu1otBWM/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-</div>
-<!-- ── Blog Audio Series ── -->
-<div class="audio-section-title">Blog Audio Series</div>
-<div class="audio-grid">
-<div class="audio-card">
-<h3>Blog Audio 1 – Want Something Better…</h3>
-<iframe src="https://drive.google.com/file/d/1tuvYO2tTe5xzXF5t1O3CTkkjwPqGWtMg/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio 2 – Would You Like a Little More?</h3>
-<iframe src="https://drive.google.com/file/d/1e4pPSYdbCiYWtn6z_Bw7IXvisKU-TiNs/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio 3 – Appreciate What's Already Working Well</h3>
-<iframe src="https://drive.google.com/file/d/103XhZujfX-HEG7G3SXUhg13NpkEToCtS/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio – Have You Lost Your Joy?</h3>
-<iframe src="https://drive.google.com/file/d/1ppn2F9WupVyqq4LfdX2JRYAa3JMBdcxE/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio – Want to Soothe Your Emotions?</h3>
-<iframe src="https://drive.google.com/file/d/1xYLNbyvYA21A5kLdttU8QdpMfKc5pApN/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio – Do You Pressure Yourself?</h3>
-<iframe src="https://drive.google.com/file/d/1skG9701BCxKB8b3E8TNS-KFfXdmncw5f/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio – Appreciating the Good Stuff's All Very Well…</h3>
-<iframe src="https://drive.google.com/file/d/1CcnDDf9jGuPF2wd8dyKca1WprXb0k71_/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio – Segment Your Day</h3>
-<iframe src="https://drive.google.com/file/d/12cvQXPFfLDFX6oxfYl0SxZvl858QV3Bc/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio Appreciation 5 – How to Appreciate a Bowl That Sucks</h3>
-<iframe src="https://drive.google.com/file/d/1vQWOam8t6PGB3zqdgJIF_GCGJQ1bo46Y/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio Appreciation 6 – How to Work Magic with a Bad-Tasting Bowl</h3>
-<iframe src="https://drive.google.com/file/d/1-qEkNno-epCCRIwkDzUmSBL8MEwuvfLD/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio – Are You in Life and Loving It?</h3>
-<iframe src="https://drive.google.com/file/d/1_OkFtEP-AT9ePRLZFTsD6MJK0gDgNr6Q/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio – Climb the Ladder to Happiness</h3>
-<iframe src="https://drive.google.com/file/d/15bIHfdC6DILUCE_Lk6ICHW01nQB1JnQx/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio – Without the Story in Your Mind</h3>
-<iframe src="https://drive.google.com/file/d/1DW7uSoT78byawAPjrPZykBikm3av0CAF/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Blog Audio – What If You Were Not the Do-er…</h3>
-<iframe src="https://drive.google.com/file/d/1gD3wiq2yDFjulOWFJWxp2RDA2ByDDp7O/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-</div>
-<!-- ── Client Tracks ── -->
-<div class="audio-section-title">Client Tracks</div>
-<div class="audio-grid">
-<div class="audio-card">
-<h3>Angela 1</h3>
-<iframe src="https://drive.google.com/file/d/1V052cwGLZvmiZSNPjSHW8Hp14hQOtaa8/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Ann Swift Soothing</h3>
-<iframe src="https://drive.google.com/file/d/1lU60g002a7bv2WmY4KPyAcbZ9tay2ZKo/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Soothing – Ann</h3>
-<iframe src="https://drive.google.com/file/d/1wjjBE-g2dBc78uDu4YCfWwzBob7sDHUX/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Auntie Marg</h3>
-<iframe src="https://drive.google.com/file/d/1UIuzD_8FULqO9NdMJrjUUm2NjNr9pj0x/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Emma – Confident, Whole, Complete</h3>
-<iframe src="https://drive.google.com/file/d/1-OCNcfzMalOxCjX6k0sGd36v-TGDw7fW/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>L Ash – Relishing Busy Times Coming</h3>
-<iframe src="https://drive.google.com/file/d/177U1oQ5lbEvIirkw96WAzS8CL_uM-h_R/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Loving Contentment – Robin</h3>
-<iframe src="https://drive.google.com/file/d/1niN2oD2H_Un5rI2mqqkp5lP354IyWY9j/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Wonderful Me! Maria</h3>
-<iframe src="https://drive.google.com/file/d/1uju_Jw04uQFmR7Nn6svVSNscVSQceuIu/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Relishing the Headship Dream!</h3>
-<iframe src="https://drive.google.com/file/d/1BgsL-a5cmyD_8tXH-rIv-tJb-PqxqyCH/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Lovely Lovely Report Writing!</h3>
-<iframe src="https://drive.google.com/file/d/1HLGBNlkDljWYA7vyGbNviDWDXxCWuFrK/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Confident Speaking</h3>
-<iframe src="https://drive.google.com/file/d/1IUheylVEfOYMCbRy9nLtrYIgxTQAxdg3/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Wanting to Want to Walk Each Day</h3>
-<iframe src="https://drive.google.com/file/d/1ShcqwIAdYsgNa1yOitEX_1z2SqiE8gJY/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>Weekly Workout Audio</h3>
-<iframe src="https://drive.google.com/file/d/15Q6N-YKAQ6E5UodYDDidiKNdciHDnz6S/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>No Can Feel Like Yes – 10 Minutes</h3>
-<iframe src="https://drive.google.com/file/d/1tUrI4cjwuJjcyR07hmP2dF5Z4J8_ZYMj/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-<div class="audio-card">
-<h3>The Little Soul and the Sun</h3>
-<iframe src="https://drive.google.com/file/d/1dZzc-1sE1WabWxK89ztb286_qAohTKR3/preview" width="100%" height="80" allow="autoplay" style="border:none;display:block;margin:4px 0;"></iframe>
-</div>
-</div>
-</div>
-</main>
-<footer id="footer" role="contentinfo">
-<div class="footer-inner">
-<div class="nav-wrapper back-to-top-nav"><nav><div class="back-to-top"><a href="#">Back to Top</a></div></nav></div>
-<div class="nav-wrapper" id="secondaryNavWrapper">
-<nav id="secondaryNavigation">
-<div class="folder">
-<div class="folder-toggle">Coaching Techniques</div>
-<div class="subnav">
-<div class="collection"><a href="belief-reversal.html"><span>Belief Reversal</span></a></div>
-<div class="collection"><a href="clean-language-and-systemic-modelling.html"><span>Clean Language and Systemic Modelling</span></a></div>
-<div class="collection"><a href="energy-techniques.html"><span>Energy Techniques</span></a></div>
-<div class="collection"><a href="meta-health-coaching.html"><span>Meta-Health Coaching</span></a></div>
-<div class="collection"><a href="personality-profiling.html"><span>Personality Profiling</span></a></div>
-</div>
-</div>
-</nav>
-</div>
-<div class="sqs-layout">
-<div class="sqs-block-content">
-<p>© Amanda Maney Alignment Coaching 2017</p>
-</div>
-</div>
-</div>
-</footer>
-</div><!-- #siteWrapper -->
-<script>
-(function() {
-  var SELECTORS = [
-    'div[id*="popup"]','div[class*="popup"]',
-    'div[id*="overlay"]','div[class*="overlay"]',
-    'div[id*="newsletter"]','div[class*="newsletter"]',
-    'div[id*="lightbox"]','div[class*="lightbox"]',
-    'section[id*="popup"]','section[class*="popup"]'
-  ];
-  function hideEl(el) {
-    el.style.setProperty('display', 'none', 'important');
-    el.style.setProperty('visibility', 'hidden', 'important');
-    el.style.setProperty('opacity', '0', 'important');
-    el.style.setProperty('pointer-events', 'none', 'important');
-  }
-  function hideAll() {
-    SELECTORS.forEach(function(sel) {
-      document.querySelectorAll(sel).forEach(hideEl);
-    });
-  }
-  var obs = new MutationObserver(function(mutations) {
-    mutations.forEach(function(m) {
-      m.addedNodes.forEach(function(node) {
-        if (node.nodeType !== 1 || node.tagName === 'BODY' || node.tagName === 'HTML') return;
-        var id = (node.id || '').toLowerCase();
-        var cls = (node.className || '').toLowerCase();
-        var keywords = ['popup','overlay','newsletter','lightbox'];
-        var matches = keywords.some(function(k){ return id.indexOf(k)>-1 || cls.indexOf(k)>-1; });
-        if (matches) { hideEl(node); }
-        SELECTORS.forEach(function(sel) {
-          if (node.querySelectorAll) node.querySelectorAll(sel).forEach(hideEl);
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="index.html" class="logo">Amanda <span>Maney</span></a>
+      <a href="index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="index.html#process">How It Works</a>
+      <a href="index.html#testimonials">Stories</a>
+      <a href="blog.html">Blog</a>
+      <a href="audio-library.html" class="active">Audio Library</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <p class="tag">Meditations &amp; Guided Sessions</p>
+    <h1>Audio Library</h1>
+    <p class="sub">A collection of guided meditations and alignment sessions to support your journey.</p>
+  </div>
+
+  <div class="audio-section">
+    <div class="audio-search">
+      <label for="audio-search">Search the library</label>
+      <input id="audio-search" type="search" placeholder="Search tracks" aria-label="Search audio tracks" />
+      <p class="audio-search-status" id="audio-search-status" aria-live="polite"></p>
+    </div>
+    <div class="audio-pagination">
+      <p class="audio-pagination-info" id="audio-pagination-info" aria-live="polite"></p>
+      <div class="audio-pagination-controls">
+        <button type="button" id="audio-prev">Previous</button>
+        <button type="button" id="audio-next">Next</button>
+      </div>
+    </div>
+      <div class="track" data-title="#bemorejolly"><p class="track-title">#BeMoreJolly</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1D67rAahWkTWPZqVNg9rcYO_m4cspHilO" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1D67rAahWkTWPZqVNg9rcYO_m4cspHilO/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="3ds - sue s kids"><p class="track-title">3Ds - Sue s kids</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1tRCpgp6hlNHwOi_b2M7qqFn6Nu1otBWM" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1tRCpgp6hlNHwOi_b2M7qqFn6Nu1otBWM/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="7 minutes stop and breathe colour"><p class="track-title">7 minutes stop and breathe colour</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=11vqtknZIzZnjm3GxdDeEfeRJzgAPh27L" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/11vqtknZIzZnjm3GxdDeEfeRJzgAPh27L/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="a little more joy 5.6.25"><p class="track-title">A little more joy 5.6.25</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1K4nuaNfK-kBbvOqwiyDAgrQPuYXkx7RI" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1K4nuaNfK-kBbvOqwiyDAgrQPuYXkx7RI/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="aligned and happy to stop"><p class="track-title">Aligned and Happy to Stop</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1QfmFuwz0oeYPlMdlCBpQMYbdAErFHJCe" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1QfmFuwz0oeYPlMdlCBpQMYbdAErFHJCe/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="aligning energy"><p class="track-title">Aligning energy</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1R2wxmNyKWqA_Z_DYY5dIow6V8DVW6_IL" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1R2wxmNyKWqA_Z_DYY5dIow6V8DVW6_IL/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="alignment coaching audio track for website 2"><p class="track-title">Alignment Coaching Audio Track For Website 2</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1JZ73YwgkD2tv5g0YIwW7sxVwH2zsFk51" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1JZ73YwgkD2tv5g0YIwW7sxVwH2zsFk51/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="all is well here - struggle included"><p class="track-title">All is well here - struggle included</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1tfJXe9DaGm3Ppc65K1yS8wYM3qkf80IM" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1tfJXe9DaGm3Ppc65K1yS8wYM3qkf80IM/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="allowing wellbeing"><p class="track-title">Allowing Wellbeing</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1SRV2zV68YrTWzXj6S1TAP3bhnvsvF0JJ" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1SRV2zV68YrTWzXj6S1TAP3bhnvsvF0JJ/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="amplifying the third d!"><p class="track-title">Amplifying the third D!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1pPw-RUC4XZC8yhM3vwL8gV2ToCgNMYtD" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1pPw-RUC4XZC8yhM3vwL8gV2ToCgNMYtD/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - 5 minutes resourceful state focus"><p class="track-title">Audio - 5 minutes Resourceful State Focus</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1kViRCLb29tl2Dc60OzEENBV330GHkIMl" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1kViRCLb29tl2Dc60OzEENBV330GHkIMl/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - aligning with i"><p class="track-title">Audio - Aligning with I</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1oJrCVWjS_HYQVJ4MVjd4Q96aXd1PBX0A" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1oJrCVWjS_HYQVJ4MVjd4Q96aXd1PBX0A/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - basic meditation"><p class="track-title">Audio - Basic Meditation</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=126h5RP-MrXvH8WKzRHewx0BZC99kvsYQ" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/126h5RP-MrXvH8WKzRHewx0BZC99kvsYQ/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - being listened to..."><p class="track-title">Audio - Being listened to...</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1XNGFtyZR5ETyx6_AgZVyRTyHnQ3A1zQt" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1XNGFtyZR5ETyx6_AgZVyRTyHnQ3A1zQt/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - confidence"><p class="track-title">Audio - Confidence</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1EulxUr9F8AAV9V63oBkOgfTkJWiXduiq" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1EulxUr9F8AAV9V63oBkOgfTkJWiXduiq/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - evening pre-paving"><p class="track-title">Audio - Evening Pre-paving</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1WB6DmjDyp2oRGv7jHI3XnDQQ189JVlMU" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1WB6DmjDyp2oRGv7jHI3XnDQQ189JVlMU/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - feeling good in my body"><p class="track-title">Audio - Feeling Good in My Body</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1no5eJxhpkk84XxfJBBJry4eM3w_hocv4" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1no5eJxhpkk84XxfJBBJry4eM3w_hocv4/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - feeling clear, happy, spacious in the decisions you make"><p class="track-title">Audio - Feeling clear, happy, spacious in the decisions you make</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1PlYt0UG8nIrwSns2VRmfipVmFVKnp82I" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1PlYt0UG8nIrwSns2VRmfipVmFVKnp82I/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - five minutes focus"><p class="track-title">Audio - Five Minutes Focus</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1TAtHabCWLA0ihxbbku3spsqePO1SJ9FK" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1TAtHabCWLA0ihxbbku3spsqePO1SJ9FK/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - focus wheel - loving what i do"><p class="track-title">Audio - Focus Wheel - Loving what I do</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1W5W3Iup6mHga9mZVxkdiM0_8wvhnSgT7" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1W5W3Iup6mHga9mZVxkdiM0_8wvhnSgT7/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - freedom - focusing appreciation"><p class="track-title">Audio - Freedom - Focusing Appreciation</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=16s1yBLeQ5O8LK-vfB6bgiMhgrn2nswuG" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/16s1yBLeQ5O8LK-vfB6bgiMhgrn2nswuG/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - freedom calls - acknowledging resistance"><p class="track-title">Audio - Freedom Calls - Acknowledging Resistance</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1_6Rns2p4gh9LViEoLF-JJ0W7X2RlS_Gu" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1_6Rns2p4gh9LViEoLF-JJ0W7X2RlS_Gu/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - looking and feeling fantastic!"><p class="track-title">Audio - Looking and Feeling FANTASTIC!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1p90y08ZjjouZxXZnLUgkWCGT4hdOz3nP" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1p90y08ZjjouZxXZnLUgkWCGT4hdOz3nP/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - pleasing myself today!"><p class="track-title">Audio - Pleasing myself today!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1w4DKXduEHZukK19XZoFWT68KxeroHSSE" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1w4DKXduEHZukK19XZoFWT68KxeroHSSE/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - pre-paving conversations"><p class="track-title">Audio - Pre-paving Conversations</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1O_XM28E7Ekbl3ZNtEH00kWBmNblqAM8Y" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1O_XM28E7Ekbl3ZNtEH00kWBmNblqAM8Y/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - pre-paving under pressure"><p class="track-title">Audio - Pre-paving Under Pressure</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1LTVSOxY5y5nMyVzMpyEkXa_jo-SvORvz" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1LTVSOxY5y5nMyVzMpyEkXa_jo-SvORvz/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - pre-paving with colour"><p class="track-title">Audio - Pre-paving with Colour</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1SEDEue4idIdcckCKXhDRaD_1XeYnRIR1" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1SEDEue4idIdcckCKXhDRaD_1XeYnRIR1/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - soothing physical pain"><p class="track-title">Audio - Soothing Physical Pain</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1Iik-f04nSVZagWyEcBrD9DQhYarZfZfG" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1Iik-f04nSVZagWyEcBrD9DQhYarZfZfG/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - soothing the body"><p class="track-title">Audio - Soothing the body</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1U4YJLgsC8tqQ5KUcilp5NM_U4x7nD17f" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1U4YJLgsC8tqQ5KUcilp5NM_U4x7nD17f/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - starting the day with your inner being"><p class="track-title">Audio - Starting the day with your inner being</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1Ie-08uKYOU2smGc2bBpZ1P6mG8-hxmRf" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1Ie-08uKYOU2smGc2bBpZ1P6mG8-hxmRf/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - strengthen your imagining as you sleep"><p class="track-title">Audio - Strengthen your imagining as you sleep</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1DK6b9EPLwOZAOPhKC9jyolFoaHW9OKAL" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1DK6b9EPLwOZAOPhKC9jyolFoaHW9OKAL/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - training the puppy mind - stage 1"><p class="track-title">Audio - Training the puppy mind - Stage 1</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=13VjzCrUfVlkAbfZvm3wkrts18mT62BMm" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/13VjzCrUfVlkAbfZvm3wkrts18mT62BMm/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - uplifting a loved one"><p class="track-title">Audio - Uplifting a Loved One</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1q3di2fmG6nd7_XZOiH-3UM4pC9NXiGlb" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1q3di2fmG6nd7_XZOiH-3UM4pC9NXiGlb/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="audio - freedom - food and weight alignment"><p class="track-title">Audio - freedom - food and weight alignment</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1ykbI1h6VJ2hkmqiuLTFhps0Nqf9V4yCo" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1ykbI1h6VJ2hkmqiuLTFhps0Nqf9V4yCo/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="before sleep - soaking in your new self awareness - 5 mins"><p class="track-title">Before sleep - soaking in your NEW SELF awareness - 5 mins</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=13fFF1zlXvmUsDGAYCCGbFC3RmLzpZr_j" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/13fFF1zlXvmUsDGAYCCGbFC3RmLzpZr_j/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="being authentic"><p class="track-title">Being Authentic</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1XyA-t-wcyvWvnHR7SqDwjHF1XscDT782" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1XyA-t-wcyvWvnHR7SqDwjHF1XscDT782/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="belief planting soul garden 1"><p class="track-title">Belief Planting Soul Garden 1</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1u5rDw6W8aC0kmFxuX5SrGO9ac_ikdGt-" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1u5rDw6W8aC0kmFxuX5SrGO9ac_ikdGt-/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blissful thinking"><p class="track-title">Blissful thinking</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1AoyyIezjl91o-uyDoqGAvZy7lsdnktim" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1AoyyIezjl91o-uyDoqGAvZy7lsdnktim/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio - appreciating the good stuff s all very well..."><p class="track-title">Blog Audio - Appreciating the good stuff s all very well...</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1CcnDDf9jGuPF2wd8dyKca1WprXb0k71_" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1CcnDDf9jGuPF2wd8dyKca1WprXb0k71_/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio - are you in life and loving it"><p class="track-title">Blog Audio - Are you in life and loving it</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1_OkFtEP-AT9ePRLZFTsD6MJK0gDgNr6Q" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1_OkFtEP-AT9ePRLZFTsD6MJK0gDgNr6Q/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio - climb the ladder to happiness"><p class="track-title">Blog Audio - Climb the Ladder to Happiness</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=15bIHfdC6DILUCE_Lk6ICHW01nQB1JnQx" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/15bIHfdC6DILUCE_Lk6ICHW01nQB1JnQx/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio - do you pressure yourself"><p class="track-title">Blog Audio - Do You Pressure Yourself</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1skG9701BCxKB8b3E8TNS-KFfXdmncw5f" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1skG9701BCxKB8b3E8TNS-KFfXdmncw5f/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio - segment your day"><p class="track-title">Blog Audio - Segment your day</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=12cvQXPFfLDFX6oxfYl0SxZvl858QV3Bc" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/12cvQXPFfLDFX6oxfYl0SxZvl858QV3Bc/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio - want to soothe your emotions"><p class="track-title">Blog Audio - Want to Soothe Your Emotions</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1xYLNbyvYA21A5kLdttU8QdpMfKc5pApN" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1xYLNbyvYA21A5kLdttU8QdpMfKc5pApN/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio - what if you were not the do-er..."><p class="track-title">Blog Audio - What if you were not the do-er...</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1gD3wiq2yDFjulOWFJWxp2RDA2ByDDp7O" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1gD3wiq2yDFjulOWFJWxp2RDA2ByDDp7O/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio - without the story in your mind"><p class="track-title">Blog Audio - Without the story in your mind</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1DW7uSoT78byawAPjrPZykBikm3av0CAF" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1DW7uSoT78byawAPjrPZykBikm3av0CAF/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio appreciation 5 - how to appreciate a bowl that sucks"><p class="track-title">Blog Audio Appreciation 5 - How to appreciate a bowl that sucks</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1vQWOam8t6PGB3zqdgJIF_GCGJQ1bo46Y" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1vQWOam8t6PGB3zqdgJIF_GCGJQ1bo46Y/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio appreciation 6 - how to work magic with a bad-tasting bowl"><p class="track-title">Blog Audio Appreciation 6 - How to work magic with a bad-tasting bowl</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1-qEkNno-epCCRIwkDzUmSBL8MEwuvfLD" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1-qEkNno-epCCRIwkDzUmSBL8MEwuvfLD/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio - 11 1 23 - have you lost your joy"><p class="track-title">Blog audio - 11 1 23 - Have you lost your joy</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1ppn2F9WupVyqq4LfdX2JRYAa3JMBdcxE" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1ppn2F9WupVyqq4LfdX2JRYAa3JMBdcxE/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio 1 - want something better..."><p class="track-title">Blog audio 1 - Want something better...</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1tuvYO2tTe5xzXF5t1O3CTkkjwPqGWtMg" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1tuvYO2tTe5xzXF5t1O3CTkkjwPqGWtMg/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio 2 - would you like a little more"><p class="track-title">Blog audio 2 - Would you like a little more</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1e4pPSYdbCiYWtn6z_Bw7IXvisKU-TiNs" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1e4pPSYdbCiYWtn6z_Bw7IXvisKU-TiNs/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="blog audio 3 - appreciate what s already working well"><p class="track-title">Blog audio 3 - Appreciate what s already working well</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=103XhZujfX-HEG7G3SXUhg13NpkEToCtS" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/103XhZujfX-HEG7G3SXUhg13NpkEToCtS/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="breathe, just breathe"><p class="track-title">Breathe, just breathe</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1iQGYqF9cpQgqF-p7ydVxXwF40fVTg5b2" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1iQGYqF9cpQgqF-p7ydVxXwF40fVTg5b2/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="bridging the gap with love"><p class="track-title">Bridging the gap with love</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1-UE180_ihO_k5s1CljzsX4Qxq3fFXrns" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1-UE180_ihO_k5s1CljzsX4Qxq3fFXrns/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="ct scan focus wheel"><p class="track-title">CT Scan Focus Wheel</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1f9SR7xurv9fEP5TupvExLqynh6xlLMFi" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1f9SR7xurv9fEP5TupvExLqynh6xlLMFi/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="colour breathing with emotions"><p class="track-title">Colour Breathing with Emotions</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1pSsLAYZy4VCio6RK8c2XAmRvsDvaQ-w6" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1pSsLAYZy4VCio6RK8c2XAmRvsDvaQ-w6/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="coming home - tricky relationships"><p class="track-title">Coming Home - Tricky Relationships</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1gKVLew0124ePOk2yE4_m755GnSsHiLnI" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1gKVLew0124ePOk2yE4_m755GnSsHiLnI/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="confident speaking"><p class="track-title">Confident speaking</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1IUheylVEfOYMCbRy9nLtrYIgxTQAxdg3" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1IUheylVEfOYMCbRy9nLtrYIgxTQAxdg3/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="courageous knowing"><p class="track-title">Courageous Knowing</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1ml5pSkXLaEI3I3L9AjJFiJBeJL3k38qk" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1ml5pSkXLaEI3I3L9AjJFiJBeJL3k38qk/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="daily dreaming begins...!"><p class="track-title">Daily Dreaming Begins...!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1jlauSgjM9qa85vtc-8p__OPQ4sEqT0nr" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1jlauSgjM9qa85vtc-8p__OPQ4sEqT0nr/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="download after difficult conversations - 9 minutes"><p class="track-title">Download after difficult conversations - 9 minutes</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1494wx2MiFh7a210nseLCayIbOyv3vo8M" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1494wx2MiFh7a210nseLCayIbOyv3vo8M/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="download. distil. dream"><p class="track-title">Download. Distil. Dream</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1MfdPK-9fncuVSqIbfJ_D12sfCZ0jmtfC" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1MfdPK-9fncuVSqIbfJ_D12sfCZ0jmtfC/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="energy of life"><p class="track-title">Energy of Life</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1h_Mr1iPNVSqmn0xFAoGx4KPDYunme3Ew" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1h_Mr1iPNVSqmn0xFAoGx4KPDYunme3Ew/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="expansion"><p class="track-title">Expansion</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1lmpEB1JRYbAlApj_Uy4bCA5ADWnJgktH" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1lmpEB1JRYbAlApj_Uy4bCA5ADWnJgktH/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="extended tania prince re-patterning"><p class="track-title">Extended Tania Prince Re-Patterning</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1wyJMHmBomImAb-vvez-AeIzb9FDhgpnw" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1wyJMHmBomImAb-vvez-AeIzb9FDhgpnw/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="feel good now - money"><p class="track-title">Feel Good Now - Money</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1Ab2OvAn-fGD0f8-0Sm9CsO8xMNnXvhku" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1Ab2OvAn-fGD0f8-0Sm9CsO8xMNnXvhku/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="feeling free!"><p class="track-title">Feeling Free!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1rPcQl10A_wbHCKCM3tynxvOfD8zE3_MQ" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1rPcQl10A_wbHCKCM3tynxvOfD8zE3_MQ/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="focus wheel - following your feel good rule"><p class="track-title">Focus Wheel - Following your Feel Good Rule</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1gDQaFsGwDB_EYicH8RtfN5PTDM6VfrQ6" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1gDQaFsGwDB_EYicH8RtfN5PTDM6VfrQ6/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="focus wheel - waking up, in the morning, happy"><p class="track-title">Focus wheel - Waking up, in the morning, happy</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1J3HAGl508SU2chr1vA-nG365eNsO6zqP" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1J3HAGl508SU2chr1vA-nG365eNsO6zqP/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="focusing with emotions"><p class="track-title">Focusing with Emotions</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1gAgEDYN87BM_gbq5gr7CH9edLyso1uh4" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1gAgEDYN87BM_gbq5gr7CH9edLyso1uh4/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="for my child..."><p class="track-title">For my child...</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1K81qDiQtVx2iaYQ5VwT3oUOLLz2FYhzc" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1K81qDiQtVx2iaYQ5VwT3oUOLLz2FYhzc/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="future me - the power of now"><p class="track-title">Future me - the power of now</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1m4fBR0YkrwGau2SMmNMDyuGrExsvV6I2" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1m4fBR0YkrwGau2SMmNMDyuGrExsvV6I2/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="get me! 7 minutes"><p class="track-title">Get ME! 7 minutes</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1sM_dheQ_9Rno342hMNleeFD0Ghcm0LaB" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1sM_dheQ_9Rno342hMNleeFD0Ghcm0LaB/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="hot tub dreaming - let it go!"><p class="track-title">Hot Tub Dreaming - Let it GO!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1lKMhEnud-gd9a73s59McENQakyAqvXJm" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1lKMhEnud-gd9a73s59McENQakyAqvXJm/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="irp and colour breathing"><p class="track-title">IRP and Colour Breathing</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1qipfTSd88O0rDahnBGlwqpLfNwOODo-x" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1qipfTSd88O0rDahnBGlwqpLfNwOODo-x/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="in grief and anger"><p class="track-title">In Grief and Anger</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=11coZVOCv9tUkKHfn-J5zoQrCKa1AwHIt" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/11coZVOCv9tUkKHfn-J5zoQrCKa1AwHIt/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="love from within"><p class="track-title">Love from within</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1eQPFfjmxrDzQ9b3m317VyPjf-XSC5Do-" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1eQPFfjmxrDzQ9b3m317VyPjf-XSC5Do-/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="love wanting what i want"><p class="track-title">Love wanting what I want</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1d_pJB50C_IMXbG5dO0R6E54CEeQUFkAA" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1d_pJB50C_IMXbG5dO0R6E54CEeQUFkAA/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="lovely lovely report writing!"><p class="track-title">Lovely lovely report writing!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1HLGBNlkDljWYA7vyGbNviDWDXxCWuFrK" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1HLGBNlkDljWYA7vyGbNviDWDXxCWuFrK/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="loving contentment - robin"><p class="track-title">Loving contentment - Robin</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1niN2oD2H_Un5rI2mqqkp5lP354IyWY9j" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1niN2oD2H_Un5rI2mqqkp5lP354IyWY9j/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="morning connection with your inner being"><p class="track-title">Morning connection with your inner being</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=10Z-uaHVwwpE2htahv75S5Pnso3hjE26v" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/10Z-uaHVwwpE2htahv75S5Pnso3hjE26v/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="no can feel like yes 10 mins"><p class="track-title">No can feel like yes 10 mins</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1tUrI4cjwuJjcyR07hmP2dF5Z4J8_ZYMj" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1tUrI4cjwuJjcyR07hmP2dF5Z4J8_ZYMj/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="nourishing the creator - max-mode engaged!"><p class="track-title">Nourishing the creator - Max-mode engaged!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=12LN4BjrT2PgWLeuH11lNDJBFsv8ime9C" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/12LN4BjrT2PgWLeuH11lNDJBFsv8ime9C/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="ocean of blue"><p class="track-title">Ocean of Blue</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1We45e458fJrmI2Z8hZIXqw0Au3jHt92D" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1We45e458fJrmI2Z8hZIXqw0Au3jHt92D/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="powerful you!"><p class="track-title">Powerful You!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1Hmx2wJEZh8t3XvXz__1kroGRCbx24XF5" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1Hmx2wJEZh8t3XvXz__1kroGRCbx24XF5/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="putting the storyline down - on paper as you settle to sleep 2"><p class="track-title">Putting the storyline down - on paper as you settle to sleep 2</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1KTQvQMGx1XHWfm6Gidm5f8i40BjjCCkj" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1KTQvQMGx1XHWfm6Gidm5f8i40BjjCCkj/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="replacing tearing up trigger"><p class="track-title">REplacing tearing up trigger</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1yoIN-BDQtUtuIMEwH1Vq_Kur16doeWEz" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1yoIN-BDQtUtuIMEwH1Vq_Kur16doeWEz/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="reaching for calm ap"><p class="track-title">Reaching for Calm AP</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1BvIpsFJYqoXxYRAa6E7u0ift15-uXGMW" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1BvIpsFJYqoXxYRAa6E7u0ift15-uXGMW/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="relishing good moments"><p class="track-title">Relishing Good Moments</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1q668dFzZHy591-WXRAew1sxkptEB7bYb" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1q668dFzZHy591-WXRAew1sxkptEB7bYb/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="relishing the headshi dream!"><p class="track-title">Relishing the Headshi Dream!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1BgsL-a5cmyD_8tXH-rIv-tJb-PqxqyCH" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1BgsL-a5cmyD_8tXH-rIv-tJb-PqxqyCH/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="secure, free, playful"><p class="track-title">Secure, free, playful</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1l4MVdkjn5apcFb9l4I20J8GPBQ2_9LMy" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1l4MVdkjn5apcFb9l4I20J8GPBQ2_9LMy/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="settle to sleep"><p class="track-title">Settle to sleep</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1GmsFIOhfHj2p_9YROzkqBlv9f6ilhU7c" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1GmsFIOhfHj2p_9YROzkqBlv9f6ilhU7c/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="settling to sleep"><p class="track-title">Settling to sleep</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1T6i-EyBWeHydvNlApmF5bqlzFVOP-fLn" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1T6i-EyBWeHydvNlApmF5bqlzFVOP-fLn/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="soothing - ann"><p class="track-title">Soothing - Ann</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1wjjBE-g2dBc78uDu4YCfWwzBob7sDHUX" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1wjjBE-g2dBc78uDu4YCfWwzBob7sDHUX/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="soothing - tania prince s mindfulness based inner re-patterning"><p class="track-title">Soothing - Tania Prince s Mindfulness Based Inner Re-patterning</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=15b9V_JV60tUkaFdGVmtElE7Pw94I0zF5" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/15b9V_JV60tUkaFdGVmtElE7Pw94I0zF5/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="start the day"><p class="track-title">Start the Day</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1UaucVjKQbEqGdGs8J1KhPtK75x0ACKfm" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1UaucVjKQbEqGdGs8J1KhPtK75x0ACKfm/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="stop breathe be here now"><p class="track-title">Stop Breathe Be Here Now</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1FoXj1LKPDL80R4pFOTQB8YNu6mfEQcur" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1FoXj1LKPDL80R4pFOTQB8YNu6mfEQcur/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="stop to breathe"><p class="track-title">Stop to Breathe</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1ZK_rhiWWPm9PPWN91N5N7bYbu0TKoqca" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1ZK_rhiWWPm9PPWN91N5N7bYbu0TKoqca/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="stopping after busy segment of the day"><p class="track-title">Stopping after busy segment of the day</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1YIGefAoMW7ZePB9gqI7r7FLdwqfFNywR" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1YIGefAoMW7ZePB9gqI7r7FLdwqfFNywR/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="the little soul and the sun"><p class="track-title">The Little Soul and The Sun</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1dZzc-1sE1WabWxK89ztb286_qAohTKR3" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1dZzc-1sE1WabWxK89ztb286_qAohTKR3/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="this girl can!"><p class="track-title">This Girl CAN!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1JNciECSqpvB1yE6ZMOEqyiP3fCylBjsE" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1JNciECSqpvB1yE6ZMOEqyiP3fCylBjsE/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="this bear dares...!"><p class="track-title">This bear dares...!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1TTKrj_meFqIRCWG28tpkRTQVVsn7fSh_" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1TTKrj_meFqIRCWG28tpkRTQVVsn7fSh_/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="tipping into relief - and beyond"><p class="track-title">Tipping into Relief - and Beyond</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1lXXVGPVW7Lbx1ITD48czCIXM0rhK671Z" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1lXXVGPVW7Lbx1ITD48czCIXM0rhK671Z/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="transforming triggers"><p class="track-title">Transforming Triggers</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1llI3ZHmKLMAgMQq8pyZtUxL_JCKmzo3Z" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1llI3ZHmKLMAgMQq8pyZtUxL_JCKmzo3Z/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="trigger place triumph"><p class="track-title">Trigger Place Triumph</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1XIe6XlcGp1Tyarfoyc3Yy9PR34-ku0G_" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1XIe6XlcGp1Tyarfoyc3Yy9PR34-ku0G_/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="tuning to emotions"><p class="track-title">Tuning to Emotions</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1XO5vgK6AIN4uv3yBW95TuWyd01GC_D2Z" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1XO5vgK6AIN4uv3yBW95TuWyd01GC_D2Z/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="using an abraham-hicks style focus wheel - real time otter ai"><p class="track-title">Using an Abraham-Hicks style Focus Wheel - Real time otter ai</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1WkqfQ6_I2-fCvRmsQnRpizYfNKHQqFFt" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1WkqfQ6_I2-fCvRmsQnRpizYfNKHQqFFt/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="wanting to want to walk each day"><p class="track-title">Wanting to want to walk each day</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1ShcqwIAdYsgNa1yOitEX_1z2SqiE8gJY" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1ShcqwIAdYsgNa1yOitEX_1z2SqiE8gJY/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="weekly workout audio"><p class="track-title">Weekly Workout Audio</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=15Q6N-YKAQ6E5UodYDDidiKNdciHDnz6S" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/15Q6N-YKAQ6E5UodYDDidiKNdciHDnz6S/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="welcome home!"><p class="track-title">Welcome Home!</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1fpA5QNt4mZdSYrOyruDXB3_WAaRn0eHc" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1fpA5QNt4mZdSYrOyruDXB3_WAaRn0eHc/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+      <div class="track" data-title="wonderful me! maria"><p class="track-title">Wonderful Me! Maria</p><div class="player-shell"><audio controls preload="none" src="https://drive.google.com/uc?export=download&amp;id=1uju_Jw04uQFmR7Nn6svVSNscVSQceuIu" style="width:100%;display:block;"></audio></div><p class="track-meta"><a href="https://drive.google.com/file/d/1uju_Jw04uQFmR7Nn6svVSNscVSQceuIu/preview" target="_blank" rel="noopener">Open in Google Drive</a></p></div>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s work together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+  </script>
+  <script>
+    (function () {
+      const searchInput = document.getElementById('audio-search');
+      const status = document.getElementById('audio-search-status');
+      const paginationInfo = document.getElementById('audio-pagination-info');
+      const prevButton = document.getElementById('audio-prev');
+      const nextButton = document.getElementById('audio-next');
+      const tracks = Array.from(document.querySelectorAll('.track'));
+      const headings = Array.from(document.querySelectorAll('.section-title'));
+      const pageSize = 10;
+      let currentPage = 1;
+
+      function updateHeadings() {
+        headings.forEach((heading) => {
+          let node = heading.nextElementSibling;
+          let hasVisibleTrack = false;
+
+          while (node && !node.classList.contains('section-title')) {
+            if (node.classList.contains('track') && !node.hidden) {
+              hasVisibleTrack = true;
+              break;
+            }
+            node = node.nextElementSibling;
+          }
+
+          heading.hidden = !hasVisibleTrack;
         });
-      });
-    });
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    if (document.body) obs.observe(document.body, {childList: true, subtree: true});
-    hideAll();
-  });
-})();
-</script>
+      }
+
+      function updateStatus(totalCount, visibleCount, query, totalPages) {
+        if (!status) return;
+        if (!query) {
+          status.textContent = `${totalCount} tracks available`;
+          return;
+        }
+        status.textContent = visibleCount === 0
+          ? `No tracks found for "${query}"`
+          : `${visibleCount} track${visibleCount === 1 ? '' : 's'} found for "${query}"${totalPages > 1 ? ` across ${totalPages} pages` : ''}`;
+      }
+
+      function updatePagination(startIndex, endIndex, totalCount, totalPages) {
+        if (paginationInfo) {
+          paginationInfo.textContent = totalCount === 0
+            ? 'No tracks to show'
+            : `Showing ${startIndex + 1}-${endIndex} of ${totalCount}`;
+        }
+        if (prevButton) {
+          prevButton.disabled = currentPage <= 1 || totalCount === 0;
+        }
+        if (nextButton) {
+          nextButton.disabled = currentPage >= totalPages || totalCount === 0;
+        }
+      }
+
+      function filterTracks() {
+        const query = (searchInput?.value || '').trim().toLowerCase();
+        const matchingTracks = tracks.filter((track) => {
+          const title = track.dataset.title || '';
+          return !query || title.includes(query);
+        });
+        const totalCount = matchingTracks.length;
+        const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
+
+        if (currentPage > totalPages) {
+          currentPage = totalPages;
+        }
+
+        const startIndex = totalCount === 0 ? 0 : (currentPage - 1) * pageSize;
+        const endIndex = Math.min(startIndex + pageSize, totalCount);
+        const visibleTracks = new Set(matchingTracks.slice(startIndex, endIndex));
+
+        tracks.forEach((track) => {
+          track.hidden = !visibleTracks.has(track);
+        });
+
+        updateHeadings();
+        updateStatus(tracks.length, totalCount, query, totalPages);
+        updatePagination(startIndex, endIndex, totalCount, totalPages);
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          currentPage = 1;
+          filterTracks();
+        });
+      }
+
+      if (prevButton) {
+        prevButton.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage -= 1;
+            filterTracks();
+          }
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener('click', () => {
+          currentPage += 1;
+          filterTracks();
+        });
+      }
+
+      filterTracks();
+    })();
+  </script>
 </body>
 </html>

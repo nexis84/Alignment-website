@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>If Failure Fills Your Rearview Mirror —  Check for Impostor Syndrome — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:1rem; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo span { color:var(--accent); }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.35rem 0.7rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  @media (max-width:600px) { nav .links { display:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo">Amanda <span>Maney</span></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>If Failure Fills Your Rearview Mirror —  Check for Impostor Syndrome</h1>
+    <p class="meta">19 April 2021</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>It may transform your life.</h3>
+    <p>Keeping my head above water was all I’d ever known. I hadn’t realised there could be so much more to life…</p>
+    <p>I was somewhat overawed by the giant of a man sitting next to me at the wedding table. Evidently, he had lived an awesome life, in the deepest sense of the word.</p>
+    <p>Normally a fish out of water on social occasions, I was fortunate to have such a talkative table-mate. My gratitude for his willingness to fill the silence turned swiftly to captivation as the man’s stories poured out around our melon-sorbet starters and halloumi fillet mains.</p>
+    <p>He spoke with passion about the two women to whom he had given his heart. He spoke about the company he had fashioned, Zeus-like, out of the clay of his youth. He told of its subsequent collapse and of rebuilding from the rubble.</p>
+    <p>He described in detail the family he has sired and clearly dotes upon… His pale eyes filled up as he spoke of each child and grandchild in turn. His tenderness was beautiful to see.</p>
+    <p>And then the dreaded moment came.</p>
+    <p>As summer fruits arrived for dessert, his blissful narration stopped.</p>
+    <p>He asked, ‘So, what have you done with your life?’</p>
+    <p>Ouch.</p>
+    <p>Jeezy creezy. How could I say, ‘I’ve survived it. That’s about as far as it goes’?</p>
+    <p>After a moment of absolute panic, I started to mumble on about something career-related to fill the void as best I might for a while but the question really hit home. Four decades and more I’d been on the planet. How tragic to look back on all that life and just think, ‘I’m surviving!’</p>
+    <h3>When All You Can See Is Failure</h3>
+    <p>The truth is, in those days (not so long ago) I would look back over two and more decades of work, and all I could see were the failures along the way. It was like viewing a battlefield. Carnage to the left of me, wasteland to the right. Shame was all I felt.</p>
+    <p>Extreme view, right? Especially as I’d always been very successful in the workplace, a real achiever. I wasn’t ambitious, but I surely was driven and my output reflected it. But my mind told me that I’d done nothing but harm.</p>
+    <blockquote><p>Failure filled my rearview mirror.</p></blockquote>
+    <p>Where did such extreme negativity come from? Even if I’d tried I couldn’t have caused the devastation that my mind portrayed to me each time I looked back. This perception was SO distorted. But it felt so real!</p>
+    <p>I could see others’ incredulity when I described this misperception. For years, I struggled with it. Life felt more and more like driving through a combined earthquake/volcano event, the whole world collapsing into a widening magma-filled chasm of disaster behind me.</p>
+    <p>Enter: Valerie Young’s “The Secret Thoughts of Successful Women”.</p>
+    <p>What revelation!</p>
+    <p>Young’s explanation of Imposter Syndrome (IS) finally made sense of the carnage in my mind.</p>
+    <p>But it was Don Cheadle who nailed it for me, when he says:</p>
+    <blockquote><p>“All I can see is everything I’m doing wrong that is a sham and a fraud…”</p></blockquote>
+    <p>Here’s a successful man, a household name, who can’t see anything but failure in his wake. Young continues:</p>
+    <blockquote><p>‘Meryl Streep, the most Academy award nominated actor in history, gets cold feet at the beginning of every new project, telling a reporter, “You think, ‘Why would anyone want to see me again in a movie? And I don’t know how to act anyway, so why am I doing this?’” Meryl Streep, for crying out loud!’</p></blockquote>
+    <p>Finally, people who understood!</p>
+    <p>There was much to be gained from the work in Young’s book and it’s one I will revisit often. If you’re resonating with the experiences I’ve described above, you might like to take the Clance IP Test to see if Imposter Syndrome (aka Imposter Phenomenon) is running for you.</p>
+    <p>I’d like to share one exercise Young describes, with a little extra something that made it accessible for me. Most people working with Imposter Syndrome recommend this approach, but until I added my own ‘special sauce’, I’d have found it very hard to do.</p>
+    <h3>An Exercise to Help You Change the View</h3>
+    <p>Young said — make a list of every single achievement in your life. From the tiny to the huge. But do it without taking away from the successes in any way. Those running IS will negate their successes by giving the credit to someone else, or to luck or fluke.</p>
+    <p>I ‘know’, for example, that I only got into Cambridge because the administrators wanted more female science students from comprehensive schools in the year I applied. (Yeah, really!) We imposters may also find ourselves putting achievements down to a mistake or a misjudgment on someone’s part etc. You get the idea.</p>
+    <p>Young’s simple exercise was a potential cringe-fest on steroids for me….</p>
+    <p>But, I have an Inner Champion now, and she was up for giving this activity a try.</p>
+    <p>So, a fair attempt at an extensive list later, I wasn’t feeling wonderful, but I wasn’t feeling utterly dreadful either… yup, things were definitely changing.</p>
+    <p>The list complete, I was now supposed to read it through and acknowledge myself for each accomplishment. Hmmm. That wasn’t going to happen.</p>
+    <p>A few things did light up on the list. My newfound ability to follow a BBC Good Food recipe; tidying the odds-and-sods drawer in the kitchen (I had done it weeks before but still opened the drawer with a loud ‘Ta DA!’ every time); decorating the house (I was clueless, but hey, I couldn’t have made it any worse…) — simple tasks completed seemed to have satisfied me the most. Along with my black belt in Tae Kwon Do…. (Yes!)</p>
+    <p>But what to do with the rest of the list?</p>
+    <p>I engaged Amelie, my imagined Inner Champion; she would know what to do here. I wrote to her about it. I laid it out straight. Here’s an extract from that conversation:</p>
+    <p>Me: I can’t feel good about these things I’ve achieved. I just can’t. If I try, I feel shame or regret. I am just relieved that they’re over. I don’t know how to celebrate having accomplished things that seem only to have drained me. Help?</p>
+    <p>Amelie: I don’t care what’s on that list, I love you. Just for being here, in physical form. I love you for getting up every day and having a go at this bleeding edge thing we call life. I think you are amazing.</p>
+    <p>Me: Wow.</p>
+    <p>Amelie: Well, it’s the truth.</p>
+    <p>Now, as for your list of achievements; let me offer you a fresh perspective. You’ve been considering how others would judge the list. That creates the — I should feel proud because this is an impressive list and it’s not fake — kind of thinking.</p>
+    <p>This immediately creates resistance — “People shouldn’t be impressed with me, I don’t deserve it, achievements don’t make me worthy,” and so on.</p>
+    <p>Me: Indeed.</p>
+    <p>Amelie: Well, I am not interested in anyone’s judgments. Not even yours. I don’t care if you think they are great achievements or not.</p>
+    <p>Me: You don’t?</p>
+    <p>Amelie: No. I only care about how much fun you’re having in the living of life. So, I’m screening the list for joy.</p>
+    <p>And each thing on the list contains moments of joy. Some more so than others. If the overall achievement wasn’t much fun, I encourage you to sift out the good bits and find more joy in the next thing you do.</p>
+    <p>I don’t look at the list and feel proud because you’ve achieved things. I look at the list and feel proud because you’re out there experiencing life with all its contrast.</p>
+    <p>You’re finding your way to ever more joy. And I so want you to enjoy your life. More and more. That’s all. I’m infinitely proud of you for existing. End of.</p>
+    <p>Me: That feels wonderful. I don’t have to see this list of achievements as the failure to live life well. I can see it as a grand, glorious, messy mixture of joy and struggle, none of which was wasted.</p>
+    <p>Amelie: That’s it, you’ve got the idea!</p>
+    <p>The struggle — the I’ve-achieved-this-but-it means-nothing — was about the judgments I’d made about myself at every step along the way. The steady stream of criticism had been enough to make any experience taste sour.</p>
+    <p>And that could change. Bit by bit, I changed it. I continue to change the path my thoughts follow.</p>
+    <p>How did I stem the criticism stream?</p>
+    <p>I started to sift my achievements for the joy they brought, without judging them in any other way. No more asking ‘Am I good enough?’, with each task I attempted. My days began to circle the question, ‘What did I enjoy most about that?’ instead. What a great practice to adopt!</p>
+    <p>Imagine being delighted by every little thing you do, because you’ve milked it for all the joy it can produce!</p>
+    <p>Imagine setting yourself up to simply enjoy each item on your To Do list, instead of judging yourself by whether or not you’ve managed to do them all!</p>
+    <p>Imagine being delighted with a day that went nowhere near your list! Imagine that!</p>
+    <p>A P.S. from Amelie:</p>
+    <p>Amelie: There you go, I knew you’d get it!</p>
+    <p>Remember, on some days, joy will not be easily found. Search for the best aspect of each experience, regardless. When things don’t go so well, just move on swiftly. No stopping to beat yourself up for ‘failing’ in someone else’s eyes. Seek out the most enjoyable experience available; follow the trail of joy.</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+  </script>
+</body>
+</html>
