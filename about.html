@@ -18,6 +18,7 @@
   nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
   nav .brand { display:flex; align-items:center; gap:1rem; }
     nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo img { height:44px; width:auto; display:block; }
     nav .logo span { color:var(--accent); }
   nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.35rem 0.7rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; }
   nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
@@ -82,7 +83,7 @@
 
   <nav>
     <div class="brand">
-      <a href="index.html" class="logo">Amanda <span>Maney</span></a>
+      <a href="index.html" class="logo" aria-label="Amanda Maney home"><img src="logo.png" alt="Amanda Maney Alignment Coaching"></a>
       
     </div>
     <div class="links">
