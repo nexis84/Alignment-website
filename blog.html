@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — Amanda Maney</title>
+  <title>Blog â€” Amanda Maney</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
@@ -16,13 +16,13 @@
     [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
     body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
   nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
-  nav .brand { display:flex; align-items:center; gap:1rem; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
     nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
-    nav .logo img { height:50px; width:auto; display:block; filter: invert(1); }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
     [data-theme="dusk"] nav .logo img { filter:none; }
     @media (max-width:600px) { nav .logo img { height:40px; } }
     nav .logo span { color:var(--accent); }
-  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.35rem 0.7rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
   nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
     nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
     nav .links a:hover, nav .links a.active { color:var(--accent); }
@@ -49,7 +49,7 @@
     .post p { font-size:0.92rem; color:var(--muted); line-height:1.75; margin-bottom:1.4rem; flex-grow:1; }
     .post a.read-more { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; transition:gap 0.2s; }
     .post a.read-more:hover { gap:0.7rem; }
-    .post a.read-more::after { content:'→'; }
+    .post a.read-more::after { content:'â†’'; }
     .post.featured { grid-column:span 2; }
     .post.featured h2 { font-size:1.6rem; }
     @media (max-width:860px) { .post.featured { grid-column:span 1; } .post.featured h2 { font-size:1.2rem; } }
@@ -140,9 +140,9 @@
         <p>Find your way back into the power of this moment. Thoughts around a poem from the beautiful writings of the great Thich Nhat Hanh.</p>
         <a href="blog/have-you-arrived.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="when your mind tries to scam you… how often do you find yourself in distress in a day, and not knowing what to do with it? and how often does your mind take you for a ride? the mind can feel like a scammer sometimes, hijacking your em 10 august 2022">
+      <article class="post" data-search="when your mind tries to scamÂ youâ€¦ how often do you find yourself in distress in a day, and not knowing what to do with it? and how often does your mind take you for a ride? the mind can feel like a scammer sometimes, hijacking your em 10 august 2022">
         <div class="post-meta">10 August 2022</div>
-        <h2>When Your Mind Tries to Scam You…</h2>
+        <h2>When Your Mind Tries to ScamÂ Youâ€¦</h2>
         <p>How often do you find yourself in distress in a day, and not knowing what to do with it? And how often does your mind take you for a ride? The mind can feel like a scammer sometimes, hijacking your em</p>
         <a href="blog/when-your-mind-tries-to-scam-you.html" class="read-more">Read more</a>
       </article>
@@ -164,10 +164,10 @@
         <p>Finding Joy in Everyday Things - or - What is it about pebbles?  What is it that I love so much about pebbles on the shore? Just rolling the words in my mind brings the waves lapping to my toes. Wet a</p>
         <a href="blog/10-finding-joy-in-everyday-things.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="connecting with joy - 3 practices for enjoying the heck out of life so, there i was, this morning, sitting in our garden room with tears of joy spilling down my cheeks. tears of joy. that’s not a common occurrence for me, i can tell you. not that i’m a misery guts, bu 19 december 2020">
+      <article class="post" data-search="connecting with joy - 3 practices for enjoying the heck out of life so, there i was, this morning, sitting in our garden room with tears of joy spilling down my cheeks. tears of joy. thatâ€™s not a common occurrence for me, i can tell you. not that iâ€™m a misery guts, bu 19 december 2020">
         <div class="post-meta">19 December 2020</div>
         <h2>Connecting with Joy - 3 Practices for Enjoying the Heck out of Life</h2>
-        <p>So, there I was, this morning, sitting in our Garden Room with tears of joy spilling down my cheeks. Tears of joy. That’s not a common occurrence for me, I can tell you. Not that I’m a misery guts, bu</p>
+        <p>So, there I was, this morning, sitting in our Garden Room with tears of joy spilling down my cheeks. Tears of joy. Thatâ€™s not a common occurrence for me, I can tell you. Not that Iâ€™m a misery guts, bu</p>
         <a href="blog/connecting-with-joy.html" class="read-more">Read more</a>
       </article>
       <article class="post" data-search="how to be in the right place at the right time, doing the right thing - living on liquid luck choosing our beliefs changes everything. believing in magic brings magic moments to us. believing that i am in the right place at the right time doing the right thing brings confidence and ease to my  29 december 2020">
@@ -176,10 +176,10 @@
         <p>Choosing our beliefs changes everything. Believing in magic brings magic moments to us. Believing that I am in the right place at the right time doing the right thing brings confidence and ease to my </p>
         <a href="blog/how-to-be-in-the-right-place.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="duck, duck, dare… finding confidence to play in the snow optimism works. it’s just a case of finding a way to do more of it, without suppressing  reality. sometimes life really stinks. sticking a smiley face sticker on that does us no good. we need a steady 22 january 2021">
+      <article class="post" data-search="duck, duck, dareâ€¦ finding confidence to play in the snow optimism works. itâ€™s just a case of finding a way to do more of it, without suppressing  reality. sometimes life really stinks. sticking a smiley face sticker on that does us no good. we need a steady 22 january 2021">
         <div class="post-meta">22 January 2021</div>
-        <h2>Duck, Duck, Dare… Finding confidence to play in the snow</h2>
-        <p>Optimism works. It’s just a case of finding a way to do more of it, without suppressing  reality. Sometimes life really stinks. Sticking a smiley face sticker on that does us no good. We need a steady</p>
+        <h2>Duck, Duck, Dareâ€¦ Finding confidence to play in the snow</h2>
+        <p>Optimism works. Itâ€™s just a case of finding a way to do more of it, without suppressing  reality. Sometimes life really stinks. Sticking a smiley face sticker on that does us no good. We need a steady</p>
         <a href="blog/duck-duck-dare.html" class="read-more">Read more</a>
       </article>
       <article class="post" data-search="learning to be inappropriate! how much do we hold ourselves back, for fear of others&#x27; disapproval or criticism? i&#x27;m enjoying writing to and from an imagined inner champion, my highest self - amelie, who brings me back into alignme 18 january 2021">
@@ -188,9 +188,9 @@
         <p>How much do we hold ourselves back, for fear of others&#x27; disapproval or criticism? I&#x27;m enjoying writing to and from an imagined Inner Champion, my Highest Self - Amelie, who brings me back into alignme</p>
         <a href="blog/learning-to-be-inappropriate.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="lessons from a life un-lived – making friends with our fears if you notice yourself becoming increasingly risk-averse, making life smaller to avoid what you fear, you will find this reflection interesting and the approach shared may be of use to you. with encou 31 january 2021">
+      <article class="post" data-search="lessons from a life un-lived â€“ making friends with our fears if you notice yourself becoming increasingly risk-averse, making life smaller to avoid what you fear, you will find this reflection interesting and the approach shared may be of use to you. with encou 31 january 2021">
         <div class="post-meta">31 January 2021</div>
-        <h2>Lessons from a Life Un-lived – Making friends with our fears</h2>
+        <h2>Lessons from a Life Un-lived â€“ Making friends with our fears</h2>
         <p>If you notice yourself becoming increasingly risk-averse, making life smaller to avoid what you fear, you will find this reflection interesting and the approach shared may be of use to you. With encou</p>
         <a href="blog/lessons-from-a-life-un-lived.html" class="read-more">Read more</a>
       </article>
@@ -200,46 +200,46 @@
         <p>Connect with who people truly are and conflict disappears. Core confidence / alignment coaching / creating the future you desire / finding our way to a life we love</p>
         <a href="blog/looking-beyond-behaviour.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="the perils of vision quests... “now, we’re just going to spend the next section of the day vision questing - let’s map out where we want to be a year, five years, ten years into our practice!” the voice of our teacher is confident  16 january 2021">
+      <article class="post" data-search="the perils of vision quests... â€œnow, weâ€™re just going to spend the next section of the day vision questing - letâ€™s map out where we want to be a year, five years, ten years into our practice!â€ the voice of our teacher is confident  16 january 2021">
         <div class="post-meta">16 January 2021</div>
         <h2>The Perils of Vision Quests...</h2>
-        <p>“Now, we’re just going to spend the next section of the day Vision Questing - let’s map out where we want to be a year, five years, ten years into our practice!” The voice of our teacher is confident </p>
+        <p>â€œNow, weâ€™re just going to spend the next section of the day Vision Questing - letâ€™s map out where we want to be a year, five years, ten years into our practice!â€ The voice of our teacher is confident </p>
         <a href="blog/the-perils-of-vision-quests.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="making the most of our flaws —  notes from a kintsugi coach highlighting our flaws and dusting them with gold - compassion flows through our frailties. this blog explores the beauty of celebrating our weaknesses, and encourages us to treat failings with tender 9 february 2021">
+      <article class="post" data-search="making the most of our flaws â€”  notes from a kintsugi coach highlighting our flaws and dusting them with gold - compassion flows through our frailties. this blog explores the beauty of celebrating our weaknesses, and encourages us to treat failings with tender 9 february 2021">
         <div class="post-meta">9 February 2021</div>
-        <h2>Making the Most of our Flaws —  Notes from a Kintsugi Coach</h2>
+        <h2>Making the Most of our Flaws â€”  Notes from a Kintsugi Coach</h2>
         <p>Highlighting our flaws and dusting them with gold - compassion flows through our frailties. This blog explores the beauty of celebrating our weaknesses, and encourages us to treat failings with tender</p>
         <a href="blog/how-to-make-the-most-of-our-flaws.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="the problem of wanting what we haven’t got — and how to alleviate it believing that we can&#x27;t be, do or have what we want is a huge source of pain in life. perhaps the source of all pain. it sounds like the thinking of a spoilt 2 year old but it is inherent to the human 20 february 2021">
+      <article class="post" data-search="the problem of wanting what we havenâ€™t got â€” and how to alleviate it believing that we can&#x27;t be, do or have what we want is a huge source of pain in life. perhaps the source of all pain. it sounds like the thinking of a spoilt 2 year old but it is inherent to the human 20 february 2021">
         <div class="post-meta">20 February 2021</div>
-        <h2>The Problem of Wanting What we Haven’t Got — and How to Alleviate it</h2>
+        <h2>The Problem of Wanting What we Havenâ€™t Got â€” and How to Alleviate it</h2>
         <p>Believing that we can&#x27;t be, do or have what we want is a huge source of pain in life. Perhaps the source of all pain. It sounds like the thinking of a spoilt 2 year old but it is inherent to the human</p>
         <a href="blog/the-problem-of-wanting.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="“love means never having to say you’re sorry”… unless it’s not your fault  then, saying sorry is worthwhile a busy working mum takes her child into the supermarket. he’s a tall boy of seven, with dark, intelligent eyes, a puppy dog smile and a slight lisp when he speaks.  a casual observer would see the boy 29 march 2021">
+      <article class="post" data-search="â€œlove means never having to say youâ€™re sorryâ€â€¦ unless itâ€™s not yourÂ fault  then, saying sorry is worthwhile a busy working mum takes her child into the supermarket. heâ€™s a tall boy of seven, with dark, intelligent eyes, a puppy dog smile and a slight lisp when he speaks.  a casual observer would see the boy 29 march 2021">
         <div class="post-meta">29 March 2021</div>
-        <h2>“Love Means Never Having to Say You’re Sorry”… Unless It’s NOT Your Fault  Then, saying sorry is worthwhile</h2>
-        <p>A busy working mum takes her child into the supermarket. He’s a tall boy of seven, with dark, intelligent eyes, a puppy dog smile and a slight lisp when he speaks.  A casual observer would see the boy</p>
+        <h2>â€œLove Means Never Having to Say Youâ€™re Sorryâ€â€¦ Unless Itâ€™s NOT YourÂ Fault  Then, saying sorry is worthwhile</h2>
+        <p>A busy working mum takes her child into the supermarket. Heâ€™s a tall boy of seven, with dark, intelligent eyes, a puppy dog smile and a slight lisp when he speaks.  A casual observer would see the boy</p>
         <a href="blog/love-means.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="who do you think you are? - how to take on your inner critic what i learnt from discovering, with horror, that self development was doing me in…   do you find that you make some progress with coaching or therapy, but it’s two steps forward, one step back? is yo 15 march 2021">
+      <article class="post" data-search="who do you think you are? - how to take on your inner critic what i learnt from discovering, with horror, that self development was doing me inâ€¦   do you find that you make some progress with coaching or therapy, but itâ€™s two steps forward, one step back? is yo 15 march 2021">
         <div class="post-meta">15 March 2021</div>
         <h2>Who Do You Think You Are? - How to take on your Inner Critic</h2>
-        <p>What I learnt from discovering, with horror, that self development was doing me in…   Do you find that you make some progress with coaching or therapy, but it’s two steps forward, one step back? Is yo</p>
+        <p>What I learnt from discovering, with horror, that self development was doing me inâ€¦   Do you find that you make some progress with coaching or therapy, but itâ€™s two steps forward, one step back? Is yo</p>
         <a href="blog/who-do-you-think-you-are.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="if failure fills your rearview mirror —  check for impostor syndrome keeping my head above water was all i’d ever known. i hadn’t realised there could be so much more to life…  i was somewhat overawed by the giant of a man sitting next to me at the wedding table. evide 19 april 2021">
+      <article class="post" data-search="if failure fills your rearview mirrorâ€Šâ€”â€Š check for impostorÂ syndrome keeping my head above water was all iâ€™d ever known. i hadnâ€™t realised there could be so much more to lifeâ€¦  i was somewhat overawed by the giant of a man sitting next to me at the wedding table. evide 19 april 2021">
         <div class="post-meta">19 April 2021</div>
-        <h2>If Failure Fills Your Rearview Mirror —  Check for Impostor Syndrome</h2>
-        <p>Keeping my head above water was all I’d ever known. I hadn’t realised there could be so much more to life…  I was somewhat overawed by the giant of a man sitting next to me at the wedding table. Evide</p>
+        <h2>If Failure Fills Your Rearview Mirrorâ€Šâ€”â€Š Check for ImpostorÂ Syndrome</h2>
+        <p>Keeping my head above water was all Iâ€™d ever known. I hadnâ€™t realised there could be so much more to lifeâ€¦  I was somewhat overawed by the giant of a man sitting next to me at the wedding table. Evide</p>
         <a href="blog/if-failure-fills-your-rearview.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="is your to do list torturing you? ‘to do’ lists made me ill.  actually, that’s not true. it wasn’t the lists that made me ill, it was my failure to live up to them.  to do lists used to be a constant reminder of my inability to make t 18 april 2021">
+      <article class="post" data-search="is your to do list torturing you? â€˜to doâ€™ lists made me ill.  actually, thatâ€™s not true. it wasnâ€™t the lists that made me ill, it was my failure to live up to them.  to do lists used to be a constant reminder of my inability to make t 18 april 2021">
         <div class="post-meta">18 April 2021</div>
         <h2>Is Your To Do List Torturing You?</h2>
-        <p>‘To Do’ Lists Made Me Ill.  Actually, that’s not true. It wasn’t the lists that made me ill, it was my failure to live up to them.  To Do Lists used to be a constant reminder of my inability to make t</p>
+        <p>â€˜To Doâ€™ Lists Made Me Ill.  Actually, thatâ€™s not true. It wasnâ€™t the lists that made me ill, it was my failure to live up to them.  To Do Lists used to be a constant reminder of my inability to make t</p>
         <a href="blog/is-your-to-do-list-torturing-you.html" class="read-more">Read more</a>
       </article>
       <article class="post" data-search="lessons in compassion from the wisdom of the enneagram how our subconscious drivers can tie us up in knots  apparently, the man arrived at the workshop in a private helicopter. he was head-to-toe gilded with the trappings of success. smooth, charismatic,  12 april 2021">
@@ -248,10 +248,10 @@
         <p>How our subconscious drivers can tie us up in knots  Apparently, the man arrived at the workshop in a private helicopter. He was head-to-toe gilded with the trappings of success. Smooth, charismatic, </p>
         <a href="blog/lessons-in-compassion.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="mind the gap - one way of connecting with a traumatised kid bridging the gap between minds needs a whole new level of listening, especially when the kid’s in trauma.  it was ten past nine on a weekday in a small primary school. the area was one of profound soc 5 april 2021">
+      <article class="post" data-search="mind the gap - one way of connecting with a traumatised kid bridging the gap between minds needs a whole new level of listening, especially when the kidâ€™s in trauma.  it was ten past nine on a weekday in a small primary school. the area was one of profound soc 5 april 2021">
         <div class="post-meta">5 April 2021</div>
         <h2>Mind The Gap - One Way of Connecting With a Traumatised Kid</h2>
-        <p>Bridging the gap between minds needs a whole new level of listening, especially when the kid’s in trauma.  It was ten past nine on a weekday in a small primary school. The area was one of profound soc</p>
+        <p>Bridging the gap between minds needs a whole new level of listening, especially when the kidâ€™s in trauma.  It was ten past nine on a weekday in a small primary school. The area was one of profound soc</p>
         <a href="blog/mind-the-gap.html" class="read-more">Read more</a>
       </article>
       <article class="post" data-search="&quot;in filling the well, think magic&quot; what to do on your &#x27;dry well&#x27; days. when we feel lacking in love, where do you turn? what happens when you turn to others for love and find a whole world of hurt instead? this blog shares thoughts on  18 may 2022">
@@ -266,10 +266,10 @@
         <p>If you&#x27;ve ever struggled to &#x27;make&#x27; yourself fulfil your commitments, here&#x27;s an experiment worth trying. Let go. Trust in Flow to take you through your schedule in optimum time and functionality. You m</p>
         <a href="blog/trusting-the-flow.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="&quot;joy arises when you come home.&quot; “joy arises out of our very core. joy is not dependent on other people or outer circumstances. joy arises when you come home. joy is to enter into your own inner being, into your own self.” ―  swami d 11 july 2022">
+      <article class="post" data-search="&quot;joy arises when you come home.&quot; â€œjoy arises out of our very core. joy is not dependent on other people or outer circumstances. joy arises when you come home. joy is to enter into your own inner being, into your own self.â€ â€•  swami d 11 july 2022">
         <div class="post-meta">11 July 2022</div>
         <h2>&quot;Joy Arises When You Come Home.&quot;</h2>
-        <p>“Joy arises out of our very core. Joy is not dependent on other people or outer circumstances. Joy arises when you come home. Joy is to enter into your own inner being, into your own self.” ―  Swami D</p>
+        <p>â€œJoy arises out of our very core. Joy is not dependent on other people or outer circumstances. Joy arises when you come home. Joy is to enter into your own inner being, into your own self.â€ â€•  Swami D</p>
         <a href="blog/joy-arises-when-you-come-home.html" class="read-more">Read more</a>
       </article>
       <article class="post" data-search="facing our reality might seem sensible - but it stops us imagining a better one facing our reality may be necessary at times, but overdoing it diminishes our power to create a better one. creation takes imagination. we have to reach beyond our current experience to make changes t 20 july 2022">
@@ -278,31 +278,31 @@
         <p>Facing our reality may be necessary at times, but overdoing it diminishes our power to create a better one. Creation takes imagination. We have to reach beyond our current experience to make changes t</p>
         <a href="blog/facing-our-reality-might-seem-sensible.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="a mantra can save you from a mind run amok the simplest use of mantra can help you settle your mind. 17 august 2022">
+      <article class="post" data-search="a mantra can save you from a mind runÂ amok the simplest use of mantra can help you settle your mind. 17 august 2022">
         <div class="post-meta">17 August 2022</div>
-        <h2>A Mantra Can Save You From a Mind Run Amok</h2>
+        <h2>A Mantra Can Save You From a Mind RunÂ Amok</h2>
         <p>The simplest use of mantra can help you settle your mind.</p>
         <a href="blog/a-mantra-can-save-you.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="trust the universe - it&#x27;s got your back trust in the universe doesn’t bring immunity to fear. we still feel fear. worry. anxiety. doubt. the emotional collywobbles come to us all.
+      <article class="post" data-search="trust the universe - it&#x27;s got your back trust in the universe doesnâ€™t bring immunity to fear. we still feel fear. worry. anxiety. doubt. the emotional collywobbles come to us all.
 
 but when we know how to create trust in life, we can genuin 21 september 2022">
         <div class="post-meta">21 September 2022</div>
         <h2>Trust the Universe - It&#x27;s Got Your Back</h2>
-        <p>Trust in the universe doesn’t bring immunity to fear. We still feel fear. Worry. Anxiety. Doubt. The emotional collywobbles come to us all.
+        <p>Trust in the universe doesnâ€™t bring immunity to fear. We still feel fear. Worry. Anxiety. Doubt. The emotional collywobbles come to us all.
 
 But when we know how to create trust in life, we can genuin</p>
         <a href="blog/trust-the-universe.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="why you may struggle to enjoy life - even when you know you’ve got it good… learning to focus with precision is an art and a science. for me, it brings joy, even in the aftermath of huge loss. here&#x27;s how... 24 august 2022">
+      <article class="post" data-search="why you may struggle to enjoy life - even when you know youâ€™ve got itÂ goodâ€¦ learning to focus with precision is an art and a science. for me, it brings joy, even in the aftermath of huge loss. here&#x27;s how... 24 august 2022">
         <div class="post-meta">24 August 2022</div>
-        <h2>Why You May Struggle to Enjoy Life - Even When You Know You’ve Got It Good…</h2>
+        <h2>Why You May Struggle to Enjoy Life - Even When You Know Youâ€™ve Got ItÂ Goodâ€¦</h2>
         <p>Learning to focus with precision is an art and a science. For me, it brings joy, even in the aftermath of huge loss. Here&#x27;s how...</p>
         <a href="blog/why-you-may-struggle.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="take your mind where you want it to go coaching tools are invaluable in the search for joy beyond loss - loss of any kind. sharing two powerful tools that work very well together when coaching yourself through life&#x27;s challenges. 31 july 2022">
+      <article class="post" data-search="take your mind where you want it toÂ go coaching tools are invaluable in the search for joy beyond loss - loss of any kind. sharing two powerful tools that work very well together when coaching yourself through life&#x27;s challenges. 31 july 2022">
         <div class="post-meta">31 July 2022</div>
-        <h2>Take Your Mind Where YOU Want It to Go</h2>
+        <h2>Take Your Mind Where YOU Want It toÂ Go</h2>
         <p>Coaching tools are invaluable in the search for joy beyond loss - loss of any kind. Sharing two powerful tools that work very well together when coaching yourself through life&#x27;s challenges.</p>
         <a href="blog/take-your-mind-where-you-want-it-to-go.html" class="read-more">Read more</a>
       </article>
@@ -312,11 +312,11 @@ But when we know how to create trust in life, we can genuin</p>
         <p>Reaching for our desires can be a nightmare of despondency, until we can balance on the basket of life. See what the squirrels can teach us...</p>
         <a href="blog/want-to-get-at-the-goodies.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="do you ache to enjoy life more? do you know it’s an inside job?
+      <article class="post" data-search="do you ache to enjoy lifeÂ more? do you know itâ€™s an insideÂ job?
 some words to guide you back to the truth of your self. here&#x27;s where your power lies... 12 october 2022">
         <div class="post-meta">12 October 2022</div>
-        <h2>Do You Ache to Enjoy Life More?</h2>
-        <p>Do you know it’s an inside job?
+        <h2>Do You Ache to Enjoy LifeÂ More?</h2>
+        <p>Do you know itâ€™s an insideÂ job?
 Some words to guide you back to the truth of your self. Here&#x27;s where your power lies...</p>
         <a href="blog/do-you-ache.html" class="read-more">Read more</a>
       </article>
@@ -326,16 +326,16 @@ Some words to guide you back to the truth of your self. Here&#x27;s where your p
         <p>Working with my own search for joy, through some pretty extreme experiences, feeds the confidence with which I coach others. If you struggle to enjoy life, you&#x27;ll have your reasons, I know. Believe me</p>
         <a href="blog/lest-ye-become.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="&quot;this week, i ar&#x27; be mostly eatin&#x27; carrots!&quot;     &lt;p&gt;home blog alignment coaching audio library about contact home blog alignment coaching audio library about contact .mobile-nav-toggle-label { di… ">
+      <article class="post" data-search="&quot;this week, i ar&#x27; be mostly eatin&#x27; carrots!&quot;     &lt;p&gt;home blog alignment coaching audio library about contact home blog alignment coaching audio library about contact .mobile-nav-toggle-label { diâ€¦ ">
         <div class="post-meta"></div>
         <h2>&quot;This week, I ar&#x27; be mostly eatin&#x27; carrots!&quot;</h2>
-        <p>    &lt;p&gt;Home Blog Alignment Coaching Audio Library About Contact Home Blog Alignment Coaching Audio Library About Contact .mobile-nav-toggle-label { di…</p>
+        <p>    &lt;p&gt;Home Blog Alignment Coaching Audio Library About Contact Home Blog Alignment Coaching Audio Library About Contact .mobile-nav-toggle-label { diâ€¦</p>
         <a href="blog/this-week-carrots.html" class="read-more">Read more</a>
       </article>
-      <article class="post" data-search="what does it take to enjoy life more? with inner work, we can make the mistake of hoping that someone will ‘fix’ us. we want to hand ourselves over like a car going in for repair.  it doesn&#x27;t go that way. we have to do the work. is it wor 19 october 2022">
+      <article class="post" data-search="what does it take to enjoy life more? with inner work, we can make the mistake of hoping that someone will â€˜fixâ€™ us. we want to hand ourselves over like a car going in for repair.  it doesn&#x27;t go that way. we have to do the work. is it wor 19 october 2022">
         <div class="post-meta">19 October 2022</div>
         <h2>What Does it Take to Enjoy Life More?</h2>
-        <p>With inner work, we can make the mistake of hoping that someone will ‘fix’ us. We want to hand ourselves over like a car going in for repair.  It doesn&#x27;t go that way. We have to do the work. Is it wor</p>
+        <p>With inner work, we can make the mistake of hoping that someone will â€˜fixâ€™ us. We want to hand ourselves over like a car going in for repair.  It doesn&#x27;t go that way. We have to do the work. Is it wor</p>
         <a href="blog/what-does-it-take.html" class="read-more">Read more</a>
       </article>
       <article class="post" data-search="what kind of knowing keeps us upright? where do we find a knowing that gives us sure footing as the waves of change roll in all around us? gathering thoughts around the stability of &#x27;inner knowing&#x27; and how to tap into that strength... 5 october 2022">
