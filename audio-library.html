@@ -17,8 +17,9 @@
     body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
   nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
   nav .brand { display:flex; align-items:center; gap:1rem; }
-    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
-    nav .logo span { color:var(--accent); }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:50px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
   nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.35rem 0.7rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; }
   nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
     nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
@@ -26,7 +27,7 @@
   .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
   .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
   .nav-burger:hover span { background:var(--accent); }
-  @media (max-width:600px) { nav { padding:1rem 1.4rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.4rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } .nav-burger { display:flex; } }
+  @media (max-width:600px) { nav { padding:1rem 1.4rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.4rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } nav .logo img { height:40px; } .nav-burger { display:flex; } }
     .hero { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
     .hero .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
     .hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:normal; line-height:1.25; margin-bottom:1rem; color:var(--text); }
@@ -104,7 +105,7 @@
 
   <nav>
     <div class="brand">
-      <a href="index.html" class="logo">Amanda <span>Maney</span></a>
+      <a href="index.html" class="logo" aria-label="Amanda Maney home"><img src="logo.png" alt="Amanda Maney Alignment Coaching"></a>
       <a href="index.html" class="home-link">Home</a>
     </div>
     <div class="links">
