@@ -17,7 +17,9 @@
     body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
     nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
     nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
-    nav .logo img { height:44px; width:auto; display:block; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+    @media (max-width:600px) { nav .logo img { height:36px; } }
     nav .logo span { color:var(--accent); }
     nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
     nav .links a:hover { color:var(--accent); }
