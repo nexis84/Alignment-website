@@ -6,14 +6,14 @@
   <title>Blog &#8212; Amanda Maney</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
-    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
-    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
-    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
-    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
-    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
-    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
-    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
     body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
   nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
   nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
@@ -37,7 +37,8 @@
     .blog-section { padding:5rem 2rem; }
     .blog-search { max-width:1060px; margin:0 auto 2.5rem; }
     .blog-search label { display:block; margin-bottom:0.55rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
-    .blog-search input { width:100%; padding:0.95rem 1rem; border:1px solid var(--warm); border-radius:999px; background:var(--white); color:var(--text); font-family:'Arial',sans-serif; font-size:0.95rem; outline:none; transition:border-color 0.2s, box-shadow 0.2s; }
+    .blog-search input { width:100%; padding:0.95rem 1rem; border:1px solid var(--warm); border-radius:999px; background:var(--surface); color:var(--text); font-family:'Arial',sans-serif; font-size:0.95rem; outline:none; transition:border-color 0.2s, box-shadow 0.2s, background-color 0.2s; }
+    .blog-search input::placeholder { color:var(--muted); opacity:0.85; }
     .blog-search input:focus { border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent); }
     .blog-search-status { margin-top:0.65rem; min-height:1.2rem; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }
     .blog-grid { max-width:1060px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:3rem 2.5rem; }
