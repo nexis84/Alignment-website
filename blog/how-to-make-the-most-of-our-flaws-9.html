@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Making the Most of our Flaws —  Notes from a Kintsugi Coach — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:1rem; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo span { color:var(--accent); }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.35rem 0.7rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:1rem 1.4rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.4rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo">Amanda <span>Maney</span></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Making the Most of our Flaws —  Notes from a Kintsugi Coach</h1>
+    <p class="meta">9 February 2021</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <p>If you worry that your flaws make you less valuable, read on…</p>
+    <p>‘I hate to have to tell you this…’</p>
+    <p>Head still buried in pillow, I became sleepily aware of a slightly stressy narration at my bedside… ‘I hate to have to tell you this…’</p>
+    <p>I picked out a few key words repeatedly surfacing the stream… ‘… no idea… so sorry… just cleaning… ‘</p>
+    <p>It started to come together in my head. My beloved had been cleaning the kitchen coving; a valiant feat involving a precarious worktop stance.</p>
+    <p>Bless.</p>
+    <p>‘… and… white powder… all over the floor!’ the stress-whisperer continued…</p>
+    <p>… ‘I just couldn’t work out where it had come from. It was everywhere!’</p>
+    <p>We have a black tiled floor in the kitchen…</p>
+    <p>‘… looked like talcum powder…your favourite coffee mug… right by my feet… I’ve never seen a mug do that before… no pieces… just powder … everywhere!’</p>
+    <p>Bugger.</p>
+    <p>Ah well. All things are but powder and dust; at least Beloved had come to no harm. I was awfully fond of that particular mug, but there we go. Life is sweeter for the poignancy of its impermanence. And poor Beloved — he was awfully sorry….</p>
+    <p>Bless.</p>
+    <p>I snuggled back under the covers of our teddy-bed (yes, we have teddy fleece bedding - OMG. BLISS!) ‘Don’t worry Sweetie, no problemo. Thanks for letting me know. No worries…’ I headed back to the land of Nod.</p>
+    <p>Loving, Flaws an’ All — The key to a happy marriage…</p>
+    <p>The story above may sound like a something and nothing tale, but actually it holds a key to our deeply happy, highly unconventional, 30+ year marriage.</p>
+    <p>Nothing matters more than the connection we share. That means no blame or vilification, no matter how badly we mess up. The flaws, they’re the good stuff. And we know it.</p>
+    <p>My response to the mug-breaking was no different to Beloved’s response to my putting the washing machine on, that time, and forgetting to put the outlet pipe in the sink, just before we took the dog out for a long walk. We lived in a third floor flat in those days…</p>
+    <p>On returning to the biblical flood waters, Beloved barked some orders at me, (I had gone into freeze mode — he’s SO good in a crisis).</p>
+    <p>Then, flood managed — principally by dint of his instinctual picking up of the entire carpet with water pool and chucking it in the bath — he swept me into a reassuring hug — ‘It was an accident, Babe, an accident…It’s okay, it’s okay…’ and then, a little later, with a grin, ‘…just don’t do it again, okay?’</p>
+    <p>Clumsiness (especially, strangely, where water is concerned), coupled with a profound lack of common sense… my husband has nicknamed me ‘Swampy’ for good reason…</p>
+    <blockquote><p>“People call these things imperfections, but they’re not, that’s the good stuff.” — A line from Robin Williams’ character in the film Good Will Hunting</p></blockquote>
+    <p>This line comes from a scene where Williams’ character describes the way his wife used to fart so loudly in bed sometimes that she would wake herself up and then blame him!</p>
+    <p>As a broken-hearted widower, he shares how he would have given anything to be woken that way again.</p>
+    <p>The message he’s trying to convey to Matt Damon’s troubled youngster character in this scene, is that it’s not about finding a perfect partner. It’s about embracing another person’s foibles. It’s about realising that it’s the flaws, not the fabulousness, that make a relationship special. This is where love comes into its own.</p>
+    <p>We share our flaws.</p>
+    <p>Then we decide whose flaws are a perfect match for our own. Williams continues…</p>
+    <blockquote><p>“…And then we get to choose who we let into our weird little worlds.” — Good Will Hunting</p></blockquote>
+    <p>Kintsugi - the Art of Flaunting our Flaws</p>
+    <p>I’ve come across a few beautiful approaches to brokenness, but none have touched me like the Zen practice of kintsugi. Introduced to it by Penny Croal, her living example makes this teaching all the richer for me. I know her as a practitioner who truly walks the dark valley with you; she offers an absolutely open heart. She shares, so generously, her own struggles and pain. Through her frailties, her compassion flows. Her authenticity is a superpower. She is the very embodiment of kintsugi.</p>
+    <p>Kintsugi dates back to the 14th century when Japanese Shogun, Ashikaga Oshimitsu, distraught at having broken his favourite bowl, sent it all the way to experts in China to be repaired.</p>
+    <p>On receipt of the mended bowl, he was horrified by the ugly staples which had been used to join the fractured pieces and gave his own craftsmen the unenviable task of trying to satisfy him with a more pleasing outcome.</p>
+    <p>One can imagine the craftsmen’s dilemma. I see them shaking their heads over the broken pot pieces, wondering how best to appease their exacting master.</p>
+    <p>Their response? They took each broken piece and paid it exquisite attention. Using tree-sap lacquer as a sealant, they reconnected it to its fellows with absolute focus. As you might expect.</p>
+    <p>But here’s what’s unexpected — the pearl of the piece — they dusted the sealant with powdered gold.</p>
+    <p>Why?</p>
+    <blockquote><p>“To render the fault lines beautiful.” — Eastern Philosophy, Kintsugi</p></blockquote>
+    <p>Wow. To render the fault lines beautiful.</p>
+    <p>They accentuated the flaws.</p>
+    <p>Made the fracture lines exquisite.</p>
+    <p>What a concept!</p>
+    <p>Thus began the Zen practice of kintsugi, from the Japanese words kin=gold and tsugi=joinery. Kintsugi: the profound tenderness of nursing life’s flaws and brokenness, healing and resealing them with seams of pure gold.</p>
+    <p>Celebrating our fault lines, not hiding them, now that’s an approach worth pursuing. What does life become when we are more delighted by frailties redeemed than we are by any strength?</p>
+    <blockquote><p>“I delight in weakness… For when I am weak, then I am strong…” — St Paul, 2 Corinthians 12</p></blockquote>
+    <p>Flaunting our flaws as we dust them with gold; we share the ‘good stuff’ of our lives.</p>
+    <p>The ‘Good Stuff’</p>
+    <p>The gold seams are the things that make us unique, aren’t they? They make us accessible. They’re a testament to courage. A legacy of hope for others, they invite us to grow healthy in resilience, knowing that we never get it wrong because we never get it done… a favourite line from Abraham’s teachings…</p>
+    <p>For such a long time, I had struggled to move my coaching practice forward because my own broken pieces seemed so limiting. I knew I could serve others well, I had evidence to prove it, but when would I love my life enough to show that I really could help others love theirs too?</p>
+    <p>Despite my successes with clients and my love for coaching and therapeutic alignment techniques, unhelpful programming (a mind beset with negative patterns from my past) resulted, inevitably, in sickness, sufficient to stop me in my tracks.</p>
+    <p>What abject failure!</p>
+    <p>Here I was, so ready to help others but clearly unable to keep my own house from collapse. Oh the shame! How could I ever coach again? I’d have to wait for years of proven successful living first. I couldn’t possibly offer my help to others until my life was a thing of glory, like the lives of all those other coaches out there with their glowing skin and luxury lifestyles…</p>
+    <p>Through the eyes of kintsugi, this nonsense just melts away. Like a veil lifted, limitations vanish. Beauty transforms all.</p>
+    <p>Strength from Weakness</p>
+    <p>Actually, the difficulties I’ve had with standard coaching practices, from goal-setting to affirmations, from building discipline to managing meditation… all of these things and more make me a better coach, more compassionate to others with the same struggles. My failures make me more determined to find easier ways, other ways to align desires and beliefs and allow the joy to flow.</p>
+    <p>Tapping into my own steady stream of inner encouragement these days, I am not just surviving, but thriving on life. Already. Without having solved every problem. Without the glowing skin or the luxury lifestyle. Without the million followers or the email list of dreams. Moving towards the desires of my heart is something I feel in my bones these days. It’s exciting! And yes, I do now love my life!</p>
+    <p>Final Thoughts</p>
+    <p>A simple practice, for visualisation, for sketching or for journaling, whichever you prefer…</p>
+    <p>If you are being horribly hard on yourself; if you’re doubting that you could ever be of value:</p>
+    <p>Imagine you have an inner stream of gold.</p>
+    <p>Imagine that stream flowing through your flaws.</p>
+    <p>Bringing your broken pieces back.</p>
+    <p>Lifting them into shining awareness.</p>
+    <p>Each revealing its own special gift for your life.</p>
+    <p>Looking at the gold seamed bowl of your life now, what might those special gifts be?</p>
+    <p>What if each and every frailty made you</p>
+    <p>all the more valuable,</p>
+    <p>all the more believable,</p>
+    <p>all the more humble and true?</p>
+    <p>What would it take for this golden stream</p>
+    <p>to render your fault lines beautiful?</p>
+    <p>With encouragement,</p>
+    <p>Amanda</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

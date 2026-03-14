@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Making Peace with our Mothers  - Looking Beyond Behaviour — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:1rem; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo span { color:var(--accent); }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.35rem 0.7rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:1rem 1.4rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.4rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo">Amanda <span>Maney</span></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Making Peace with our Mothers  - Looking Beyond Behaviour</h1>
+    <p class="meta">8 January 2021</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <p>‘To know me is to love me.’ Roger Ebert</p>
+    <p>Mothers - not always the easiest of people to love… I know that might sound harsh, but it’s the truth for some of us at least. I guess we just need so much from our mothers at the start of it all, that we struggle to get past the problems and torments they might have been suffering at the time. Our total dependency amplifies any perceived deficiency - it’s a huge demand for anyone to meet.</p>
+    <p>I had to work hard, for decades, long after my mother had died, to look beyond her behaviours — she had terrified me as a child. She was a magnificent woman. Just scary as hell. And very out of balance. Tranquillisers and Bells whiskey - not a great combination for a woman suffering with depression…</p>
+    <p>Perhaps it’s not your mother. Perhaps someone else in your life is bringing you down. A child, a friend, a colleague… You know the score: endless conversations with friends about the ways in which this person lets you down or puts you down; endless hours spent replaying unhappy events on loop inside your head, wishing for a way to break free.</p>
+    <p>The good news is that our anguish-ridden relationships set us on a mission, to find our power, to find more joy.</p>
+    <p>Finding my way to more joy felt like a real slog, for the longest time. Joy just didn’t seem to be on the agenda for my life’s experience. And then, a breakthrough. Joy in sight; joy within reach; joy, here and now. (More of that later.)</p>
+    <p>And the better it gets, the better it gets. Now, I can look beyond behaviours of others, feast on the joy of my connections with them and deal swiftly with all else.</p>
+    <p>And the best thing about finding my way to joy, is that it has enabled me to do the same for others. I have seen clients move from fury to fun, from despair to dancing delight within their relationships, once they’ve cleared their own pathways to joy. It is my deepest pleasure, to see my clients thrive. To see their looks of astonishment and relief as they free themselves from torment. I love coaching clients to find more joy.</p>
+    <p>Joy was never supposed to be a permanent state. Of course there are moments of not-joy in everyone’s experience. But joy was never supposed to be a rarity, either, glimpsed only briefly before being engulfed by frustration or overwhelm or …. whatever other negative emotions you may find dominating your world at times.</p>
+    <p>If you struggle with the behaviours of certain people in your life — and let’s face it, hermits apart, we all do — and if you long for harmony, take heart. More joy is always available. Magic wands, not so much.</p>
+    <p>Setting expectations for the improvement we’re after is vital. More joy is a great expectation. Nirvana is not. Much as I adore the idea of magic, imagining we can completely resolve relationships, is likely to make us ill. Imagining we can turn our most painful connections to pure bliss and deliciousness, well, it’s putting unrealistic expectations in place. We know these will lead only to disappointment.</p>
+    <p>We also know that we can’t change the people out there, dammit! (Why won’t they all behave themselves for our sakes?)</p>
+    <p>The only power we truly have is to make peace with others, exactly as they are.</p>
+    <p>Which means looking beyond behaviours. Because let’s face it, their behaviours drive us nuts.</p>
+    <p>Looking beyond behaviours means searching for common ground, for understanding, for a way to view the unwanted traits with compassion rather than distress. It means diving deeper than the 'what’ or the ‘how’ of their behaviours and looking instead for the ‘why’.</p>
+    <p>It’s almost impossible, however, to find compassion for others, to embrace their ‘why’ with love, if we have no such compassion for ourselves. Making peace with others has to start with making peace with ourselves. Why? Because the behaviours of others only distress us if they trigger a negative belief or emotion we’ve already got running within ourselves.</p>
+    <p>If we feel entirely loved, safe and powerful, other people’s unwanted behaviours are not a problem. It’s like watching a toddler tantrum when you know you’ve got the situation handled. You look at the screaming, the pinging tears, the flying fists and feet and say, ‘Ah, bless!’ Because you know that all is well. You know this will blow itself out. You are secure in yourself.</p>
+    <p>Making peace with others means finding peace within ourselves. And that can be much easier said than done, right?</p>
+    <p>If we can find meaning, find common ground, find compassion for the shared vulnerability that causes all unhappy behaviours, then we can find more joy for ourselves, regardless of what the other is doing.</p>
+    <h3>Looking Beyond Behaviour</h3>
+    <p>There are many ways to get beneath surface behaviours, but there’s one question central to them all.</p>
+    <p>Why?</p>
+    <p>This question has potential to bring us closer to the peace we seek.</p>
+    <p>When a client asks me to help them improve a relationship, we look for the whys behind both the other person’s behaviours and the client’s reactions to the behaviours.</p>
+    <p>‘Why is he/she doing that?’ Is coupled with ‘Why does it bother me so much?’</p>
+    <p>The power lies more in the second question than the first. When we know our own triggers, we can respond more kindly, taking care of ourselves first and becoming more sure-footed with others.</p>
+    <p>There are two particular suggestions I have for you if you want to find more joy in relationships.</p>
+    <p>• Learn more about how different personalities work. I recommend pursuing knowledge of the Enneagram — a rich and profound approach to understanding human behaviour. I use it with every client, it is a lens through which every relationship becomes more beautiful and brings more joy. If you want to know why things bother you the way they do, nothing I’ve come across comes close to this tool. • Create yourself an Inner Champion — (here’s the breakthrough I mentioned earlier!) You’ve heard of an Inner Critic, right? Many of us have made one of these for ourselves. So, make up an opposite or better, inner being. Someone who is your greatest advocate. Someone who feeds you nothing but encouragement and reassurance 24/7. Write to her. Have her write back. You’ll be amazed at the impact it has!</p>
+    <p>More than anything, be kind to yourself. Relationships are complex and demanding. Seek joy, but don’t be hard on yourself if it’s not coming easily to you. Reach out. There is an abundance of help available, plenty of it completely free.</p>
+    <p>Remember — more joy is the goal. Not the miracle-cure!</p>
+    <p>If you’d like to read up on the Enneagram, I’d recommend the following books:</p>
+    <p>The Wisdom of the Enneagram by Don Richard Riso and Russ Hudson</p>
+    <p>The Enneagram made Easy by Renee Baron and Elizabeth Wagele</p>
+    <p>Personality Portraits - The Enneagram Encountered by Rachel Watson and me</p>
+    <p>With every encouragement,</p>
+    <p>Amanda</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

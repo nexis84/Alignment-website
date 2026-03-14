@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do You Ache to Enjoy Life More? — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:1rem; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo span { color:var(--accent); }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.35rem 0.7rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:1rem 1.4rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.4rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.68rem; padding:0.3rem 0.6rem; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo">Amanda <span>Maney</span></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Do You Ache to Enjoy Life More?</h1>
+    <p class="meta">12 October 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>Do you know it’s an inside job?</h3>
+    <h3>Those who ache to enjoy life more feel a sense of loss</h3>
+    <p>Mostly, they describe it as an ‘outer’ loss — a loved one has died; health is impaired; they’ve lost purpose or sense of direction…</p>
+    <p>The more they look outside themselves for relief, the worst the ache becomes. If I could only have… be… do… then I could feel good…</p>
+    <p>Loss does that. It makes us believe that we’re incomplete without that which we crave so badly.</p>
+    <p>Herein lies the rub.</p>
+    <p>Joy is an inside job.</p>
+    <p>Always.</p>
+    <p>I’ve known it a long time. It’s a knowing that’s served me well. Especially in recent times.</p>
+    <p>I remember so vividly, sitting on the edge of our bed with Michael for the very last time. We were getting him ready to go to the hospital.</p>
+    <p>I knew. I knew… My worst nightmare, unfolding before me…</p>
+    <p>But a deeper knowing inside me quelled the urge to dissolve. The words came through loud and clear.</p>
+    <blockquote><p>“Michael is not the source of your joy.”</p></blockquote>
+    <p>You’ve had moments of knowing like that. We all have. They call us Home to ourSelves. You know those defining certainties. The ones wild horses can’t dissuade…</p>
+    <p>They’re not moments filled with emotion. They are more solid than that. There’s nothing fickle or fleeting about them. You know when you know when you know.</p>
+    <p>Moments of knowing come from a place of stillness inside ourselves.</p>
+    <p>A place of alignment.</p>
+    <p>Deeper than emotion.</p>
+    <p>Stronger than all power to persuade…</p>
+    <h3>Do you think joy comes from outer effects?</h3>
+    <p>That’s where we all go astray.</p>
+    <p>It’s easy to think that the joy comes from outer effects. Surely, our loved ones make us happy? A finished project brings us delight?</p>
+    <p>But just as light bounces off objects to be received by our eyes, so love is reflected to us by our outer world experiences. Sometimes it is magnified and encouraged, for sure. But the source of the love is never the object of it.</p>
+    <p>We are the subject of our love. All joy comes from inside us.</p>
+    <p>My work with clients is the work I do with myself. That’s how I know my work works!</p>
+    <p>And it’s remarkable what happens when we look inward to connect with the love that we seek.</p>
+    <h3>Align with the joy that’s inside of you and signs of alignment abound…</h3>
+    <p>Here’s a sign of outer alignment that came directly from doing the inner work. I’m quoting it from a post I wrote about it in a Facebook group.</p>
+    <p>I found myself teary this morning.</p>
+    <p>Still navigating the translation of my darling husband Michael, I’m mostly tuning into his energy form. I talk to him all the time. I ‘hear’ his responses, from sweet nothings to sound advice, it’s all there for my receiving…</p>
+    <p>But sometimes a wave of loss sweeps in from a trigger unforeseen. So it was this morning.</p>
+    <p>My tears?</p>
+    <p>I was grieving the loss of the sunlight.</p>
+    <p>The darkness drawing in…</p>
+    <p>It felt suddenly unbearably sad, to lose sight of the garden in the early morning. To think of blacked-out afternoons. Evenings without soothing from leaves and petals and squirrels’ tails…</p>
+    <p>Fortunately, I know to come Home to mySelf when I feel sadness like that. Before long, I’m relishing thoughts of candles and fairy lights… But mostly I am reminded that the sunlight is inside me.</p>
+    <p>Externals are lovely, for sure, but the source of my joy is in ME!</p>
+    <p>We ARE the love we seek, the beauty we crave, the sweetness we savour.</p>
+    <p>I smiled as I journaled to mySelf and back. Desire simply creates more receiving!</p>
+    <p>I stopped.</p>
+    <p>For some reason — never usually do this — I asked my Google mini to open Spotify and play.</p>
+    <p>I never listen to music at this time of the day.</p>
+    <p>The track started.</p>
+    <p>I smiled through fresh — now happy — tears.</p>
+    <p>‘Here comes the Sun’</p>
+    <p>Michael added,</p>
+    <p>‘And the sun, my darling, is YOU!’</p>
+    <p>So good!</p>
+    <h3>Finding joy may seem impossible…</h3>
+    <p>Finding joy is a distressing thought when our mind is besieged and in pain.</p>
+    <p>Our puppy-dog mind runs circles around us in its search for love ‘out there’. We try so hard to ‘figure this out’: to find a solution, to create the conditions we want. Outside us.</p>
+    <p>The relationship. The money. The house, or whatever.</p>
+    <p>We know, though, don’t we, that the outer conditions, lovely though they are, bring us fleeting relief at best.</p>
+    <p>We know the joy of these conditions is a temporary fix.</p>
+    <p>Maybe the house delights us for years, but we won’t find the joy of it sufficient for long. When we first move in, the house may make life enjoyable, the novelty is enough. Soon, though, we begin to desire something else…</p>
+    <p>Even as the house brings pleasure, the lack of the next outer effect brings pain.</p>
+    <p>One of the blessings of ‘losing’* a soulmate is the ferocity of focus it gives us to find the true source of joy. If the lover, the money, the house or career is not the source of joy… how do we uncover what is?</p>
+    <blockquote><p>“You are looking for love in all the wrong places. And every place is the wrong place to look for love — other than within” — Abraham</p></blockquote>
+    <h3>You can find joy. You can!</h3>
+    <p>The critical factor to finding joy is, you have to start from where you are.</p>
+    <p>If we are sad or helpless or afraid, we’re nowhere near joy and we know it. Joy feels utterly out of reach from there. We have to be able to stand in the place of discomfort and respond from the knowing within.</p>
+    <p>Most of us have unhelpful reactions to negative emotion. It freaks us out to find ourselves feeling lonely or afraid. We barely admit to shame, anger or jealousy. We fear these emotions. We shun them. Even tiredness can trigger feelings of failure and overwhelm.</p>
+    <p>Weariness worries us. We don’t want to ‘do’ anything right now… but what about all the things piling up to be done? What if we never feel like doing them? Do we have to live our lives forcing ourselves to get up and ‘do stuff’ even when ‘doing’ brings no joy?</p>
+    <p>How the puppy-mind makes mayhem! How her thoughts have us scattered and stray!</p>
+    <blockquote><p>“For a few moments, be aware of your potential for change. Whatever your present situation is, evolution and transformation are always possible. At the least, you can change your way of seeing things and then, gradually, your way of being as well.” — Matthieu Ricard</p></blockquote>
+    <p>We need to know how to accept our present situation before turning to the changes we seek.</p>
+    <h3>What’s stopping you, really?</h3>
+    <h3>**Think of a thought that currently prevents your joy. Finish this sentence in your own way.</h3>
+    <p>I can’t enjoy life now because…</p>
+    <p>Tune into how this one thought affects you on every level.</p>
+    <p>What does it do to you:</p>
+    <p>• Physically — How does it affect your strength and vitality, ultimately your health? • Emotionally — What feelings and moods does it create? • Mentally — How clearly do you think and focus, when you think this thought? • Spiritually/energetically — How does this thought impact your energy levels? Your sense of connection with self and with life?</p>
+    <p>Now imagine being unable to ever think that thought again.</p>
+    <p>How would that affect your life? If you could never think the thought, I can’t enjoy life now because… how would life be different, on each of those levels?</p>
+    <p>Physically. Emotionally. Mentally. Spiritually.</p>
+    <p>How would life change if you could no longer think, I can’t enjoy life now because… ?</p>
+    <p>What kind of you would you be, without that one thought?</p>
+    <p>What if you could leave that thought behind? With a little focused work…</p>
+    <p>Daily practice. That’s all it takes.</p>
+    <p>But most of us don’t manage to persuade ourself of its power. It seems too simple. Too easy. Too humble.</p>
+    <p>And yet…</p>
+    <p>Find yourself a space — in the morning if possible — do a little practice, just for one week.</p>
+    <p>Journal your answers to the questions above. Play with a different topic every day, if you like. See how you feel, seven days in…</p>
+    <p>You just might find yourself hooked on the inner work, Dear One… and there’s no going back after that!</p>
+    <p>If you’d feel the inner work calling you and would like a little help getting started, get in touch! There’s nothing I love more…</p>
+    <p>*I choose to see death of my soulmate not as ‘loss’. Instead, I view it as the translation from physical into pure energy form. As far as I’m concerned, Michael is in WiFi now and I’m installing broadband!</p>
+    <p>**This powerful exercise comes from the beautiful work of Byron Katie. Her book ‘Loving What Is’ is a treasure.</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>
