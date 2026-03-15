@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is Your To Do List Torturing You? — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { display:none; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Is Your To Do List Torturing You?</h1>
+    <p class="meta">18 April 2021</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>Turn it on its head and drip dopamine instead.</h3>
+    <h3>‘To Do’ Lists Made Me Ill.</h3>
+    <p>Actually, that’s not true. It wasn’t the lists that made me ill, it was my failure to live up to them.</p>
+    <p>To Do Lists used to be a constant reminder of my inability to make the basics work. I knew they were proven to be a good thing. I knew the key elements of a good one.</p>
+    <p>• Prioritisation. • Realistic timeframes. • Chunking down tasks.</p>
+    <p>I knew the To Do List instructions. I just couldn’t follow them. As soon as an item joined my list every fibre of my being seemed to rebel against the doing of it. A core ‘I’m inadequate,’ belief was calling the shots, colouring my view, forcing my hand.</p>
+    <p>I’d write the list with a sigh and then sabotage all attempts to follow it. I can’t tell you how often a day would end without my reaching number one on the blessed thing…</p>
+    <h3>If your ‘To Do List’ is torturing you, I feel your pain.</h3>
+    <p>I remember watching colleagues with an awe/envy mix. One in particular comes to mind. An efficient, confident woman, impeccably dressed and self-contained, she always seemed to know just what was what.</p>
+    <p>We were tackling similar tasks on our To Do Lists one day, working shoulder to shoulder at neighbouring computers. She was focused, laser-sharp, tight, on track. I was in the awe/envy state, aware of her progress as I wrestled with the enormity of the job at hand.</p>
+    <p>After an hour or two of satisfied, “Yes,” “Done,” “Tick!” type mutterings, she shot me a beam as she gathered up her laptop, pencil-case, notebook and mug. “That’s another tick on my To Do List for today!” she said. She was clearly getting a huge buzz out of her sense of forward motion.</p>
+    <p>Why then, oh why wasn’t I?</p>
+    <p>We’d both achieved the task at hand and more than met required standards. We’d both done well. She felt it. I didn’t.</p>
+    <p>My To Do List was doing me in. Hers was making her day.</p>
+    <h3>I Got Curious.</h3>
+    <p>Here’s Amabile and Kramer’s key finding, having analysed 12000 best work days:</p>
+    <blockquote><p>“…of all the events that occur on best days, one stood out well above the rest — simply making progress on meaningful work.”</p></blockquote>
+    <p>Progress, of any size, towards something of meaning, gives us a dopamine hit. Our body feels pleasure because we’ve achieved. It’s a chemical pathway.</p>
+    <p>I knew that already, but thought a bit more about it…</p>
+    <h3>The buzz you get has nothing to do with the size or importance of the item on the list.</h3>
+    <p>It has everything to do with feeling pleased about moving consciously in a pre-determined direction. Even if the direction isn’t exciting or delightful. It’s determined by you. And it’s accomplished by you. That’s enough for your dopamine loop.</p>
+    <p>I’ve heard people say that they’ve added tasks to their lists after they’ve done them, just for the pleasure of ticking them off. I confess, I’ve tried that once or twice, but my judgemental, exacting Enneagram 1 wing told me that was cheating — I didn’t pursue the practice.</p>
+    <p>My TDL was all about trying to get the jobs done. And trying to make myself do the ‘right’ jobs, you know, Pareto’s 20% of jobs that leverage 80% impact.</p>
+    <p>I researched the dopamine effect years ago. But I couldn’t make it work for me because the tasks were always the #1 priority. Feeling good came a distant second. I wasn’t allowed to make feeling good a priority. I mean, that’s just wrong on so many levels, isn’t it?</p>
+    <p>No, getting the jobs done was all that mattered. Up until recently, I viewed every aspect of my working life as a mountain to climb. I was in a perpetual state of overwhelm.</p>
+    <p>Did I make lists of things to do, as advised by the work management trainers and books I’d read?</p>
+    <p>Yes. But I wasn’t making them to feel good. I was making them to try to make myself believe that I could achieve unattainable goals. The lists only ever made the mountain harder and higher and more and more hopeless to climb.</p>
+    <p>Failing to follow my To Do List was a daily occurrence. That meant that every day I amassed more ‘proof’ that I really was hopelessly incapable. Which was a huge lie. But it met my inner critic’s approval. It fed my ‘I’m inadequate’ belief.</p>
+    <h3>My To Do List Became a Tool of Torture.</h3>
+    <p>The TDL was where I put:</p>
+    <p>All the things I should achieve in the day/week/month…</p>
+    <p>So that:</p>
+    <p>• I didn’t forget them • I could prioritise them correctly • I could break down a bigger task into smaller pieces • I could schedule tasks</p>
+    <p>At least, that was the theory…</p>
+    <p>The problem was, because of my ‘I’m inadequate’ belief:</p>
+    <p>• I would rarely put an achievable task on my TDL. They were seen as too insignificant to count. Why would I bother listing them? • I ALWAYS underestimated the time a task would take. By a factor of at least 4. • I put far too many tasks on my TDL for the day. • I couldn’t chunk tasks down. I just couldn’t. The tasks were huge, vague and unwieldy. No matter how much time management training I received.</p>
+    <p>My TDL was my list of shame. Even writing one was a depressing affair. Viewing them at the end of a day was worse. And a million failed attempts to write and follow a simple TDL led me to the hopelessness triptych:</p>
+    <blockquote><p>I’m not achieving anything here.</p></blockquote>
+    <p>Which led to:</p>
+    <blockquote><p>I can’t achieve anything here.</p></blockquote>
+    <p>And then:</p>
+    <blockquote><p>I haven’t achieved anything, ever… and I never will.</p></blockquote>
+    <p>What a lovely hopelessness cascade that was!</p>
+    <p>That’s until I turned my To Do List on its head.</p>
+    <h3>I’ve Turned My TDL on Its Head and Now It Drips Dopamine Instead.</h3>
+    <p>The turnaround is quite subtle.</p>
+    <p>With the help of my Inner Champion, Amelie *— who’s dissolving my inner critic daily, I decided to do it differently. I followed what mattered most.</p>
+    <h3>Nowadays my TDL is for</h3>
+    <h3>using progress to feel good.</h3>
+    <h3>Nowadays, feeling good is my #1 priority.</h3>
+    <p>Getting the tasks done is important, of course, but it can only happen when #1 is addressed.</p>
+    <p>Now I view my list as a tool for triggering dopamine. Now TDL stands for ‘Trigger Dopamine List’.</p>
+    <p>Of course I chunk the tasks. When I can, I put micro-steps on there. If each tick is going to make me feel good, why wouldn’t I have as many as possible?</p>
+    <h3>I use a double tick system for my TDL.</h3>
+    <p>Each task has a hand-drawn box on the left of it and another on the right.</p>
+    <p>Here’s how it goes:</p>
+    <p>• I write the tasks for the next segment of time — perhaps the whole day, but if possible, a separate list for the morning, and one for the afternoon. The smaller the tasks, the better. More ticks, more dopamine. • I read the list and think ‘Success!’ as I focus on each item. I send that feeling ahead of me into every task. It gets the dopamine flowing. • I tick the left hand box as I send success to each task — I’ve already achieved, before engaging in the work. I’ve pre-framed the activity and received a dopamine hit. I enjoy thinking about the success I’m going to enjoy with each task achieved. • I get on with the first task. • When I complete the task I tick the right hand box. I savour the sense of achievement as I tick it. I make the most of the dopamine hit. I remember that it’s not about the task itself, it’s about the good feeling I’m creating by the doing of it. • I move on to the next task.</p>
+    <h3>What difference does this make?</h3>
+    <h3>I get to feast on dopamine,</h3>
+    <h3>all the live-long day!</h3>
+    <h3>Am I Now the ‘Busy Fool’?</h3>
+    <p>Have I become the busy fool, spending the day on the no-impact tasks, the ‘easy wins’ to get more ticks?</p>
+    <p>Funnily enough, the answer to this question is NO.</p>
+    <p>Here’s what I’ve noticed as I settle into my two-tick dopamine drip list…</p>
+    <p>• I get much more done. And interestingly, breaking tasks into micro-steps is improving the accuracy of my estimates. Which makes my longer and medium term scheduling much more realistic. • I have a flexible, longer term approach to the the jobs that need doing. That’s another blog for the writing… But it’s making the scheduling of bigger goals a joy. • I prioritise better because I’m not resisting my list. • It’s easier to tackle the trickier items, because I’m better at breaking them down. And I’m just looking at the pleasure from completing a task, however small.</p>
+    <p>But most importantly…</p>
+    <p>• I’m enjoying my work. I’m not just talking about the interesting stuff. I’m enjoying all the little tasks. I’m enjoying the scary tasks. And I’m giving myself huge credit for them all. For the first time in my life, I feel like an achiever.</p>
+    <p>I’m not looking at the whole mountain. I’m enjoying taking one more step, getting one more dopamine hit. And I’m stopping more often to admire the view.</p>
+    <h3>How Do I Feel About My To Do List Now?</h3>
+    <p>I love it. I mean, I really LOVE my To Do List. It feels good just thinking about it. I can’t wait to get back to it. It’s a joy-fest!</p>
+    <p>By the end of the day I’m basking in the glow of deep satisfaction.</p>
+    <p>Does it matter that I don’t get it all done? No. I look forward to the dopamine ticks I’ve got saved up for tomorrow.</p>
+    <p>If you’ve been tortured by To Do Lists, I recommend you play with this practice. Turn your To Do List into a ‘Trigger Dopamine List’, and make feeling good the #1 priority.</p>
+    <p>Try it for a week or two and see what happens to productivity as your joy levels rise.</p>
+    <blockquote><p>“We can, if we’re not careful, unconsciously equate purpose and fulfilment with rare and fleeting circumstances, and miss the countless opportunities to find meaning in the small moments of everyday life.”— Courtland Dahl on Medium</p></blockquote>
+    <p>There’s more joy to be found in the simple things of life than you might think…</p>
+    <p>And before you know it, your life, no matter how small, might just begin to feel like a grand and glorious feast of experiences.</p>
+    <p>Which it is.</p>
+    <p>With encouragement,</p>
+    <p>Amanda</p>
+    <p>*I created an Inner Champion for myself, to replace the toxic stream of negativity from my inner critic. All kinds of great things have happened as a result. I heartily recommend it!</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

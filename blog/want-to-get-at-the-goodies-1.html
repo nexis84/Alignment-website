@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Want to Know How to Get at Life's Goodies? — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { display:none; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Want to Know How to Get at Life's Goodies?</h1>
+    <p class="meta">31 August 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>Ask a squirrel — they’ve got it sussed</h3>
+    <p>Experiencing the extremes of life after loss is bringing me all kinds of goodies, often in ways unexpected. In moments where grief overwhelms me, these fragments of goodness find me. They soothe me back into alignment.</p>
+    <p>A lesson I’ve learned recently from three squirrel kits brings steadiness to my yearning for joy.</p>
+    <p>Here’s how…</p>
+    <h3>Squirrels are expert in going for the goodies… and getting them!</h3>
+    <p>Picture the scene. A metal bird feeder — a tall pole, with a shallow basket 2/3 of the way up. A plastic, cylindrical seed dispenser, designed for small birds only, hangs from an arm at the top of the pole. The base of the dispenser is a good foot from the basket, roughly at the same height…</p>
+    <p>I’m sure you can imagine what comes next.</p>
+    <p>The squirrel, a young kitten, arrives at the base. The pole is slippery with rain. Comical pole climbing follows. Each time, the fluffy kit gets a little higher up before sliding, slowly, inexorably back down to the ground.</p>
+    <p>Without hesitation, the wee soul tries again.</p>
+    <p>And again.</p>
+    <p>And again.</p>
+    <p>And again.</p>
+    <p>And again… You get the idea.</p>
+    <p>Finally, the basket is reached. Now the real fun begins…</p>
+    <p>Oh the ungainly contortions that follow, as that kitten leans out for the seeds from the feeder!</p>
+    <p>Every which way, she goes for the prize; failing time after time after time. Gripping, slipping, teetering drunkenly, pinwheeling limbs in slip-sliding attempts… upside down, inside out, moments of seeming success… all doomed.</p>
+    <p>Our kitten fails, dropping in weird convolutions back down to the grass in a heap… over and over and over again.</p>
+    <p>And her reaction to failure remains constant. No weeping and wailing, no gnashing of teeth, just, ‘Let’s get back up to that basket!’</p>
+    <p>Our kitten is undaunted. The challenge looks like fun. Speed and pure focus finally wins out. She gets to the basket. Now the next problem — reaching out for the seeds without falling from the basket.</p>
+    <p>Failure heaps upon failure. Her determined heart never once skips a beat.</p>
+    <p>And of course, in the end, (after a fabulous comic performance for me) she finally figures it out.</p>
+    <p>There’s a secret to getting the goodies, once the pole has been mastered. Once you’ve got it, you’ve got it for good…</p>
+    <p>Once you’ve scaled the pole, to get your paws on those goodies you must get your balance on the basket first.</p>
+    <p>I watch as the kitten’s awareness develops. It doesn’t come all at once. For a while, every angle of seed-cylinder approach is explored. Futile attempts made, from the basket, time and time again.</p>
+    <p>Finally it is settled. Stretch across for the bottom seed-hole from the stability of the basket, don’t reach down for it, inverted from the top of the cylinder. But how to secure a grip that will last?</p>
+    <p>The kit tries, in a rush, to achieve it. Charging up the pole, onto the basket she reaches out to the prize… for a brief moment, her tongue touches seed stash. ‘Yes! El Dorado, I’ve arrived!’</p>
+    <p>But the seed or two of a moment’s embracing is soon followed by loss of footing from the basket.</p>
+    <p>Back feet adrift now, the kit curls them round from the lost basket to the base of the seed dispenser. Her claws reach for purchase on smooth plastic.</p>
+    <p>For a moment or two, swinging forward and backward, our furry friend feasts on a few seeds more, as she clings to that sheer-sided cylinder… slowly sliding… sliding… sliding… Until gravity wins once again.</p>
+    <p>‘Hmmm… one more adjustment needed,’ I can almost hear her thinking out loud.</p>
+    <p>This time her approach is different.</p>
+    <p>The scamper up the pole. That’s really easy now.</p>
+    <p>Basket achieved, this time she stops. I see her gaze at the honeysuckle and jasmine, her front paws tucked into her chest. Is she listening for danger I wonder? But no. She’s just stopping for a moment…</p>
+    <p>She adjusts her stance on the basket. She’s going for grip this time. Real, solid purchase. Having taken a moment to establish her balance, now she reaches out, pushes the seeds away from herself.</p>
+    <p>She settles back into balance and catches the returning seed-cylinder, feet clamped on firm foundations. She stretches her body out like a fluffy snood, twisting impossibly to bridge the gap. But her anchor this time is solid. She can hold the torque steady. She feasts.</p>
+    <p>Watching this play out for each of three siblings gave me ample pondering.</p>
+    <p>I found myself applying squirrel tactics to life. It helped. It really helped.</p>
+    <p>We are constantly reaching for some kind of ‘goodies’ in life. Perhaps we are trying to find joy after a loss of some kind. Or we want to allow money to come to us more abundantly. Maybe we want ease in a relationship. Or a project completed…</p>
+    <p>We may try to ease the pain of desire that seems out of reach. Trying to have no desire, in my experience, is futile. Numbness is the best outcome of that pursuit, for me. Not a great way to live life.</p>
+    <p>Making peace with what is, that’s good practice. But I don’t think it’s enough, if it makes us deny what we truly want. Desire gnaws away at us, underneath, calling us out as we pretend it’s ok, that we’re fine and dandy without it.</p>
+    <p>I love loving what is. And I have to enjoy my desires. Especially the ones that seem way out of reach. I have no option. I have to find a way of enjoying the fact that I want more. And I always will. Want more. It’s how I’m made. I’m guessing you are too.</p>
+    <p>Right now, I want more sense of connection with the essence of my sweet husband, now in pure energy form. I want a life of co-mingling with him. How many would say, ‘That’s not even possible?’ I don’t care, it’s a desire I can’t deny. I can’t go back. I can’t not want to sense his companionship now as I type, to feel his brilliance flowing through me…</p>
+    <p>And by hook or by crook, Friend, with help from the squirrels, I’m getting there, I’ve more sense of him daily…</p>
+    <p>I’ve come to realise the power of imagination and choice. These are the keys to finding joy here and now.</p>
+    <p>I can’t use my physical senses to give me what I want right now. Michael is not accessible that way. That leaves me with imagination and choices — I imagine his energy, present, as real as my WiFi. I choose focus and thoughts and beliefs that support me. I practise them with the focus of a squirrel on that pole…</p>
+    <p>Whatever you are stretching for right now, the squirrels have much to offer…</p>
+    <h3>Squirrel Kit Code — On Getting the Goodies</h3>
+    <h3>More from the metaphor</h3>
+    <p>These squirrels teach much about getting the good stuff in life. But we have to step back from the physical for a minute. Vibrational manifestation must come first.</p>
+    <p>All physical manifestations start with emotional/vibrational ones. No exceptions. Law of Attraction posits that what we send out, vibrationally, comes back to us. Amplified.</p>
+    <p>If I want to feel connection to my husband, now translated into pure, positive energy, I’ve got to get into the vibration, the feeling place, of pure, positive energy.</p>
+    <p>If I want money, or health in my body, or anything else for that matter, I’ve got to feel the presence of it vibrationally before it can physically show up.</p>
+    <p>The Squirrel Kit Code, for me, is a great guide to getting into the vibrational vicinity of a desire that feels out of reach. Here’s what I mean…</p>
+    <p>The grass below the feeder represents the lowest energy emotions — fear, despair, powerlessness. Oh boy do I know those feelings well…</p>
+    <p>The pole, ascending, is emotions ranked in order — the emotional scale — progressively better feelings all the way up to the basket…</p>
+    <p>The basket represents relief, contentment, stability. Hope. And the beginnings of positive expectation — optimism and more…</p>
+    <p>The seeds in the dispenser represent the deliciousness of enjoying a desire, before it shows up. More on this in my next blog, but this is the truly the secret to living a life of joy.</p>
+    <p>Until we can milk an un-manifested desire, we are slaves to external conditions. We can never be happy, now. It’s always: “I’ll be happy if…” or “ I can only be happy when…”</p>
+    <p>We can never enjoy life that way. We never reach a place where everything is just how we like it. The Land of Ticketty-Boo is a figment of our despairing…</p>
+    <p>Once we do learn how to do enjoy a desire that’s currently out of reach, we discover the sweet spot of life. Taking pleasure in the imaginings of creation underway… oooh! When we’ve mastered that, we never go hungry again!</p>
+    <p>The ‘goodies’ it turns out, are the high-flying emotions of eagerness, enthusiasm, joy, appreciation, connection, excitement and more.</p>
+    <p>Why do I want my husband here beside me? Because he triggers me so easily into feeling joy and delight, ease and wellbeing….</p>
+    <p>Where will I find my connection with him now? In those very same feelings.</p>
+    <p>How easy is it to trigger these lovely feelings for myself right now, with such profound sense of loss? It’s NOT easy! It’s the hardest thing I’ve ever had to do. It seems downright impossible at times.</p>
+    <p>But with practice, it is doable. It is an emotional state that I’m after. I can reach that basket… I promised Michael I would.</p>
+    <p>We don’t get the ‘goodies’ in life, purely by enjoying what is. We get them from reaching for more and imagining the ‘wonderful becoming…’*</p>
+    <p>Feasting on the goodies of life is feasting on belief that our dreams are becoming. Believing, because we choose to, that those goodies are ours.</p>
+    <h3>Kit Code — in brief</h3>
+    <p>• The Pole Climb: Assume you will master the pole-climb. Expect that you will need many attempts. Over and over and over again you will fail. Be okay with that. Those goodies are yours. • Keep Your Focus Steady. It doesn’t matter if you’re a**e over t*t on the grass again… It doesn’t matter that the feeder’s for the birds, actually. Ignore the outraged flutter of sparrows nearby with their own, contradictory opinions; keep your eye on the prize. Those goodies are yours. • Balance on the Basket once you have reached it… then stretch for the seeds in the feeder. Those goodies are yours.</p>
+    <h3>What makes the goodies so damn unattainable?</h3>
+    <p>It may help to explore how these elements can go awry, so we can see what the squirrels can teach us.</p>
+    <p>If you’re anything like me, you will find some of the following problems familiar.</p>
+    <p>• We’re trapped on the grass, we can’t see or approach the pole…</p>
+    <p>Trauma can trap us this way. Grief can paralyse for a while. Over time, unresolved trauma creates a sense of profound and lasting loss. A shocking event or series of happenings can lock us in ‘freeze’ mode inside.</p>
+    <p>We can’t escape the devastation of the emotions unleashed. But we can’t express them either. We are trapped in the helpless state of despair. The ‘pole’ of improving emotions is unreachable. We are winded, disorientated, immobile on the grass.</p>
+    <p>We feel helpless, hopeless, powerless. But these are emotions. Not permanent states of reality.</p>
+    <p>• We are trying to get up that pole but keep sliding back down again…</p>
+    <p>Despair swallows us whole: we land on the grass and the sense of hopelessness overwhelms us. It’s impossible, we’re NEVER going to make it. Oh, if we were that squirrel, on the grass again, we’d be pacing around the feeder base, wringing our hands, looking miserably above us as others make it to the seed. We’d be curled in defeat while they feasted mightily, bemoaning our lot, sighing, ‘Why not me? Why not me?’</p>
+    <p>It sounds shameful do be so woeful, I know, but it’s perfectly natural when you’ve been conditioned into a chronic state of powerlessness. Unresolved trauma does that. Big T or little. We can become subconsciously entrained into believing that defeat is inevitable. We give up easily. We’re convinced we are fatally flawed. That we’re lazy, or ‘entitled’, or weak.</p>
+    <p>• We can make our way up the pole pretty well, but can’t stay on the basket without some other squirrel knocking us off it…</p>
+    <p>Here’s where the influence of others plays out. It’s not easy to keep balance when others around you are ‘losing their heads and blaming it on you.’ Or you become aware that they seem ‘better’ than you, stronger, fitter, faster… Letting go of the need for approval. That’s the work. It can be done, but it’s a significant task to be tackled.</p>
+    <p>• We reach for the seeds, lose footing on the basket and we’re a**e over t*t on the grass again… covered in humiliation.</p>
+    <p>We try affirmations and what-not, to stretch towards our desires and intentions. But instead of bringing them into range, we lose balance and wind up in despair once again. We’re never going to crack the sweet spot of life. It seems we are doomed to fail.</p>
+    <p>Sound familiar?</p>
+    <p>If so, let’s dig a little deeper…</p>
+    <h3>The Pole Climb</h3>
+    <p>Climbing the slippery pole — bringing our vibrational frequency up to the contentment, optimism and more — that takes training. It requires ‘in the moment’ awareness. We must learn to love the pain for the guidance it brings.</p>
+    <p>How do we do that? Practice.</p>
+    <p>Love, love love what is. Love yourself in the moment you lose balance. Love your life in the moments when you long to be gone. Love what is. The ‘good’ and the ‘bad’ of it. Love, love, love, love, love, love it all.</p>
+    <p>Don’t require yourself to feel the love. Decide it. Choose it. It is done.</p>
+    <p>Identify the ‘bad’. Say its name. Choose to love it. Know that it’s guiding you Home. Home to the truth of who you are. You are love. You are joy. You are enough. The pain says you’re thinking in ways that don’t serve you. ‘This storyline is not the truth of you.’</p>
+    <p>When you love life like that (and oh, how my lovely Michael did!) you bring yourself into alignment with the love that knows the goodies are yours. That whatever is distressing you is just the ‘lack’ end of the stick. (By stick I mean subject). That focus on the feelings at the other end of the very same stick brings you all the goodies you’ve longed for.</p>
+    <p>I can think about the lack of Michael’s physical presence with me here. It would take no seconds to dissolve me in the anguish of our hospital month and his dying days at home, this time last year. Oh boy, are those thoughts compelling…</p>
+    <p>Or I can reach to imagine Michael’s energy today — blended with mine in sweetest communion; smiling inside me as I send these words into the world; whispering, “Yes, like that, that’s it, Darling Girl!”</p>
+    <p>The goodies, truly are yours…</p>
+    <p>A bit more pole-practice, some more basket-balancing and yes, a good few tumbles back down to the grass… Love says to you: “Keep steady focus and you’ll be feasting on the goodies. Soon, my sweet kitten, soon...”</p>
+    <p>And when you’ve done that the once, there’s no going back. You’ve learnt it can be done. The experienced squirrels don’t slide down the pole the way the young kits do. They overbalance sometimes, but they’re quick to return to their perch, with purpose. They get a good feeding, no question.</p>
+    <h3>Keep Your Focus Steady</h3>
+    <p>Keeping attention on what is wanted, not what is not — it’s a tricky operation. More training required.</p>
+    <p>Every subject’s that stick with two ends — Wanted and Unwanted. When we don’t know the ‘how’s and the ‘when’s, when we doubt that the wanted can come to us, then we focus agonisingly, unrelentingly on the unwanted… i.e. the lack of five-sense pacification. I want to see him, hear him… I want to smell, taste and touch him. Now I must imagine him instead. My imagine muscles are weak. Unused since I was a child… I’ve got work to do.</p>
+    <p>Fortunately, our emotions are the guide. If we’re sad, or fearful, angry or depressed, our focus is on the ‘Unwanted’ end of the stick. Oh, and if we’re not feeling anything much, we’re likely doing the same, numbing the anguish of despair. And that’s all perfectly ok.</p>
+    <p>These painful emotions, much as we might resist them, are our dearest friends. Much as we’d wish them to leave us be. They nag us and chivvy us, they swamp and overwhelm us… they’ll do whatever it takes to bring us back Home.</p>
+    <p>We have no choice but to listen to their call, in the end.</p>
+    <h3>Balance on the Basket</h3>
+    <p>Balance requires relaxation, poise: we need to love where we are. Being content with the isness, that’s not easy when what is, sucks. And yet, when we still the mind and the senses, we come to a place of calm.</p>
+    <p>When we decide to love the emotions we feel — all of them — balance is ours once more. When we stop looking for the antidote to life, when we stop wanting to ‘crack’ life, that’s when balance returns.</p>
+    <p>Somewhere deep inside us we know there is nothing we need. We are. That is all. That is enough.</p>
+    <p>I can achieve that balance relatively easily now. What used to take days, now takes hours or even minutes. Balancing after a bout of extreme sadness is still super-challenging, but I know that it’s doable now.</p>
+    <p>It’s taken extreme situations to teach me to focus but now, reaching for silence and listening for guidance —these are my mainstays. I can’t function without them.</p>
+    <p>Balancing on the basket for me is bringing my mind towards stillness, following the flow of slow breathing, allowing my focus to settle.</p>
+    <p>Meditation is designed for this purpose, of course. Beauty takes me there. Friendship. The accomplishment of a simple task. Playing with watercolours…</p>
+    <p>So many simple moments in life can surely be milked for the pleasure of being. As long as we reassure ourselves with the thought that ‘simply’ enjoying this moment, right now, is enough.</p>
+    <h3>Slow and steady…</h3>
+    <p>See if even one phrase here might soothe you. If it does, carry it with you awhile.</p>
+    <p>The core messages:</p>
+    <p>• Expect extremes of emotion — especially once you’re truly practising. Moving energy faster, through focus means you fall harder from that basket when you fall. That’s a good sign. • Expect to practise. A lot. Enjoy it as best you can. • Balance on the basket (anchor in good feelings) before reaching for more. • Remember, the sweet spot is the enjoyment of your desire before it comes. Anticipation is the kernel of joy.</p>
+    <p>Sending you encouragement Dear One, as always.</p>
+    <p>If you’d like to connect, book in for a chat! There’s nothing I love to do more than encourage another. *Thich Nhat Hanh — ‘No Death, No Fear’</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

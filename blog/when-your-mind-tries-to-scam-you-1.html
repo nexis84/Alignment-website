@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When Your Mind Tries to Scam You… — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { display:none; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>When Your Mind Tries to Scam You…</h1>
+    <p class="meta">10 August 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>Hang up! Then wash your mind out…</h3>
+    <p>I was sitting at my sister’s kitchen table while she made a work call from her office. I’d had the most wonderful three days with her and her lovely husband. Three days without a wobble. Not a moment of sadness. Ne’er a twinge of worry. Wall to wall sunshine, inside and out. What a delight!</p>
+    <p>I’d lost sight of my puppy-dog mind for a while. Clearly, it had enjoyed the break too. Lots of happy distraction from the soothing of sweet company.</p>
+    <p>Now, however, we were headed home, my puppy-dog mind and I. And as I sat at that kitchen table, my inner mischief-maker found itself a toilet roll to shred…</p>
+    <h3>The Scam</h3>
+    <p>The signs of the shredding were subtle at first. Little scraps of white, barely noticeable, to start with.</p>
+    <p>A few pieces of doubt. A scattering of worry. It didn’t take long for the storm to start in earnest.</p>
+    <p>Snowflakes in tissue, flecking the carpet of my mind.</p>
+    <p>“You don’t know what you’re doing, you know. Money’s running out…”</p>
+    <p>“There’s no joy in life on your own, without Michael.”</p>
+    <p>“It’s pointless. You’re hopeless. You’re lost.”</p>
+    <p>As my sister’s voice carried down the hall, I made a grab for the thought-pup, in an attempt to curtail the wild dervisher…</p>
+    <p>A mouth full of tissue bits, it dodged my outstretched arms. Oh boy. I knew where this was going.</p>
+    <p>“Pack that IN!” I commanded, without much conviction.</p>
+    <p>My puppy-dog mind paused for a moment… and then took a leak on the sofa.</p>
+    <p>A tear brimmed my eye. And another. Damn.</p>
+    <p>Back to the wayward puppy of my mind. Back to watching myself every sodding minute of the day. Back to the struggle to bring that bloody puppy to heel.</p>
+    <p>Life is so much easier when others do the work for me! For three days my lovely sister had carried me along in her glorious good feeling flow.</p>
+    <p>Ice cream by the sea, comedy at the Edinburgh Fringe, the ‘Throw the Teabag” game. (Oh the elation when a bag flung across the kitchen lands in a mug!)</p>
+    <p>Laughter. Hugs. Silliness. And more ice cream…</p>
+    <p>Now, the sudden plunge, back into ice cold waters — the deluge of despair. A tsunami washing through the living room of my mind.</p>
+    <p>Such an extreme time, this.</p>
+    <p>A couple more tears form.</p>
+    <p>No. Not doing that. Not going to spoil my morning’s fun before I catch that train home.</p>
+    <h3>Hang Up</h3>
+    <p>“That’s enough of that,” I declare. The inner pup freezes for a moment, stares me out… a standoff across the tissue strewn living room of my thoughts…</p>
+    <p>And my phone rings. An unknown number. I wouldn’t normally answer, but, hey, it’s a great distraction. I pick up. Say my name. Listen…</p>
+    <p>An automated voice replies.</p>
+    <p>“This is Her Majesty’s Revenue and Customs Service. We have discovered anomalies in your tax return. You are liable to serve prison time and we are on our way to arrest you…”</p>
+    <p>I hang up.</p>
+    <p>Horrible, horrible, HORRIBLE.</p>
+    <p>Instantly, the realisation. Wow. Law of Attraction at its most obvious.</p>
+    <p>There I was, wrestling my puppy-dog mind as it started the shred-shower of despair. The ultimate, “Can I mess with your mind?” scam.</p>
+    <p>And then the ‘messing’ is amplified by phone… of course.</p>
+    <p>I know what I need to do now. Stop that puppy in its tracks. Hang up on the scammer in my mind.</p>
+    <p>And it is just a scam.</p>
+    <p>Ok, I’ve got some reason to worry, to feel anguish and grief and the rest. Yes. We all have our reasons. And the feelings they trigger.</p>
+    <p>It’s healthy to feel those feelings. That’s not the scam. Far from it. That’s my emotional guidance system, calling me Home.</p>
+    <p>The scam is the way I resist those emotions. That’s the cause of the problems. That’s what keeps them in place.</p>
+    <p>It was the reaction I’d had to the puppy’s sh*tty paw-prints. That’s where the resistance lay.</p>
+    <p>It went like this:</p>
+    <p>• Puppy-mind makes a stinking mess (e.g. — worry thoughts have me feeling anxious). • I feel the anxiety and FREAK out. “No, no NO!!” I howl, as I try to push the anxiety away. “I hate feeling this way. I’ve felt this way so often before. Will this anxiety never end?” • I try to stop my thoughts — catch the puppy — now agitated by my freaked out reaction. • I try a Focus Wheel, some meditation perhaps, but by now it’s just too late. My puppy-mind and its poo-paws are padding all over the show. • It can take days to catch her… • Then, even when I’ve caught her, calmed her and got her playing nicely, there’s still a whole heap of poop drying out in my living room…</p>
+    <p>Now I’m clear. I’ve got to hang up the phone before resistance takes hold.</p>
+    <p>I need to act swiftly, lovingly, to reassure my puppy-dog mind.</p>
+    <p>It took another full day before the tsunami spat me out. Me and my bedraggled pup. Lungs full of water. Shocked afresh by the power of the undertow.</p>
+    <p>I’d tried so hard to stay afloat. “Control your thoughts…” I’d beamed back to myself, over and over again that day.</p>
+    <p>Why hadn’t it been enough to ‘hang up’, the minute I felt my mind going ‘there’ as I sat there in my sister’s kitchen? I’d talked myself into a better feeling place straight away; smiled at the phone scam and its reflection of my vibrational reality; I’d enjoyed the rest of my time with my sister…</p>
+    <p>Why then did the puppy go so badly AWOL so damned fast straight afterwards? And how do I avoid that mayhem in future?</p>
+    <h3>Wash Your Mind Out</h3>
+    <p>The last question was answered by a book I was drawn to once I gave up the struggle... and asked for help.</p>
+    <p>Help from whom? From infinite intelligence, Source energy, divine love, whatever you want to call it… I don’t have a visceral sense of it, but when I surrender and ask for help, I always receive it.</p>
+    <p>This time, after my great surrender (oh, the drama!) and after I’d stopped, breathed, let go of it all…</p>
+    <p>I noticed a wee book on my shelf, ‘Blissology’. I’d not read it. I’d had it for years.</p>
+    <p>I opened to a random page — 82. The author, Andy Baggott, was addressing the exact issue I’d been fretting over — the very toilet roll my puppy dog mind had been shredding. Hmm. Nice one Source, I thought.</p>
+    <p>I was in. I read more. There was a section on ‘Mending Your Day’. Baggott’s suggestion was to go back over each day and re-imagine any moments that didn’t go well as you would like them to have gone.</p>
+    <p>He suggested re-creating the day as you’d like it to have gone. Putting different words in people’s mouths, changing events in your mind’s eye and so on.</p>
+    <p>This mending of the past reminded me of Karl Dawson’s Matrix Re-imprinting, using Emotional Freedom Technique (EFT). Here we work therapeutically with the younger versions of the self, Dawson’s Energetic Consciousness HOlograms (ECHOs), frozen in our energy field in moments of trauma.</p>
+    <p>I pondered the moments in the day I’d spent struggling as I travelled home from my sister’s. I reflected on those first moments of of frozen ‘freaked out’ trauma while she had been on the phone.</p>
+    <p>The ‘freaked out’ reaction I’d had to feeling negative emotions was re-triggered trauma, that’s all. But old trauma patterns give huge momentum to current negative emotion, way out of proportion to what’s actually going on.</p>
+    <p>Baggott with his Blissology took me to a new realisation. His idea — an end of day ‘fixing’ can be powerful, I know. Right now, that feels too much like effort. More clinging to control.</p>
+    <p>Instead, I found myself softly imagining that frozen version of me, my ECHO sitting in Elinor’s kitchen. I imagined my previous self as the remains of a freeze-frame — like dried leaves caught in a mesh.</p>
+    <p>I imagined love as a mighty wave flowing through the scene. Love, reassurance, relief. A great wave of love washing those leaves back to the ocean, embracing them, dissolving them away. Love. Reassurance. Relief. Home.</p>
+    <p>It felt wonderful.</p>
+    <p>It’s now part of my daily practice.</p>
+    <p>It’s a washing of the whole house, not just the living room, while the poop is still fresh and will dissolve away with ease! Now, new poop doesn’t need to combine with old to make the whole of life feel like a sh*t-heap!</p>
+    <p>No details in the wash-through. Just the emotions, the energy of love, comfort, reassurance, joy. I don’t have to feel these emotions strongly, the intention to direct energy is enough.</p>
+    <h3>Pooping Puppy?</h3>
+    <p>Now, each day’s agenda is — Get into alignment (get happy) — keep an eye on alignment throughout the day… If I’m out of kilter, no big deal. No more resisting the negatives.</p>
+    <p>Now, it goes like this:</p>
+    <p>• Quickly scoop up the pooping puppy. (Stop thinking. Breathe. Let go.) • Give her a cuddle. (Coach myself with encouraging words and kindness.) • Show puppy how to poop outside. (Journal or speak out loud the negative thoughts/emotions.) • Take her for a walk, get her energy moving. (Focus Wheel or Ladder or conversational journalling to bring myself into alignment with what I want.) • Wash the soiled upholstery. (Imagine love energy washing the remnants of that memory through, dissolving them in reassurance and relief.)</p>
+    <p>Then, at the end of the day, I go to bed playing over all the beautiful moments of my day. Including the newly washed, soothed moments. I bask in appreciation for it all. I sleep swaddled in a litany of loveliness.</p>
+    <p>This way, I get to love my life. It feels so good.</p>
+    <h3>Puppy Training for All</h3>
+    <p>How many people are truly, deeply happy? How many say, when you ask them, “Life’s wonderful! I love it. So good to be here!”?</p>
+    <p>So many people live in a perpetual state of stress.</p>
+    <p>I used to live that way.</p>
+    <p>Have you noticed how the mess our puppy-mind makes is not proportional to the actual issue we’re facing?</p>
+    <p>We can feel worry, doubt, anxiety, anger et al, at the slightest provocation. For some of us, worry or sadness feels like a default setting. Even when life is actually going smoothly, we can find it an uphill struggle just the same.</p>
+    <p>It’s not the size of the toilet roll, it’s how unruly the pup…</p>
+    <p>A puppy gone feral is a tough one to train.</p>
+    <p>But not impossible…</p>
+    <p>If you need help with your puppy, or you’d like to know more, get in touch!</p>
+    <p>Meantime, love to you, as always,</p>
+    <p>Amanda</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

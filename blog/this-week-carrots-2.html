@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clean Language & Systemic Modelling — Amanda Maney</title>
+  <title>"This week, I ar' be mostly eatin' carrots!" — Amanda Maney</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
@@ -28,15 +28,18 @@
   .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
   .nav-burger:hover span { background:var(--accent); }
   @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { display:none; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
-    .hero { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
-    .hero .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
-    .hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:normal; line-height:1.25; margin-bottom:1rem; color:var(--text); }
-    .hero p.sub { font-size:1rem; color:var(--muted); max-width:480px; margin:0 auto; }
-    .content-section { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
-    .content-section p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
-    .content-section h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; }
-    .content-section blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
-    .content-section blockquote p { font-style:italic; }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
     .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
     .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
     .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
@@ -85,42 +88,44 @@
 
   <nav>
     <div class="brand">
-      <a href="index.html" class="logo" aria-label="Amanda Maney home"><img src="logo.png" alt="Amanda Maney Alignment Coaching"></a>
-      
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
     </div>
     <div class="links">
-      <a href="index.html#process">How It Works</a>
-      <a href="index.html#testimonials">Stories</a>
-      <a href="blog.html">Blog</a>
-      <a href="audio-library.html">Audio Library</a>
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
     </div>
     <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <div class="hero">
-    <p class="tag">Services</p>
-    <h1>Clean Language</h1>
-    <p class="sub">Gentle questions that open new worlds</p>
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>"This week, I ar' be mostly eatin' carrots!"</h1>
+    <p class="meta"></p>
   </div>
 
-  <div class="content-section">
-    <p>Information about Clean Language coming soon.</p>
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <p>Home Blog Alignment Coaching Audio Library About Contact Home Blog Alignment Coaching Audio Library About Contact .mobile-nav-toggle-label { display: inline-block !important; } "This week, I ar' be mostly eatin' carrots!" Wed, 11 May 2022 18:00:27 +0000 Trusting the Flow If you were ever a fan of ‘The Fast Show’, you’ll remember a great character, Jesse, who appeared every week. His one-liner, delivered to perfection, became part of our daily dialogue at home. The camera would pan in on a dilapidated shed, with a subtitle along the lines of ‘This week’s nutritional advice’ on the screen. Jesse — played by the wonderful Mark Williams — looking like a hairy sack of turnips, would emerge from the shed, shuffle a bit, like an awkward infant on a nativity stage and then say to the camera with great seriousness, something along the lines of: “This week, I ar’ be mostly eatin’ carrots.” At which point he’d turn around and shuffle back into his shack. Glorious! This scene came to my mind as I pondered my offering to you this week. The randomness and hilarity of Jesse’s considered advice sums up how life is unfolding right now. Simplicity with a dash of absurdity seems the perfect set up as I share my thoughts with you. This week, I ar’ be mostly trustin’ the Flow. The struggle I’ve had recently is a familiar one. Perhaps you know it too. How do I get myself aligned with the things I have to do? It is a common enough experience — as soon as a commitment is made, obligation born from it means it’s the last thing on Earth I want to do! I’d been trying to make myself want to do the tasks I’d committed myself to. And it was bringing me down. One of the benefits of this time of great contrast: I have no tolerance for joyless activity. Yet another morning’s mourning brought me to my knees. I’d been doing so well until recently. I’d thought most of the Great Sadness was over. I know, grieving takes much more time than we’d like to imagine, but what was this week’s misery really abo</p>
   </div>
 
   <div class="cta">
     <p class="tag">Ready to begin?</p>
     <h2>Let&#8217;s find your alignment together</h2>
     <p>One conversation can change everything.</p>
-    <a href="audio-library.html" class="btn">Explore Audio Library</a>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
   </div>
 
   <footer>
     <div class="footer-links">
       <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
-      <a href="audio-library.html">Audio Library</a>
+      <a href="../audio-library.html">Audio Library</a>
     </div>
     <p>&#169; Amanda Maney Alignment Coaching</p>
   </footer>
