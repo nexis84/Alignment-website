@@ -577,7 +577,13 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
       function initTranscriptToggles(visibleTracks) {
         visibleTracks.forEach((track) => {
           const description = track.querySelector('.track-description');
-          if (!description || description.dataset.transcriptInit === '1') {
+          const meta = track.querySelector('.track-meta');
+          let toggle = meta ? meta.querySelector('.track-transcript-toggle') : track.querySelector('.track-transcript-toggle');
+          if (!description) {
+            if (toggle) toggle.remove();
+            return;
+          }
+          if (description.dataset.transcriptInit === '1') {
             return;
           }
 
@@ -588,9 +594,11 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
           const descId = description.id || `track-description-${Math.random().toString(36).slice(2, 9)}`;
           description.id = descId;
 
-          const toggle = document.createElement('button');
-          toggle.type = 'button';
-          toggle.className = 'track-transcript-toggle';
+          if (!toggle) {
+            toggle = document.createElement('button');
+            toggle.type = 'button';
+            toggle.className = 'track-transcript-toggle';
+          }
           toggle.setAttribute('aria-expanded', 'false');
           toggle.setAttribute('aria-controls', descId);
           toggle.textContent = 'View Transcript';
@@ -621,15 +629,12 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
             toggle.focus();
           });
 
-          const meta = track.querySelector('.track-meta');
           if (meta) {
-            const existingToggle = meta.querySelector('.track-transcript-toggle');
-            if (existingToggle) existingToggle.remove();
             meta.insertAdjacentElement('beforebegin', closeButton);
-            meta.insertAdjacentElement('beforebegin', toggle);
+            if (!meta.contains(toggle)) meta.appendChild(toggle);
           } else {
             track.appendChild(closeButton);
-            track.appendChild(toggle);
+            if (!track.contains(toggle)) track.appendChild(toggle);
           }
         });
       }
