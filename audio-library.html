@@ -51,11 +51,10 @@
     .audio-section .section-title:first-child { margin-top:0; }
     .track { margin-bottom:1rem; padding:0.9rem 1rem; border:1px solid var(--warm); border-radius:12px; background:var(--audio-panel); content-visibility:auto; contain-intrinsic-size:120px; }
     .track-title { font-family:'Arial',sans-serif; font-size:0.73rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:0.55rem; line-height:1.4; }
-    .track-description { color:var(--text); margin-bottom:0.7rem; font-size:0.98rem; line-height:1.75; white-space:pre-line; }
-    .track-description.is-collapsed { display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; position:relative; }
-    .track-description.is-collapsed::after { content:''; position:absolute; left:0; right:0; bottom:0; height:2.2rem; background:linear-gradient(to bottom, rgba(255,255,255,0), var(--audio-panel)); pointer-events:none; }
-    .track-description-toggle { display:inline-flex; align-items:center; border:1px solid var(--warm); background:var(--audio-panel-soft); color:var(--accent); border-radius:999px; padding:0.28rem 0.7rem; font-family:'Arial',sans-serif; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; margin:-0.2rem 0 0.55rem; }
-    .track-description-toggle:hover { border-color:var(--accent); }
+    .track-description { display:none; color:var(--text); margin:0.2rem 0 0.7rem; font-size:0.98rem; line-height:1.75; white-space:pre-line; }
+    .track-description.is-visible { display:block; }
+    .track-transcript-toggle { display:inline-flex; align-items:center; border:1px solid var(--warm); background:var(--audio-panel-soft); color:var(--accent); border-radius:999px; padding:0.28rem 0.7rem; font-family:'Arial',sans-serif; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; margin:0.1rem 0 0.55rem; }
+    .track-transcript-toggle:hover { border-color:var(--accent); }
     .track-meta { margin-top:0.45rem; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; }
     .track-meta a { color:var(--accent); text-decoration:none; }
     .track-meta a:hover { text-decoration:underline; }
@@ -564,40 +563,42 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
       const pageSize = 10;
       let currentPage = 1;
 
-      function initDescriptionToggles(visibleTracks) {
+      function initTranscriptToggles(visibleTracks) {
         visibleTracks.forEach((track) => {
           const description = track.querySelector('.track-description');
-          if (!description || description.dataset.expandInit === '1') {
+          if (!description || description.dataset.transcriptInit === '1') {
             return;
           }
 
-          description.dataset.expandInit = '1';
-          description.classList.add('is-collapsed');
-
-          const isTruncated = description.scrollHeight > description.clientHeight + 2;
-          if (!isTruncated) {
-            description.classList.remove('is-collapsed');
-            return;
-          }
+          description.dataset.transcriptInit = '1';
+          description.hidden = true;
+          description.classList.remove('is-visible');
 
           const descId = description.id || `track-description-${Math.random().toString(36).slice(2, 9)}`;
           description.id = descId;
 
           const toggle = document.createElement('button');
           toggle.type = 'button';
-          toggle.className = 'track-description-toggle';
+          toggle.className = 'track-transcript-toggle';
           toggle.setAttribute('aria-expanded', 'false');
           toggle.setAttribute('aria-controls', descId);
-          toggle.textContent = 'Show more';
+          toggle.textContent = 'View Transcript';
 
           toggle.addEventListener('click', () => {
-            const expanded = description.classList.toggle('is-expanded');
-            description.classList.toggle('is-collapsed', !expanded);
-            toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-            toggle.textContent = expanded ? 'Show less' : 'Show more';
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            const nextExpanded = !isExpanded;
+            description.hidden = !nextExpanded;
+            description.classList.toggle('is-visible', nextExpanded);
+            toggle.setAttribute('aria-expanded', nextExpanded ? 'true' : 'false');
+            toggle.textContent = nextExpanded ? 'Hide Transcript' : 'View Transcript';
           });
 
-          description.insertAdjacentElement('afterend', toggle);
+          const meta = track.querySelector('.track-meta');
+          if (meta) {
+            meta.insertAdjacentElement('beforebegin', toggle);
+          } else {
+            track.appendChild(toggle);
+          }
         });
       }
 
@@ -664,7 +665,7 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
           track.hidden = !visibleTracks.has(track);
         });
 
-        initDescriptionToggles(Array.from(visibleTracks));
+        initTranscriptToggles(Array.from(visibleTracks));
         updateHeadings();
         updateStatus(tracks.length, totalCount, query, totalPages);
         updatePagination(startIndex, endIndex, totalCount, totalPages);

@@ -388,6 +388,7 @@
       opacity: 0;
       transition: opacity 2s ease-in-out;
     }
+    .hero .bg-slide { filter: saturate(1.22) contrast(1.06); }
     .bg-slide.active { opacity: 1; }
     .bg-slide::after {
       content: '';
@@ -395,7 +396,7 @@
       inset: 0;
       background: rgba(255,255,255,0.82);
     }
-    .hero .bg-slide::after    { background: rgba(255,255,255,0.68); }
+    .hero .bg-slide::after    { background: rgba(255,255,255,0.54); }
     .cta .bg-slide::after     { background: rgba(255,255,255,0.66); }
     [data-theme="dusk"] .bg-slide::after { background: rgba(30,28,34,0.85) !important; }
     /* Lift content above the carousel layer */
