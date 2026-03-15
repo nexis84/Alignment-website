@@ -49,7 +49,7 @@
     @media (max-width:640px) { .audio-pagination { flex-direction:column; align-items:stretch; } .audio-pagination-controls { justify-content:space-between; } }
     .section-title { font-size:1.1rem; font-weight:normal; color:var(--text); letter-spacing:0.05em; margin:3rem 0 1.2rem; padding-bottom:0.6rem; border-bottom:1px solid var(--warm); font-family:'Arial',sans-serif; text-transform:uppercase; font-size:0.8rem; letter-spacing:0.18em; }
     .audio-section .section-title:first-child { margin-top:0; }
-    .track { position:relative; margin-bottom:1rem; padding:0.9rem 1rem; border:1px solid var(--warm); border-radius:12px; background:var(--audio-panel); content-visibility:auto; contain-intrinsic-size:120px; }
+    .track { position:relative; display:flex; flex-direction:column; margin-bottom:1rem; padding:0.9rem 1rem; border:1px solid var(--warm); border-radius:12px; background:var(--audio-panel); content-visibility:auto; contain-intrinsic-size:120px; }
     .track-title { font-family:'Arial',sans-serif; font-size:0.73rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:0.55rem; line-height:1.4; }
     .track-description { display:none; color:var(--text); margin:0.2rem 0 0.7rem; font-size:0.98rem; line-height:1.75; white-space:pre-line; }
     .track-description.is-visible { display:block; }
@@ -58,6 +58,12 @@
     .track-transcript-close { display:none; position:absolute; top:0.55rem; right:0.55rem; width:1.55rem; height:1.55rem; border:1px solid var(--warm); border-radius:999px; background:var(--audio-panel-soft); color:var(--accent); font-family:'Arial',sans-serif; font-size:0.9rem; line-height:1; cursor:pointer; align-items:center; justify-content:center; }
     .track-transcript-close:hover { border-color:var(--accent); }
     .track.transcript-open .track-transcript-close { display:inline-flex; }
+    .track-title { order:1; }
+    .track-meta { order:4; }
+    .track.transcript-open .track-meta { order:2; margin-top:0; margin-bottom:0.55rem; }
+    .track.transcript-open .track-transcript-toggle { order:3; }
+    .track-description { order:4; }
+    .track.transcript-open .track-description { order:4; }
     .track-meta { margin-top:0.45rem; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; }
     .track-meta a { color:var(--accent); text-decoration:none; }
     .track-meta a:hover { text-decoration:underline; }
