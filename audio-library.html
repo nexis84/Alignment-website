@@ -41,6 +41,7 @@
     .audio-search input:focus { border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent); }
     .audio-search-status { margin-top:0.65rem; min-height:1.2rem; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }
     .audio-pagination { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 2rem; padding-bottom:1rem; border-bottom:1px solid var(--warm); }
+    .audio-pagination.audio-pagination-bottom { margin:2rem 0 0; padding:1rem 0 0; border-bottom:none; border-top:1px solid var(--warm); }
     .audio-pagination-info { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
     .audio-pagination-controls { display:flex; gap:0.7rem; }
     .audio-pagination button { border:1px solid var(--warm); background:var(--audio-panel); color:var(--text); padding:0.7rem 1rem; border-radius:999px; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:border-color 0.2s, color 0.2s, opacity 0.2s, background-color 0.2s; }
@@ -145,10 +146,10 @@
       <p class="audio-search-status" id="audio-search-status" aria-live="polite"></p>
     </div>
     <div class="audio-pagination">
-      <p class="audio-pagination-info" id="audio-pagination-info" aria-live="polite"></p>
+      <p class="audio-pagination-info" data-audio-pagination-info aria-live="polite"></p>
       <div class="audio-pagination-controls">
-        <button type="button" id="audio-prev">Previous</button>
-        <button type="button" id="audio-next">Next</button>
+        <button type="button" data-audio-page="prev">Previous</button>
+        <button type="button" data-audio-page="next">Next</button>
       </div>
     </div>
       <div class="track" data-title="7 minutes stop and breathe colour 7 minute - stop, be, breathe…"><p class="track-title">7 minutes stop and breathe colour</p><p class="track-description">7 Minute - Stop, Be, Breathe…</p><div class="track-meta"><a class="track-play" href="https://drive.google.com/file/d/11vqtknZIzZnjm3GxdDeEfeRJzgAPh27L/preview" target="_blank" rel="noopener">Play</a><button class="track-transcript-toggle" aria-expanded="false">View Transcript</button></div></div>
@@ -536,6 +537,13 @@ Breathe this love in through your heart and out from your heart. If there were a
 This love is who you are. Breathe into this infinite, vastness of love... and breathe out.
 Welcome Home.
 Give yourself all the time you need... When you&#x27;re ready, and only when you&#x27;re ready, take a deep breath in, and let it out. Bring yourself back to continue with your day, knowing that Love is always here, always ready to welcome you Home.</p><div class="track-meta"><a class="track-play" href="https://drive.google.com/file/d/1fpA5QNt4mZdSYrOyruDXB3_WAaRn0eHc/preview" target="_blank" rel="noopener">Play</a><button class="track-transcript-toggle" aria-expanded="false">View Transcript</button></div></div>
+    <div class="audio-pagination audio-pagination-bottom">
+      <p class="audio-pagination-info" data-audio-pagination-info aria-live="polite"></p>
+      <div class="audio-pagination-controls">
+        <button type="button" data-audio-page="prev">Previous</button>
+        <button type="button" data-audio-page="next">Next</button>
+      </div>
+    </div>
   </div>
 
   <div class="cta">
@@ -567,9 +575,9 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
     (function () {
       const searchInput = document.getElementById('audio-search');
       const status = document.getElementById('audio-search-status');
-      const paginationInfo = document.getElementById('audio-pagination-info');
-      const prevButton = document.getElementById('audio-prev');
-      const nextButton = document.getElementById('audio-next');
+      const paginationInfo = Array.from(document.querySelectorAll('[data-audio-pagination-info]'));
+      const prevButtons = Array.from(document.querySelectorAll('[data-audio-page="prev"]'));
+      const nextButtons = Array.from(document.querySelectorAll('[data-audio-page="next"]'));
       const tracks = Array.from(document.querySelectorAll('.track'));
       const headings = Array.from(document.querySelectorAll('.section-title'));
       const pageSize = 10;
@@ -669,17 +677,17 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
       }
 
       function updatePagination(startIndex, endIndex, totalCount, totalPages) {
-        if (paginationInfo) {
-          paginationInfo.textContent = totalCount === 0
+        paginationInfo.forEach((node) => {
+          node.textContent = totalCount === 0
             ? 'No tracks to show'
             : `Showing ${startIndex + 1}-${endIndex} of ${totalCount}`;
-        }
-        if (prevButton) {
-          prevButton.disabled = currentPage <= 1 || totalCount === 0;
-        }
-        if (nextButton) {
-          nextButton.disabled = currentPage >= totalPages || totalCount === 0;
-        }
+        });
+        prevButtons.forEach((button) => {
+          button.disabled = currentPage <= 1 || totalCount === 0;
+        });
+        nextButtons.forEach((button) => {
+          button.disabled = currentPage >= totalPages || totalCount === 0;
+        });
       }
 
       function filterTracks() {
@@ -716,21 +724,21 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
         });
       }
 
-      if (prevButton) {
-        prevButton.addEventListener('click', () => {
+      prevButtons.forEach((button) => {
+        button.addEventListener('click', () => {
           if (currentPage > 1) {
             currentPage -= 1;
             filterTracks();
           }
         });
-      }
+      });
 
-      if (nextButton) {
-        nextButton.addEventListener('click', () => {
+      nextButtons.forEach((button) => {
+        button.addEventListener('click', () => {
           currentPage += 1;
           filterTracks();
         });
-      }
+      });
 
       filterTracks();
     })();
