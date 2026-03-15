@@ -623,6 +623,8 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
 
           const meta = track.querySelector('.track-meta');
           if (meta) {
+            const existingToggle = meta.querySelector('.track-transcript-toggle');
+            if (existingToggle) existingToggle.remove();
             meta.insertAdjacentElement('beforebegin', closeButton);
             meta.insertAdjacentElement('beforebegin', toggle);
           } else {
