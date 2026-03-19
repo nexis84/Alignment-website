@@ -20,10 +20,11 @@
     nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
     nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
     [data-theme="dusk"] nav .logo img { filter:none; }
-  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
-  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
-    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
-    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  nav .home-link { color:var(--text); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--text); border-color:var(--accent); }
+    nav .links a { color:var(--text); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links { display:flex; align-items:center; }
+  nav .links a:hover { color:var(--text); }
   .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
   .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
   .nav-burger:hover span { background:var(--accent); }
@@ -77,6 +78,14 @@
     .cta p { color:var(--muted); margin-bottom:2rem; }
     .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
     .btn:hover { opacity:0.8; }
+    .cta .btn {
+      background: rgba(255,255,255,0.18);
+      color: var(--text);
+      border: none;
+      backdrop-filter: blur(14px) saturate(1.3);
+      -webkit-backdrop-filter: blur(14px) saturate(1.3);
+      box-shadow: 0 2px 16px 0 rgba(60,60,60,0.07);
+    }
     footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
     footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
     footer a:hover { color:var(--accent); }
@@ -91,6 +100,35 @@
     .swatch:hover { transform:scale(1.15); }
     .swatch.active { border-color:var(--text); }
     .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  
+    /* -- BACKGROUND CAROUSEL -- */
+    .hero, .cta { position: relative; }
+    .bg-carousel {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .bg-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      filter: saturate(1.28) contrast(1.13) brightness(0.97);
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+    .bg-slide.active { opacity: 1; }
+    .bg-slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.70);
+    }
+    .hero .bg-slide::after { background: rgba(255,255,255,0.66); }
+    .cta .bg-slide::after { background: rgba(255,255,255,0.64); }
+    [data-theme="dusk"] .bg-slide::after { background: rgba(30,28,34,0.78) !important; }
+    .hero > *:not(.bg-carousel),
+    .cta > *:not(.bg-carousel) { position: relative; z-index: 1; }
   </style>
 </head>
 <body>
@@ -118,32 +156,32 @@
   </div>
 
   <nav>
-    <div class="brand">
-      <a href="index.html" class="logo" aria-label="Amanda Maney home"><img src="logo.png" alt="Amanda Maney Alignment Coaching"></a>
-      <a href="index.html" class="home-link">Home</a>
-    </div>
+    <div class="brand"><a href="index.html" class="logo" aria-label="Amanda Maney home"><img src="logo.png" alt="Amanda Maney Alignment Coaching"></a><a href="index.html" class="home-link">Home</a></div>
     <div class="links">
       <a href="index.html#process">How It Works</a>
-      <a href="index.html#testimonials">Stories</a>
+      <a href="about.html">About Me</a>
       <a href="blog.html">Blog</a>
-      <a href="audio-library.html" class="active">Audio Library</a>
+      <a href="audio-library.html">Audio Library</a>
+      <a href="work-with-me.html">Work with me</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="hero">
-    <p class="tag">Meditations &amp; Guided Sessions</p>
+  <div class="bg-carousel" aria-hidden="true">
+    <div class="bg-slide" style="background-image:url('images/homepage/hero-1.jpg'); background-position:center 65%;"></div>
+  </div>
+    <p class="tag">Library</p>
     <h1>Audio Library</h1>
-    <p class="sub">A collection of guided meditations and alignment sessions to support your journey.</p>
+    <p class="sub">A growing collection of guided tracks for alignment, relief, and focus.</p>
   </div>
 
   <div class="audio-section">
     <div class="audio-search">
-      <label for="audio-search">Search the library</label>
-      <input id="audio-search" type="search" placeholder="Search tracks" aria-label="Search audio tracks" />
-      <p class="audio-search-status" id="audio-search-status" aria-live="polite"></p>
+      <label for="audio-search">Search audio tracks</label>
+      <input id="audio-search" type="search" placeholder="Search by title or transcript..." autocomplete="off" />
+      <p id="audio-search-status" class="audio-search-status" aria-live="polite"></p>
     </div>
     <div class="audio-pagination">
       <p class="audio-pagination-info" data-audio-pagination-info aria-live="polite"></p>
@@ -152,20 +190,16 @@
         <button type="button" data-audio-page="next">Next</button>
       </div>
     </div>
-      <div class="track" data-title="7 minutes stop and breathe colour 7 minute - stop, be, breathe…"><p class="track-title">7 minutes stop and breathe colour</p><p class="track-description">7 Minute - Stop, Be, Breathe…</p><div class="track-meta"><a class="track-play" href="https://drive.google.com/file/d/11vqtknZIzZnjm3GxdDeEfeRJzgAPh27L/preview" target="_blank" rel="noopener">Play</a><button class="track-transcript-toggle" aria-expanded="false">View Transcript</button></div></div>
-      <div class="track" data-title="amplifying the third d!"><p class="track-title">Amplifying the third D!</p><div class="track-meta"><a class="track-play" href="https://drive.google.com/file/d/1pPw-RUC4XZC8yhM3vwL8gV2ToCgNMYtD/preview" target="_blank" rel="noopener">Play</a></div></div>
-      <div class="track" data-title="5 minutes resourceful state focus 5 minute resourceful state focus take a nice deep breath in… and let it out. make yourself comfortable as you breathe in… and breathe out, allowing yourself to be here, fully in this moment. you might like to soften the focus of your eyes, relaxing the muscles around them, closing them if you like, as you breathe. and breathing in… and breathing out… you might like to stretch the out breath a little, if it feels good… breathing in… and out and out and out… noticing how that allows your body and mind to relax. as you breathe, with soft eyes, scan your body now. notice what’s happening inside you as you breathe. there may be pictures, thoughts, memories, sensations, emotions. whatever is there, somehow you’ll know how you know that it’s there. allow all of that to be there. just observe it. you don’t need to judge it or change it... just allow it to be there as you breathe, with soft eyes. that’s it. you might like to get a sense of placing all of that just outside yourself as you breathe out. allow it all to be there, simply observe it, and breathe, with soft eyes, knowing there is nothing you need to do. and then bringing your attention back to whatever is inside you right now, allowing all of that to be there as you breathe in and breathe out and out and out and out… that’s it. and now choosing a colour that would be the perfect colour for a feeling you’d like to enjoy; breathe that colour in through your heart and out from your heart, with soft eyes, breathing it in, breathing it out and out and out… that’s it. if there were a colour that would take this even deeper, allow yourself to breathe that colour in through your heart… and out from your heart. breathing it in… and breathing it out and out and out. that’s it. soak every cell in your body in that colour as you breathe it in through your heart… and out from your heart… and getting a sense of breathing that colour now out and out and out into the space around you, flooding the room with that colour. allow that to happen all by itself as you breathe the colour in through your heart and out from your heart. that’s it. now as you breathe colour in through your heart and out from your heart, allow it to flow into your future, to flood into the next hours, and days and weeks of your life. allow the future you to be bathed in this colour as you breathe it in through your heart and out from your heart. that’s it. now bringing your attention back to this moment, allow yourself to focus on the space around you. when you’re ready, take a nice, deep breath in and let it out… open your eyes and continue with your day."><p class="track-title">5 minutes Resourceful State Focus</p><p class="track-description">5 Minute Resourceful State Focus
-Take a nice deep breath in… and let it out. Make yourself comfortable as you breathe in… and breathe out, allowing yourself to be here, fully in this moment. You might like to soften the focus of your eyes, relaxing the muscles around them, closing them if you like, as you breathe.
-And breathing in… and breathing out… you might like to stretch the out breath a little, if it feels good… Breathing in… and out and out and out… noticing how that allows your body and mind to relax.
-As you breathe, with soft eyes, scan your body now. Notice what’s happening inside you as you breathe. There may be pictures, thoughts, memories, sensations, emotions. Whatever is there, somehow you’ll know how you know that it’s there. Allow all of that to be there. Just observe it. You don’t need to judge it or change it... Just allow it to be there as you breathe, with soft eyes. That’s it.
-You might like to get a sense of placing all of that just outside yourself as you breathe out. Allow it all to be there, simply observe it, and breathe, with soft eyes, knowing there is nothing you need to do.
-And then bringing your attention back to whatever is inside you right now, allowing all of that to be there as you breathe in and breathe out and out and out and out… that’s it.
-And now choosing a colour that would be the perfect colour for a feeling you’d like to enjoy; breathe that colour in through your heart and out from your heart, with soft eyes, breathing it in, breathing it out and out and out… That’s it.
-If there were a colour that would take this even deeper, allow yourself to breathe that colour in through your heart… and out from your heart. Breathing it in… and breathing it out and out and out. That’s it.
-Soak every cell in your body in that colour as you breathe it in through your heart… and out from your heart…
-And getting a sense of breathing that colour now out and out and out into the space around you, flooding the room with that colour. Allow that to happen all by itself as you breathe the colour in through your heart and out from your heart. That’s it.
-Now as you breathe colour in through your heart and out from your heart, allow it to flow into your future, to flood into the next hours, and days and weeks of your life. Allow the future you to be bathed in this colour as you breathe it in through your heart and out from your heart. That’s it.
-Now bringing your attention back to this moment, allow yourself to focus on the space around you. When you’re ready, take a nice, deep breath in and let it out… Open your eyes and continue with your day.</p><div class="track-meta"><a class="track-play" href="https://drive.google.com/file/d/1kViRCLb29tl2Dc60OzEENBV330GHkIMl/preview" target="_blank" rel="noopener">Play</a><button class="track-transcript-toggle" aria-expanded="false">View Transcript</button></div></div>
+
+    <h2 class="section-title">Meditations &amp; Settling</h2>
+    <div class="track" data-title="7 minutes stop and breathe colour">
+      <p class="track-title">7 Minutes Stop and Breathe Colour</p>
+      <p class="track-description">And breathing in... and breathing out... you might like to stretch the out breath a little, if it feels good. Breathe in and allow yourself to settle as you focus softly on relief and ease.</p>
+      <div class="track-meta">
+        <a class="track-play" href="https://drive.google.com/file/d/1kViRCLb29tl2Dc60OzEENBV330GHkIMl/preview" target="_blank" rel="noopener">Play</a>
+        <button class="track-transcript-toggle" aria-expanded="false">View Transcript</button>
+      </div>
+    </div>
       <div class="track" data-title="basic meditation"><p class="track-title">Basic Meditation</p><div class="track-meta"><a class="track-play" href="https://drive.google.com/file/d/126h5RP-MrXvH8WKzRHewx0BZC99kvsYQ/preview" target="_blank" rel="noopener">Play</a></div></div>
       <div class="track" data-title="confidence confidence take a nice deep breath in… and let it out… allow yourself to settle into this moment, into this space as you breathe… soften the focus of your eyes, you can close them if you like. and you might like to stretch into the out breath, relaxing into a longer and longer breath out… even holding it for a moment before breathing in… that’s it… breathing in… breathing out and out and out… and out and out… and noticing how the long out breath slows your mind gently, makes it easier to be here, in this moment, where there is no past, no future, just being here, now. focusing on confidence… allowing yourself now to take your puppy-mind to where you want it to go, notice what’s inside you as you think the word… confidence… you may find thoughts, memories, sensations, emotions arise. that’s fine. allow all that’s here to be here as you notice and observe. allow them all. it’s all valid. you don’t need to judge anything or change anything. just notice it and allow… as you breathe, with soft eyes. that’s it. you might like to get a sense of placing all of that just outside yourself as you breathe out… that’s it. and allow it all to be there. as you breathe, with soft eyes. just observing it all. then bringing your attention to what’s inside you now, allow yourself to enjoy this stream of thoughts focusing your puppy mind towards more confident states. i love the idea of feeling more confident. it makes sense to me that confidence comes from the way that i think. i like seeing my mind like an untrained puppy. i like the thought of taking my mind deliberately now, every day, to milk the feeling of confidence and magnify it in my experience. it makes sense that confidence isn’t about anything outside myself. it’s only about where my puppy mind hangs out! and, with practice, i can change that. i can choose the direction of my thoughts. i’d love to be a person who feels way more confident most of the time. that would be amazing. i love the thought of feeling so strong and sure in myself that i can give of my best and thoroughly enjoy it before, during and after the event. i love the idea of feeling so confident that working on my own becomes easy and relaxed; because i know i am enough. i love the idea of being someone who is confident enough to enjoy working alone as well as in collaboration. i love the idea of inviting others’ opinions from a place of relaxed, easy confidence. i love the idea of knowing more and more surely that i don’t need anything or anyone to give me the confidence that will make everything work out much better for me and for those that i serve. i love the way i look and sound when i am fully confident! i love the smile that brims me over when i feel that good about myself and what i’m doing. i love how that confidence brings benefit to others, how warm, and wise and generous i am, how ready and able i am to give. i love the things i say to myself when i’m really, really confident. i love the thought that the more i deliberately focus on the way that looks and sounds and feels, the more i’ll feel that confidence. i love the warm, capable, shining, smiling me that revels in the confidence i feel. i love how that kind of confidence opens me up to being more resourceful, being super-productive, trusting my own judgement and enjoying working with others. i love the thought that focusing daily on that confident version of me is all i need to do to experience being that way more often. i know i can feel confident. i love it when i do. i love how i feel even now as i relish confidence and enjoy sending my thoughts there more and more. it’s like throwing the ball to send the puppy where i want it to play. it’s really exciting to think of how different all aspects of my life will be in a few days’ time; in a week; in a month; focusing my mind on confidence in this easy, relaxed way each day. i like this practice! i look forward to doing it some more! now, taking a nice deep breath in… and letting it out, bring your attention back to what is in the space around you, and when you’re ready, open your eyes and continue with your day. good job!"><p class="track-title">Confidence</p><p class="track-description">Confidence
 Take a nice deep breath in… and let it out… Allow yourself to settle into this moment, into this space as you breathe… Soften the focus of your eyes, you can close them if you like. And you might like to stretch into the out breath, relaxing into a longer and longer breath out… even holding it for a moment before breathing in… That’s it… Breathing in… breathing out and out and out… and out and out… And noticing how the long out breath slows your mind gently, makes it easier to be here, in this moment, where there is no past, no future, just being here, now.
@@ -547,16 +581,19 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
   </div>
 
   <div class="cta">
+    <div class="bg-carousel" aria-hidden="true">
+      <div class="bg-slide" style="background-image:url('images/homepage/cta-1.jpg'); background-position:center 55%;"></div>
+    </div>
     <p class="tag">Ready to begin?</p>
     <h2>Let&#8217;s work together</h2>
     <p>One conversation can change everything.</p>
+    <a href="work-with-me.html" class="btn">Work with me</a>
   </div>
 
   <footer>
     <div class="footer-links">
       <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
-      <a href="audio-library.html">Audio Library</a>
     </div>
     <p>&#169; Amanda Maney Alignment Coaching</p>
   </footer>
@@ -569,6 +606,18 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
     (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
     function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
     document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  
+    document.querySelectorAll('.bg-carousel').forEach(function(carousel) {
+      const slides = Array.from(carousel.querySelectorAll('.bg-slide'));
+      if (!slides.length) return;
+      let current = Math.floor(Math.random() * slides.length);
+      slides[current].classList.add('active');
+      setInterval(function() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 5 * 60 * 1000);
+    });
   </script>
   <script>
     (function () {
@@ -741,6 +790,18 @@ Give yourself all the time you need... When you&#x27;re ready, and only when you
 
       filterTracks();
     })();
+  
+    document.querySelectorAll('.bg-carousel').forEach(function(carousel) {
+      const slides = Array.from(carousel.querySelectorAll('.bg-slide'));
+      if (!slides.length) return;
+      let current = Math.floor(Math.random() * slides.length);
+      slides[current].classList.add('active');
+      setInterval(function() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 5 * 60 * 1000);
+    });
   </script>
 </body>
 </html>

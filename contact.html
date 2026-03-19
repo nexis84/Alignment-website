@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meta Health Coaching — Amanda Maney</title>
+  <title>Contact — Amanda Maney</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
     [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
     [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
     [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
@@ -33,16 +34,18 @@
     .hero .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
     .hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:normal; line-height:1.25; margin-bottom:1rem; color:var(--text); }
     .hero p.sub { font-size:1rem; color:var(--muted); max-width:480px; margin:0 auto; }
-    .content-section { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
-    .content-section p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
-    .content-section h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; }
-    .content-section blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
-    .content-section blockquote p { font-style:italic; }
+    .contact-section { max-width:560px; margin:0 auto; padding:4rem 2rem 5rem; text-align:center; }
+    .contact-section p { color:var(--muted); margin-bottom:2rem; font-size:1.02rem; }
+    .field { margin-bottom:1.6rem; }
+    .field label { display:block; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.5rem; }
+    .field input, .field textarea { width:100%; background:transparent; border:none; border-bottom:1px solid var(--warm); padding:0.6rem 0; font-family:'Georgia',serif; font-size:1rem; color:var(--text); outline:none; transition:border-color 0.2s; }
+    .field input:focus, .field textarea:focus { border-bottom-color:var(--accent); }
+    .field textarea { resize:vertical; min-height:120px; }
     .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
     .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
     .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
     .cta p { color:var(--muted); margin-bottom:2rem; }
-    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; border:none; cursor:pointer; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
     .btn:hover { opacity:0.8; }
     .cta .btn {
       background: rgba(255,255,255,0.18);
@@ -56,6 +59,17 @@
     footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
     footer a:hover { color:var(--accent); }
     .footer-links { margin-bottom:0.8rem; }
+    .social-icons { display:flex; justify-content:center; gap:1.2rem; margin-bottom:1.2rem; }
+    .social-icons a { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:var(--warm); color:var(--text); transition:background 0.2s, transform 0.2s; font-size:1.1rem; }
+    .social-icons a:hover { background:var(--accent); color:var(--white); transform:scale(1.1); }
+    .booking-section { text-align:center; padding:3rem 2rem 4rem; margin:2rem 0; border-top:1px solid var(--warm); border-bottom:1px solid var(--warm); }
+    .booking-section .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .booking-section h3 { font-size:1.3rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .booking-section p { color:var(--muted); margin-bottom:1.6rem; }
+    .booking-btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.9rem 2.8rem; border:none; cursor:pointer; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; text-decoration:none; }
+    .booking-btn:hover { opacity:0.9; }
+    .calendly-link { color:var(--text); }
+    .calendly-link:hover { color:var(--accent); }
     .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
     .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
     .theme-toggle-btn:hover { transform:scale(1.1); }
@@ -121,46 +135,67 @@
     </button>
   </div>
 
-    <nav>
-      <div class="brand"><a href="index.html" class="logo" aria-label="Amanda Maney home"><img src="logo.png" alt="Amanda Maney Alignment Coaching"></a><a href="index.html" class="home-link">Home</a></div>
-      <div class="links">
-        <a href="index.html#process">How It Works</a>
-        <a href="about.html">About Me</a>
-        <a href="blog.html">Blog</a>
-        <a href="audio-library.html">Audio Library</a>
-        <a href="work-with-me.html">Work with me</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </nav>
+  <nav>
+    <div class="brand">
+      <a href="index.html" class="logo" aria-label="Amanda Maney home"><img src="logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="index.html#process">How It Works</a>
+      <a href="about.html">About Me</a>
+      <a href="blog.html">Blog</a>
+      <a href="audio-library.html">Audio Library</a>
+      <a href="work-with-me.html">Work with me</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
   <div class="hero">
   <div class="bg-carousel" aria-hidden="true">
     <div class="bg-slide" style="background-image:url('images/homepage/hero-1.jpg'); background-position:center 65%;"></div>
   </div>
-    <p class="tag">Services</p>
-    <h1>Meta Health Coaching</h1>
-    <p class="sub">The body&#8217;s messages, understood</p>
+    <p class="tag">Get in touch</p>
+    <h1>Contact Amanda</h1>
+    <p class="sub">I&#8217;d love to hear from you. Send me a message and I&#8217;ll be in touch soon.</p>
   </div>
 
-  <div class="content-section">
-    <p>Information about Meta Health Coaching coming soon.</p>
+  <div class="contact-section">
+    <p>Whether you have a question about coaching, want to book a discovery call, or simply want to say hello — I&#8217;m here.</p>
+    <a href="mailto:aomaney@gmail.com" class="btn">Send Email</a>
   </div>
 
+  <div class="booking-section">
+    <p class="tag">Schedule a consultation</p>
+    <h3>Book Your Free Session</h3>
+    <p>Ready to get started? Schedule a free discovery call with me using Calendly.</p>
+    <a href="https://calendly.com/" target="_blank" rel="noopener" class="booking-btn">
+      <i class="fas fa-calendar-alt"></i> Book Now
+    </a>
+  </div>
+  
   <div class="cta">
     <div class="bg-carousel" aria-hidden="true">
       <div class="bg-slide" style="background-image:url('images/homepage/cta-1.jpg'); background-position:center 55%;"></div>
     </div>
-    <p class="tag">Ready to begin?</p>
-    <h2>Let&#8217;s find your alignment together</h2>
-    <p>One conversation can change everything.</p>
-    <a href="about.html" class="btn">About Me</a>
+    <p class="tag">Take the first step</p>
+    <h2>Ready to find your way home?</h2>
+    <p>You deserve to live a life you truly love.</p>
+    <a href="index.html#process" class="btn">How It Works</a>
   </div>
-
   <footer>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/stories/amandajoymaney/2426539569267007247/" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
     <div class="footer-links">
-      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="contact.html">Contact</a>
     </div>
     <p>&#169; Amanda Maney Alignment Coaching</p>
   </footer>

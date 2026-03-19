@@ -1,3 +1,4 @@
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amanda Maney — Alignment Coaching</title>
   <style>
+    .cta .bg-slide {
+      filter: saturate(1.28) contrast(1.13) brightness(0.97);
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     /* ── THEMES ── */
@@ -112,11 +116,11 @@
     nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
     nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
     [data-theme="dusk"] nav .logo img { filter:none; }
-    nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
-    nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .home-link { color:var(--text); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+    nav .home-link:hover { color:var(--text); border-color:var(--accent); }
     nav .links { display:flex; align-items:center; }
-    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
-    nav .links a:hover { color:var(--accent); }
+    nav .links a { color:var(--text); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover { color:var(--text); }
     .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
     .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
     .nav-burger:hover span { background:var(--accent); }
@@ -129,10 +133,10 @@
     }
     .hero p.tag {
       font-family: 'Arial', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.82rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--text);
       margin-bottom: 1.4rem;
     }
     .hero h1 {
@@ -144,14 +148,15 @@
     }
     .hero p.sub {
       font-size: 1.05rem;
-      color: var(--muted);
+      color: var(--text);
       max-width: 480px;
       margin: 0 auto 2.8rem;
     }
+    .hero p.sub em { color: inherit; }
     .btn {
       display: inline-block;
-      background: var(--accent);
-      color: var(--white);
+      background: rgba(255,255,255,0.18);
+      color: var(--text);
       padding: 0.8rem 2.4rem;
       text-decoration: none;
       font-family: 'Arial', sans-serif;
@@ -159,6 +164,10 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       transition: opacity 0.2s;
+      border: none;
+      backdrop-filter: blur(14px) saturate(1.3);
+      -webkit-backdrop-filter: blur(14px) saturate(1.3);
+      box-shadow: 0 2px 16px 0 rgba(60,60,60,0.07);
     }
     .btn:hover { opacity: 0.8; }
 
@@ -178,7 +187,7 @@
       letter-spacing: 0.01em;
       text-align: center;
     }
-    p { margin-bottom: 1.1rem; color: var(--muted); }
+    p { margin-bottom: 1.1rem; color: var(--text); }
     p:last-child { margin-bottom: 0; }
 
     /* ── STORY ── */
@@ -201,7 +210,7 @@
       line-height: 1;
       margin-bottom: 0.8rem;
       /* render as accent-tinted large digit */
-      color: var(--accent);
+      color: var(--text);
       opacity: 0.35;
     }
     .step h3 {
@@ -237,10 +246,10 @@
     .tech-list a:first-child { border-top: 1px solid var(--warm); }
     .tech-list a::after {
       content: '→';
-      color: var(--accent);
+      color: var(--text);
       font-size: 0.9rem;
     }
-    .tech-list a:hover { color: var(--accent); }
+    .tech-list a:hover { color: var(--text); }
 
     /* ── TESTIMONIALS ── */
     .testimonials {}
@@ -262,7 +271,7 @@
       display: block;
       font-size: 3rem;
       line-height: 1;
-      color: var(--accent);
+      color: var(--text);
       opacity: 0.4;
       margin-bottom: 0.4rem;
       font-family: 'Georgia', serif;
@@ -276,7 +285,7 @@
       font-size: 0.75rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--text);
     }
 
     /* ── CTA ── */
@@ -292,15 +301,15 @@
     footer {
       background: var(--cream);
       border-top: 1px solid var(--warm);
-      color: var(--muted);
+      color: var(--text);
       text-align: center;
       padding: 2.4rem;
       font-family: 'Arial', sans-serif;
       font-size: 0.75rem;
       letter-spacing: 0.08em;
     }
-    footer a { color: var(--muted); text-decoration: none; margin: 0 1rem; transition: color 0.2s; }
-    footer a:hover { color: var(--accent); }
+    footer a { color: var(--text); text-decoration: none; margin: 0 1rem; transition: color 0.2s; }
+    footer a:hover { color: var(--text); }
     footer .footer-links { margin-bottom: 0.8rem; }
 
     /* ── THEME SWITCHER ── */
@@ -370,23 +379,24 @@
       overflow: hidden;
       z-index: 0;
     }
-    .bg-slide {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
-    }
+      .bg-slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        filter: saturate(1.28) contrast(1.13) brightness(0.97);
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+      }
     .bg-slide.active { opacity: 1; }
     .bg-slide::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(255,255,255,0.82);
+      background: rgba(255,255,255,0.70);
     }
-    .hero .bg-slide::after    { background: rgba(255,255,255,0.80); }
-    .cta .bg-slide::after     { background: rgba(255,255,255,0.78); }
-    [data-theme="dusk"] .bg-slide::after { background: rgba(30,28,34,0.85) !important; }
+    .hero .bg-slide::after    { background: rgba(255,255,255,0.66); }
+    .cta .bg-slide::after     { background: rgba(255,255,255,0.64); }
+    [data-theme="dusk"] .bg-slide::after { background: rgba(30,28,34,0.78) !important; }
     /* Lift content above the carousel layer */
     .hero > *:not(.bg-carousel),
     .cta > *:not(.bg-carousel) { position: relative; z-index: 1; }
@@ -430,9 +440,11 @@
     <div class="brand"><a href="index.html" class="logo" aria-label="Amanda Maney home"><img src="logo.png" alt="Amanda Maney Alignment Coaching"></a><a href="index.html" class="home-link">Home</a></div>
     <div class="links">
       <a href="index.html#process">How It Works</a>
-      <a href="index.html#testimonials">Stories</a>
+      <a href="about.html">About Me</a>
       <a href="blog.html">Blog</a>
       <a href="audio-library.html">Audio Library</a>
+      <a href="work-with-me.html">Work with me</a>
+      <a href="contact.html">Contact</a>
     </div>
     <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
@@ -440,39 +452,54 @@
   <!-- HERO -->
   <div class="hero">
     <div class="bg-carousel" aria-hidden="true">
-      <div class="bg-slide" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80&auto=format&fit=crop'); background-position:center 65%;"></div>
+      <div class="bg-slide" style="background-image:url('images/homepage/hero-1.jpg'); background-position:center 65%;"></div>
     </div>
-    <p class="tag">Alignment Coaching</p>
-    <h1>Find Your Way to<br>a Life You Love</h1>
-    <p class="sub">
-      Feeling lost, joyless, or disconnected? You haven't lost yourself —
-      you've lost your <em>connection</em> to yourself. I can help you find it again.
+    <p class="tag" style="color: #5a5e66; font-size: 1.1rem;">Reaching for</p>
+    <h1 style="color: #5a5e66;">A Little More Joy</h1>
+    <p class="sub" style="color: #5a5e66; font-size: 1.25rem;">
+      Let me show you how.
     </p>
 </div>
 
   <!-- STORY -->
   <section class="story">
     <div class="container">
-      <h2>My Story</h2>
-      <p>
-        I know what it feels like to search — for years, even decades — for a life
-        that feels truly yours. I left a 30-year career with my body inflamed by
-        stress. Then my darling husband was diagnosed with terminal brain cancer. I
-        nursed him through four months until he died, peaceful and happy, at home.
-      </p>
-      <p>
-        His dying sharpened everything. Alignment had never mattered more. After he
-        passed, I kept aligning — working through grief, day by day, reaching for a
-        little more joy each time.
-      </p>
-      <p>
-        That practice brought me out of the darkness and into a life I truly love.
-        Beauty surrounds me. I do what I love. I love what I do. Loss gave me
-        clarity, meaning, and purpose — and I know how to show you the same path.
-      </p>
-      <p>
-        <em>If you're struggling, I see you. I hear you. I feel you.
-        You deserve to live a life you truly love.</em>
+      
+      <div class="story-block" style="max-width: 600px; margin: 0 auto; font-size: 1.08rem; line-height: 1.7; text-align: center;">
+        <p><strong>You may be outwardly successful, but feeling the strain...</strong><br>
+        Or perhaps life, for you, is a struggle.</p>
+
+        <p><strong>Health, Work, Relationships, Money...</strong><br>
+        Whether You Long For More Or Have Suffered A Loss....</p>
+
+        <p style="text-align:center; margin: 2em 0 1em 0; font-size:1.15rem;">
+          <span style="display:block; font-weight:bold; color:#5a5e66;">Learn How To</span>
+          <span style="display:block; font-size:1.25rem; font-weight:bold; color:#3a3530; margin:0.2em 0;">Feel Good First</span>
+          <span style="display:block;">And The Change You Want Will Come Effortlessly</span>
+          <span style="display:block;">While You Watch In Delight And Smile...</span>
+        </p>
+
+        <p>Whether you want to <strong>Amplify What's Working</strong>,<br>
+        Or <strong>Soothe What Is Not</strong>...<br>
+        If you want to smile more,<br>
+        <span style="font-weight:bold; color:#3a3530;">I Can Help.</span></p>
+
+        <p>I work with those who want to enjoy life more and know that it's an inside job.<br>
+        Together, we focus on what they want to achieve.</p>
+
+        <p>Personal, Professional, Physical Desires,<br>
+        Whatever the context, the approach is the same.</p>
+
+        <div style="margin: 2em 0 1em 0; text-align:center;">
+          <span style="font-size:1.18rem; font-weight:bold; color:#3a3530;">When You Choose To Work With Me:</span>
+        </div>
+
+        <div style="margin-top:1.2em;">
+          <div>We tune in to the way you want to feel.</div>
+          <div>We use those feelings to inspire you to act.</div>
+          <div>We harness the strength at your core.</div>
+        </div>
+      </div>
       </p>
     </div>
   </section>
@@ -510,8 +537,24 @@
           </p>
         </div>
       </div>
-      <p style="text-align:center; margin-top:2.5rem; font-size:0.85rem; color:var(--muted);">
-        Grounded in the teachings of Abraham — <a href="https://www.abraham-hicks.com" style="color:var(--accent);">abraham-hicks.com</a>
+      <p style="text-align:center; margin-top:2.5rem; font-size:0.85rem; color:var(--text);">
+        Grounded in the teachings of Abraham — <a href="https://www.abraham-hicks.com" style="color:var(--text);">abraham-hicks.com</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div style="max-width: 600px; margin: 3.5rem auto 2.5rem auto; text-align: center; font-size: 1.18rem; line-height: 1.7; color: #3a3530;">
+      <p style="margin-bottom: 1.5em;">
+        When you discover how easy it is<br>
+        to get yourself feeling good, no matter what,<br>
+        <strong>smiling is inevitable!</strong>
+      </p>
+      <p style="margin-bottom: 0.5em;">
+        Wherever you are,<br>
+        you are always in the perfect place<br>
+        to reach for<br>
+        <span style="font-size:1.7rem; font-weight:bold; color:var(--text);">A Little More Joy!</span>
       </p>
     </div>
   </section>
@@ -552,14 +595,13 @@
   <!-- CTA -->
   <div class="cta">
     <div class="bg-carousel" aria-hidden="true">
-      <div class="bg-slide" style="background-image:url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1600&q=80&auto=format&fit=crop'); background-position:center 55%;"></div>
-      <div class="bg-slide" style="background-image:url('https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=1600&q=80&auto=format&fit=crop'); background-position:center;"></div>
-      <div class="bg-slide" style="background-image:url('https://images.unsplash.com/photo-1530053969600-caed2596d242?w=1600&q=80&auto=format&fit=crop'); background-position:center 45%;"></div>
+      <div class="bg-slide" style="background-image:url('images/homepage/cta-1.jpg'); background-position:center 55%;"></div>
+
     </div>
-    <p class="tag" style="font-family:'Arial',sans-serif;font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">Take the first step</p>
+    <p class="tag" style="font-family:'Arial',sans-serif;font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text);margin-bottom:1rem;">Take the first step</p>
     <h2>Ready to find your way home?</h2>
     <p>You deserve to live a life you truly love.</p>
-    <a href="audio-library.html" class="btn">Explore Audio Library</a>
+    <a href="about.html" class="btn">About Me</a>
   </div>
 
   <!-- FOOTER -->
@@ -567,9 +609,9 @@
     <div class="footer-links">
       <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/">Facebook</a>
       <a href="https://www.instagram.com/amandajoymaney/">Instagram</a>
-      <a href="audio-library.html">Audio Library</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <p style="color:var(--muted);margin:0;">© Amanda Maney Alignment Coaching</p>
+    <p style="color:var(--text);margin:0;">© Amanda Maney Alignment Coaching</p>
   </footer>
 
   <script>
