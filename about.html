@@ -93,6 +93,9 @@
     [data-theme="dusk"] .bg-slide::after { background: rgba(30,28,34,0.78) !important; }
     .hero > *:not(.bg-carousel),
     .cta > *:not(.bg-carousel) { position: relative; z-index: 1; }
+    .about-photo { text-align:center; padding:3.5rem 2rem 0; }
+    .about-photo img { width:240px; height:240px; object-fit:cover; border-radius:50%; border:4px solid var(--warm); box-shadow:0 4px 24px rgba(0,0,0,0.10); }
+    @media (max-width:600px) { .about-photo img { width:180px; height:180px; } }
   </style>
 </head>
 <body>
@@ -141,6 +144,10 @@
   </div>
     <p class="tag">About Amanda</p>
     <h1>About Amanda</h1>
+  </div>
+
+  <div class="about-photo">
+    <img src="images/image-asset.webp" alt="Amanda Maney" />
   </div>
 
   <div class="about-section">
