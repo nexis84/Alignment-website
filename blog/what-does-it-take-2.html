@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Does it Take to Enjoy Life More? — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.62rem; letter-spacing:0.12em; padding:0.28rem 0.5rem; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>What Does it Take to Enjoy Life More?</h1>
+    <p class="meta">19 October 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <p>It takes work! But it’s work worth doing…</p>
+    <h3>Inner Work — Is It Really Worth Doing?</h3>
+    <p>People fear the inner work. Understandably. It can feel like a nightmare in there…</p>
+    <p>Emotions. Painful ones. The ones we’ve avoided for decades and more.</p>
+    <p>All lurking inside us, waiting to tear us apart…</p>
+    <p>How often I hear people say… ‘I don’t want to start exploring that stuff. I’d start crying and I know I’d never stop.’</p>
+    <p>I felt that way myself, for years.</p>
+    <p>How many of us choose death by slow addiction, rather than facing that inner world? We’re frightened of painful emotions. They overwhelm us. They seem to threaten our very survival.</p>
+    <p>Maybe we reach a point where we can no longer avoid this inner work. We reach out for help. There are so many approaches and who knows which approach is the best fit for us? It’s bewildering. We’re lost in a world we don’t recognise...</p>
+    <p>What if you were the one who knows? The only one who knows…</p>
+    <p>What if you were the expert on you?</p>
+    <p>I don’t mean we don’t ask for advice or information. Of course there are others who know WAY more about the world of emotion and trauma than we do.</p>
+    <p>But what if we had infallible inner guidance inside?</p>
+    <h3>What if the Feel Good Rule, ruled?</h3>
+    <p>Here’s my take, from my own experience and that of my clients.</p>
+    <p>The Feel Good Rule is the only rule worth following.</p>
+    <p>Is the inner work worth doing? Absolutely.</p>
+    <p>Should it feel awful in the doing of it? Absolutely NOT.</p>
+    <p>I’ve had experiences with highly trained and qualified therapists, who’ve opened me up for 90 minutes of sobbing and then sent me home, crying all the way, with no sense of improvement and no follow up connection at all.</p>
+    <p>This doesn’t work for me. In my experience, there’s no need for it to feel that bad.</p>
+    <p>Do we need to acknowledge our painful emotions? Yes.</p>
+    <p>We have to start from where we are. They are like children who need soothing. But the good news is, they don’t need as much from us as we think.</p>
+    <p>We don’t need to figure out where they all came from. I find storyline largely unnecessary and mostly a distraction. It can tie us up in knots as we try to ‘fix’ what’s gone ‘wrong’.</p>
+    <p>In my experience, it’s the emotions that need attention, not the storyline. Every time.</p>
+    <p>Our emotions ache to be honoured and validated. That doesn’t feel as bad as we think. When we know what to do, it brings relief. Almost instantly. Every time.</p>
+    <p>We can call our emotions by their name; give them an inner hug; take them by the hand and lead them into better feeling places.</p>
+    <p>They go willingly.</p>
+    <p>We don’t stay in the land of grief or despair, rage or jealousy, fear or resentment.</p>
+    <p>We acknowledge, validate, appreciate our emotions and lead them gently back Home.</p>
+    <p>We don’t feel glorious when we’re soothing our anguish, but we feel a sense of relief as we do.</p>
+    <p>Does it take work? Yes.</p>
+    <p>Does it take time? Yes. Lots and lots of repeated practice is needed to release chronic patterns of pain.</p>
+    <p>Does it feel good while you do it. Yes. It feels like… relief. For a long time, relief is the inner goal of our work. It feels wonderful to reach relief. Over and over again.</p>
+    <p>Once we’re pretty stable in relief, once we can get there easily, we head for its neighbour, satisfaction. When we practise the feeling of satisfaction, we can build upward from there.</p>
+    <h3>The Feel Good Rule is not about pretending</h3>
+    <p>We don’t pretend to feel great when we don’t. Following the Feel Good Rule doesn’t mean a leap from despair to enthusiasm. If we’re in a situation of ongoing trauma, emotional first aid may be all we can manage.</p>
+    <p>The Feel Good Rule does not mean we must feel good.</p>
+    <p>It means we follow the trail towards feeling good. Following the path to our joy.</p>
+    <p>As sound is distorted over distance, joy can’t be felt when we’re in despair. From despair, our inner joy calling might feel like a prompting into anger or rage.</p>
+    <p>So how does the Feel Good Rule take us INTO rage?</p>
+    <p>If anger feels better than despair, go for anger. From despair, rage is a huge improvement.</p>
+    <p>So the Feel Good Rule is more of a ‘Feel-as-good-as-you-can-right-now Rule’!</p>
+    <p>When you follow it, you’re always reaching to feel a little bit better. Then a little bit better again.</p>
+    <p>Relief comes next. Always.</p>
+    <h3>Here are the features of the inner work I do</h3>
+    <p>It feels good every step of the way. It brings relief. Relief builds. Once you know you can consciously move towards relief, you know you’re on your way.</p>
+    <p>You want to do it. When the inner work needs to be done (i.e. you ache to enjoy life more) and the tools you’re using bring relief every time, you really do want to do it! ‘Want to get to your inner workshop today?’ The answer‘s a resounding ‘Hell YES!’</p>
+    <p>NO discipline or willpower is needed. Willpower and discipline? Vastly overrated in my view.</p>
+    <p>If you’re aching to feel better, you’ve probably expended all you have of both. Much coaching is based on these two pillars. Inner work, I find, works best without either.</p>
+    <p>The Feel Good Rule, rules. We find our way to doing the work because it makes us feel better, now. End of.</p>
+    <p>My agreement with clients: if it doesn’t feel good, don’t do it. If it doesn’t feel good, you won’t do it. Not consistently for any length of time, anyway.</p>
+    <p>Regimens built on discipline become another source of distress as the willpower fades and the practice drags us down.</p>
+    <p>How do we make ourselves do it? We don’t. We get ourselves wanting to do it. Why? Because it brings relief. We know we’re making progress.</p>
+    <p>We move a little further towards joy with every repeat. We’re moving into enjoying life more, by changing the inner programmes we run. We’re getting there. From the very first session. And we know it.</p>
+    <p>You do it for yourself. Guidance really helps. Of course. We all thrive on support. The expertise of others makes our work easier. But the best inner work is the work you do for yourself. Learn the tools from others to do it for yourself.</p>
+    <blockquote><p>“It depends on us alone, and requires patient work, carried out from day to day. Happiness must be built, and this requires time and effort. In the long term, happiness and unhappiness are therefore a way of being, or a life skill.” — Matthieu Ricard</p></blockquote>
+    <p>Enjoy the work at every step and you will keep going. The fruits of your efforts are almost instantaneous (you will feel some relief within minutes) and they are also cumulative…</p>
+    <p>It takes time. You don’t go to the gym for a week and come out with your dream physique…</p>
+    <p>So it is with inner work. We don’t move from grief to joy in a week or two of focus. It takes time. Weeks, normally. It may take months for some.</p>
+    <p>What keep us doing it? It feels good. Every time. Inner work calls me — it always brings relief. My clients say the same.</p>
+    <p>Once we have the tools, we’re on our way. We know how to get to where we want to go. Our emotions become our guidance system. We bless them for showing us what to soothe next.</p>
+    <p>Most of us don’t turn strong focus inward until some major loss hits us. Blessed are they who don’t wait that long! Regardless, with time and with focus, we can do this. You can do this.</p>
+    <h3>You can do it!</h3>
+    <p>When you are ready. When you can’t bear not to, any more. You can do what it takes to bring you relief.</p>
+    <p>Again. And again. And again.</p>
+    <p>And oh boy is it worth it!</p>
+    <p>From relief, we reach for satisfaction. Proud of the progress we make, we’re happy to be on our way. Outer effects matter less as we turn inwards to the true source of our joy.</p>
+    <p>Enjoying the outer world — its lovely people, places and pleasures — becomes easy when we realise we don’t need them to feel whole. No loss can truly wound us when we know that our joy is an inside job.</p>
+    <p>This inner work IS work. But it’s work that is SO worth doing!</p>
+    <p>If you’d like some help to get started, book in for a (free) chat. I LOVE helping others to enjoy life more.</p>
+    <p>My work is inspired mainly by the teachings of Abraham-Hicks.</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

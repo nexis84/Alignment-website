@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lest Ye Become As Little Children... — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+    nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+    @media (max-width:600px) { nav .logo img { height:40px; } }
+    nav .logo span { color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+    @media (max-width:600px) { nav .links { display:none; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'?'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Lest Ye Become As Little Children...</h1>
+    <p class="meta">28 September 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>… Life is likely to suck!</h3>
+    <h3>Want to enjoy life more?</h3>
+    <h3>Are you desperate? Are you ready to do what it takes?</h3>
+    <p>What if it were as simple as picking up a straw and blowing paint across a page?</p>
+    <p>I know, I know. When you’re not enjoying life, you want to slap the one who says, ‘Lighten up! Have more fun! Be kind to yourself…’</p>
+    <p>When reality is a tsunami of troubles and traumas, the ‘enjoy’ word may seem insulting. The simplest act could hold within it a promise of joy, but we can’t get near it.</p>
+    <p>You should have heard the struggle one client had recently as I tried to coax her into allowing herself a five minute break just once in her day…</p>
+    <p>Her new home is a building site. Literally. No floors, walls, ceilings… Her builders are robbing her blind and she knows it, but has to keep them sweet or she’ll be in a worse state.</p>
+    <p>Her dad’s health is extremely frail (he lives there too) — even her sweet dog is a poorly pup with all manner of medical needs.</p>
+    <p>She is a person who needs time alone to recharge. An Enneagram 9, she has to withdraw to reconnect.</p>
+    <p>But the thought of walking down the road and back again to give herself time to regroup — without the phone, without the dog — she simply couldn’t do it.</p>
+    <p>“I’d feel guilty!” she said.</p>
+    <p>Never mind the fact that the whole family — husband too — was depending on her Herculean efforts to keep her head together when everyone around her was surely losing theirs…</p>
+    <p>If you’re aching to enjoy life and struggling to do so, chances are you’ve got some big stuff going on, whether you can explain it or not. I really do get it.</p>
+    <p>The words of Herman Hesse speak beautifully to this longing.</p>
+    <blockquote><p>“If you are now wondering where to look for consolation, where to seek a new and better God… [this] does not come to us from books, [God] lives within us…“… you will surely realise, in your present loneliness and despair, that this time you must not look to external… sources… for enlightenment.“Nor to me. You can find it only in yourself. And there it is, there dwells the God who is higher and more selfless…“This God is in you too… most particularly in you, the dejected and despairing.”“…there is a God and only one God [who] dwells in your hearts, and it is there that you must seek…”</p></blockquote>
+    <p>(If you need to, please substitute the word ‘God’ for whatever works best for you.)</p>
+    <p>Maria Popova describes Hesse as “brimming with kindred consolation for the transcendent traumas of living.” Exquisitely said.</p>
+    <p>A lifeline only helps if we can reach it. At times, soothing suggestions feel like cruel blades digging at an open wound.</p>
+    <p>It’s taken a lot of work, a lot of tears, a lot, lot, LOT of focused coaching to bring myself here to the point where I can invite you to reach for more.</p>
+    <p>If you’re not there yet, don’t give up. You’re on your way. You’re still reading. Which means you’re setting your intentions, consciously or unconsciously. And your higher self will guide you...</p>
+    <p>Nurture your knowing that there is a version of you far greater than your current circumstances allow.</p>
+    <p>Feed the beliefs that serve you. Stop asking if they’re true. Ask only how they feel.</p>
+    <p>Feel into this one:</p>
+    <blockquote><p>“… the belief that divinity is to be found not in some outside deity, but in the human soul itself, in its fidelity to itself as a fractal of nature, a particle of the perfect totality of the universe, which Margaret Fuller — Emerson’s greatest influence — called “The All’” — Maria Popova</p></blockquote>
+    <p>Reach for that ‘fractal of nature’, that prism of paradise that surely shines at your core. Even in the heart of disaster… as others before you have done. Our sisters and brothers who have found hope in the holocaust are beacons of light to us all. Edith Eger says,</p>
+    <blockquote><p>“We can’t choose to vanish the dark, but we can choose to kindle the light.”</p></blockquote>
+    <p>And,</p>
+    <blockquote><p>“…over time I learned that I can choose how to respond... I can be miserable, or I can be hopeful — I can be depressed, or I can be happy. We always have that choice, that opportunity for control. I’m here, this is now, I have learned to tell myself, over and over, until the panicky feeling begins to ease.” ? Edith Eger, The Choice</p></blockquote>
+    <h3>What’s stopping you from enjoying life more?</h3>
+    <p>If you’re loving life, having a ball, chances are you’re the ‘kid at heart’ kind. I guess you’re probably not reading this blog, either. You’re out there, surfing at dawn or spinning fallen leaves into golden showers as you walk or cuddling up with hot cocoa and basking in bliss…</p>
+    <p>But for many of us, we may see the surf or the leaves on our walk and yet, we can’t enjoy them. Not really. A cup of cocoa might be nice, but it’s laced with thoughts of worry…</p>
+    <p>For some, worry starts with ‘How many calories am I consuming right now?’ or “How much did you say this cost?” For others, the hot drink barely features as thoughts drive relentlessly on… things I have to do but don’t want to do; things I’ve messed up; things I need but don’t know how to achieve…</p>
+    <p>For others again, it’s more of an, “I should be enjoying this. Why aren’t I? Why can’t I enjoy the simple pleasures of life?” as they battle a sense of weariness.</p>
+    <p>For those living with loss, it‘s often, “I’m never going to enjoy the simple pleasures of life again. Ever. How can I?” — the warm chocolate leaves them hollow and cold.</p>
+    <p>I hear those worries from friends and from clients, and I’ve been there plenty — I know the anguish well.</p>
+    <p>It’s completely understandable. But it can change. Dramatically.</p>
+    <p>When we’re ready.</p>
+    <p>When desire is strong enough.</p>
+    <p>When it becomes necessary.</p>
+    <h3>Let’s take a closer look…</h3>
+    <p>When we take a closer look at what’s stopping us from enjoying life, we may think it’s something on the outside of us. This is illusion. The ‘storyline’ is a — very compelling — red herring. Joy is an inside job.</p>
+    <blockquote><p>“Most of our suffering comes from our wrong perceptions.”</p></blockquote>
+    <blockquote><p>“We have to be master of our emotions… our perceptions… and learn not to be their victim.” — Thich Nhat Hanh</p></blockquote>
+    <p>It’s not our body, our budget, our to-do-list, our failures, our loss of a loved one, but our thoughts about same that cause our grief and suffering.</p>
+    <p>If we were incapable of thinking those grief-filled, worrisome thoughts, if they were removed from our minds, forever, we would simply… be.</p>
+    <p>In this moment, we would be. Without judgement or comparison. We would settle and access the stillness at our core.</p>
+    <h3>So what’s with this “Lest ye become as little children…” then?</h3>
+    <p>How can this possibly help?</p>
+    <p>Unless we become as little children, we cannot enter the kingdom of heaven. We’re talking children on a good day… and heaven as life at its best, here on Earth.</p>
+    <p>I watched some young children at an open-air festival recently. Heavenly beings, they were demonstrating for all of us, the presence of the kingdom of god.</p>
+    <p>They spent the day happily absorbed. Lost in each moment. Enrapt.</p>
+    <p>Attention, even as it shifted from one focus to another, was absolute.</p>
+    <p>These children were IN the moment. Like a swimmer in a pool. They were IN life.</p>
+    <p>Fully. Completely. IN.</p>
+    <p>In the singers on stage. In the chest of fancy dress. In the heap of ‘My Little Pony’s. In the tall grass that swallowed them whole. In the cuddles and in the snacks they received at their parents’ laps.</p>
+    <p>One little girl, a fairy-like creature, had ringlets of gold and a tee-shirt that said, “ICE CREAM PLEASE!” This sweet sylph ate her bodyweight in pizza, slice after slice after slice. She flitted to her mother and back over and over, settling with each slice to immerse herself fully into the music on stage…</p>
+    <p>Another, whose hair spoke of a pudding bowl and a misguided, well-meaning mother, turned cartwheels over and over, up and downhill. Beaming, supremely confident, she gathered admiring students who tumbled, legs akimbo all around her.</p>
+    <p>A little boy sat, for the longest time, entranced by the musicians and their skill. He was utterly transfixed. His future self was surely strumming and plucking and beating those instruments on a stage of his own creating…</p>
+    <p>A five year old doesn’t analyse or worry or spend time on the past or the future. She is utterly lost in the rapture of this moment, in awe of the wonders at her feet…</p>
+    <p>Children are IN the moment.</p>
+    <p>Adults are mostly ABOUT it.</p>
+    <p>Consider…</p>
+    <p>How many of your moments are you spending IN life?</p>
+    <p>How many moments are you spending thinking ABOUT life?</p>
+    <p>I’ll bet you’re mostly about life.</p>
+    <p>We think ABOUT the cocoa or the leaves or the surf. That’s if we’re keeping our attention there at all.</p>
+    <p>For the most part, we’ve left the cocoa at the first sip. We’re not there with the leaves any more. We’re thinking about the next task, or the words that were said last week….</p>
+    <p>Planning or fretting about future takes us from the surf at our side. Ruminating about past removes us from the leaves at our feet.</p>
+    <p>If we could be like the little children…</p>
+    <p>But that’s not possible for us grown-ups… is it?</p>
+    <p>Ok, sometimes we may have no option but to think some thoughts about life. Fine. Nothing wrong with that.</p>
+    <p>But how many more moments could we spend, each day, IN life instead of ABOUT it?</p>
+    <p>I’m willing to bet there are A LOT of moments you could be IN, if you want to enjoy life more.</p>
+    <p>When Michael was here, in this room, in his hospital bed, we were IN, IN, IN, IN, IN…</p>
+    <p>We sang ‘What’ll We Do With the Herring’s Head?’ as I bathed him and changed him. Well, I sang and he giggled… It’s a great song, so very long, with rhyme and repetition. It covered the shortcomings of a wife turned nurse and cack-handed carer. How we loved those moments!</p>
+    <p>I remember making Michael hoot with laughter as I conversed with a contrary cushion…</p>
+    <p>It had slipped off the chair where I’d placed it… and then slipped off again. It was a perfect fodder for a flight of fancy as I improvised an argument out loud.</p>
+    <p>“I don’t care if you want to go play in the garden, you’re a cushion! Stop arguing, do your job!” The charade was pure joy… seeing Michael’s smile, hearing his giggles, watching him shake his head with feigned disbelief. This way, delight!</p>
+    <p>These moments could so easily have been lost to us both. There were plenty of fearful, worrisome, grief-stricken thoughts I could have been thinking ABOUT what was happening there.</p>
+    <p>But immersing myself IN each moment with Michael was pure love, pure joy in his unfolding…</p>
+    <p>These days, I encourage clients to do as I do and imagine a five-year-old self, free from doubts or fears, grief or worry. A child fully immersed in her life.</p>
+    <p>They find, as do I, that it transforms their experience. They smile more. They worry less. They enjoy more ice cream…</p>
+    <h3>Try it</h3>
+    <p>What have you got to lose?</p>
+    <p>Start the day by imagining a childlike version of you. Imagine how she would be IN this moment. How eagerly she’d move into the next.</p>
+    <p>No thinking ABOUT your day. Just dive INTO it.</p>
+    <p>When you catch your self unnecessarily thinking ABOUT stuff, (and you will) bring yourself back IN.</p>
+    <p>Allow yourself short periods of thinking ABOUT if you must.</p>
+    <p>The rest of the time, get back IN.</p>
+    <p>If your moment is not a delight to you, allow yourself to do what small children do. Daydream yourself an alternative.</p>
+    <p>Being IN life doesn’t mean ‘facing’ it. Imaginings are IN the moment too. I spent much of my childhood imagining our London flat, inverted and full of water.</p>
+    <p>To escape my reality I swam, gilled and fishlike, over the door frames and light fittings in my mind.</p>
+    <p>Such bliss, so easy to access!</p>
+    <p>If you can, play.</p>
+    <p>With something or someone.</p>
+    <p>Paint. Music. Flour. Pets. Kids. All good play fodder!</p>
+    <p>The painting at the top of this blog was a bit of a disappointment to me, until my five-year-old self — so IN love with life — reached for a straw and blew paint all over the leaves and the spaces.</p>
+    <p>Oh how I grinned as I blew the paint across the paper!</p>
+    <p>I’m grinning thinking of it, still!</p>
+    <p>Sending you every encouragement, Dear One as you nurture your five-year-old self!</p>
+  </div>
+<footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+  </script>
+</body>
+</html>

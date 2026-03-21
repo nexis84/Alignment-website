@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lessons from a Life Un-lived – Making friends with our fears — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.62rem; letter-spacing:0.12em; padding:0.28rem 0.5rem; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Lessons from a Life Un-lived – Making friends with our fears</h1>
+    <p class="meta">31 January 2021</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <p>Three steps to making friends with your fear…</p>
+    <p>Hurtling towards the rocks as the Dordogne opened out into a massive toothy grin, I wondered if taking a lesson or two might have been wise before leaping into this kayak for my virgin trip.</p>
+    <p>“Don’t hit that great big rock, don’t hit that great big rock, don’t hit that…. bloody hell!”</p>
+    <p>All my ‘don’t-ing’ drew me (of course) to the biggest rock of the bunch, with the force of a junkyard, car-lifting magnet. I was about to be scrapped.</p>
+    <p>I remember an insane prioritising of sandals over paddle as the kayak crunched and capsized. I grabbed for my footwear as the boulder bit and I watched the blade swoosh away on the current… Well, at least I wouldn’t die without footwear…</p>
+    <p>Surviving that encounter was a scrambly, wet, deeply undignified affair, best not described any further. I escaped, miraculously, with only an egg-sized lump on my left knee to show for the mishap. I remember being taken aback by the way that limbs no longer belong to the body when they’ve been that cold, for that long… a weird experience, trying to scramble up a muddy bank with legs made of blancmange…</p>
+    <p>That trip down the Dordogne was a beautiful, scary, great big adventure; one of several instigated by a very dear friend, an Enneagram 6 with a delicious, 7, thrill-seeking wing. I look back on it with great relish. I’m so glad my friend invited me. I’m so glad I didn’t think twice before saying yes.</p>
+    <p>There’s no way I would ever have made such a trip on my own. As a risk-averse enneagram 9, I have no inclination towards adventure. None.</p>
+    <p>I really don’t like the thrill of being scared. In fact I hate it. I don’t like acceleration, deceleration, speed, height… I know, dull, right?</p>
+    <p>I had noticed this fear of fear intensifying with time, culminating with a panic attack a few years ago, when just being a passenger on the motorway had become enough to catalyse full-blown, white-knuckle, irrational terror on a two-hour journey to the Lake District.</p>
+    <p>My aversion to fear didn’t stop there. All that resistance built up in my body to such an extent that it resulted, ultimately, in 18 months of adrenalin-induced whole-body, itchy-as-hell-hives, triggered any time I experienced physical or mental stress. I had created a full-blown, physical allergy to fear. This mind-body thing. It’s real.</p>
+    <p>Worrying, overthinking the past, resisting planning for the future for fear of disappointment… fear, fear and more fear. All these fears became tied in, for me, to insane attempts to control the carp out of life and avoid adrenalin.</p>
+    <p>How had I reached this point? Seeking answers to this question ultimately paved my way to relief.</p>
+    <p>Quite some time ago, (two decades ago at least) work-triggered stress led me to the world of self-help. I became a passionate enthusiast. I learnt a whole heap from it and have seen many benefits. But I also encountered some considerable challenges along the way.</p>
+    <p>A ‘self-help’ pitfall, well-documented these days, is the unrealistic expectation of the ‘miracle cure’, combined with a heightened desire to control the uncontrollable. We fear the vulnerability that comes with accepting that so much of life is … well, uncontrollable.</p>
+    <p>I certainly fell into the trap, for some time, of thinking that if I just learnt the right combination of techniques, life’s pain could be avoided. As an Enneagram 9, there’s nothing I wanted more.</p>
+    <p>My core 9 personality driver is to avoid… well, everything actually, in order to attain peace. I have the 9’s tendency to withdraw and numb out completely, to prevent life from being able to have impact on me. I see it in clients too. The attempt to avoid pain is not exclusive to 9s — 7s and 2s in particular will tend to resist the darker side of life.</p>
+    <p>Many of us subconsciously train our brains to fear painful feelings. That means that, when we feel bad, we don’t just feel bad, we feel bad about feeling bad! Feeling bad became a real forte for me: I could layer it up to bury myself deep, and lay a patio on top!</p>
+    <blockquote><p>When you get in the habit of running away from painful emotions or trying to fix them, you train your brain to fear them.— Nick Wignall</p></blockquote>
+    <p>The futile avoidance of fear can build into a quagmire of resistance to negative emotions and experience. Dealing with daily demands then becomes increasingly like walking with feet cast in concrete.</p>
+    <p>Life with concrete boots is exhausting and it doesn’t feel great.</p>
+    <p>My experiences of this led me to more learning, and the exploration of therapeutic interventions. I trained in accessible modalities: Gary Craig’s Emotional Freedom Technique, (EFT), Karl Dawson’s EFT — Matrix Re-imprinting, Brandon Bays’ Journey therapy, Jonathan Shaw’s Do the Opposite (DTO).</p>
+    <p>As a practitioner, I was able to assist others with these tools within my coaching practice, whilst receiving profound benefits for myself. I loved this work, from the start. What greater joy is there than to catalyse freedom for others? And it really does work.</p>
+    <p>But I still found myself steering the kayak towards the boulders in the river of my life. What was that about? For what seemed like the longest time, I couldn’t figure it out. I could see myself overworking, overthinking, overdoing with worry driving me on to the rocks. Why couldn’t I steer towards the calm, gentle waters on the other side of the river, where the confident ones hang out?</p>
+    <p>It turned out that the crash and burn (or drown) in my life was inescapable. Why? Even with all the great tools and awarenesses I’d gained, with all the value I could give to others, I was still missing the key ingredient.</p>
+    <p>I had no trust in myself or in life.</p>
+    <p>I wanted to have faith. I was so tired of fearing my fear. I loved the idea of letting go and letting God. I believed others who said they could do it. But I didn’t have it. Which meant that life was still sweeping me towards the rocks, and I was back-paddling furiously in futile and exhausting efforts to avoid them.</p>
+    <blockquote><p>As soon as you trust yourself, you will know how to live.— Johann Wolfgang von Goethe</p></blockquote>
+    <p>And that’s when I got it.</p>
+    <p>In the foaming broth of a capsized life-moment, I caught a fresh insight from the teachings of Abraham (www.Abraham-Hicks.com)</p>
+    <p>According to Abraham, the single most important relationship in life is the one we have with our Inner Being. All the tools and techniques, all the processes in the world, don’t have any foundation unless rooted in the connection we have with our core self.</p>
+    <p>I didn’t have one of those. My significant other was… just … not.</p>
+    <p>I so wanted that kind of confidence. I wanted Goethe’s trust in the self. I wanted an inner being who would help me find my way…</p>
+    <p>And then, one day, I just decided to make an Inner Being up. Instead of hoping for enlightenment, I opted for plain ol’ fiction. I figured I didn’t have anything to lose.</p>
+    <p>I started to write to my Inner Being as if she were a real person, a champion to whom I could take my fears and worries. I wrote back to myself, as if I were an all-loving, all-knowing, all-powerful presence, relaxed and confident and sure.</p>
+    <p>Clearly, there were some necessary parameters. (I have yet to create a champion equipped with an actual magic wand…) But I could go with the logic that any power I have is in the present moment. And that anything I want — health, wealth, any thing or situation — is because I believe that the having of it will make me feel good.</p>
+    <p>I figured that if I focused my conversations with this Inner Being around connecting with the feelings I wanted, the connection would be of value. It was only about raising a frequency. Lower emotions = lower frequency, higher emotions = higher frequency = greater access to joy in the now as well as increased likelihood of lining up with more.</p>
+    <p>Candice Pert’s ‘Molecules of Emotion’ backed the validity of making emotion a key focus. Her work proved the impact of emotions as chemicals in the body. Regardless of what might happen next, I knew that if I managed to release negative emotions more easily and allow positive ones in, I was doing myself good. If my Inner Being could be a way of using self talk to reassure myself, I could finally make friends with my fear.</p>
+    <p>I launched a journal. I created it around imagined conversations with my Inner Champion, Amelie. Each day, I would return to the pages of my notebook, and I’d write as if they were a living, breathing space. I was surprised by the strength of the relationship that grew from this simple, daily practice.</p>
+    <p>Soon, it wasn’t about avoiding bad feelings any more. Quite the opposite. Amelie always called me to acknowledge my feelings. But she then focused me towards the feelings I wanted instead. And I got better and better at leaving the thorny questions of how and when issues would resolve to the all-knowing Amelie.</p>
+    <p>It didn’t matter that Amelie was make-believe. What mattered was that she was my excuse to deliberately adopt and practise a confident, joyful, powerful stance. She made me imagine, repeatedly each day, that all would be well, because I had the power to feel good in any given moment. Which was all I ever wanted anyway.</p>
+    <p>This single journaling practice grounded all the other tools I’d found. My imagined relationship became the foundation I needed to dissolve the toxic negativity and fear-filled torrents of thought.I finally had the steady stream of reassurance I needed to carry me safely around the rocks and I knew it.</p>
+    <p>When rocks appeared, I experimented with leaning into the stream. I actively handed stuff over to Amelie, trusting that relaxing into the flow was all it would take. It worked. Repeatedly. And the better it got, the better it got.</p>
+    <p>I actually reached the point where I could genuinely welcome fear as the friend it is. Fear simply tells me, it’s time to connect again with Amelie. It’s time to hand her the paddle. And it’s such a relief when I do. I dare to believe that the relief I feel in handing fear to the imagined champion at my core is all I need to find my way downstream past this next batch of boulders.</p>
+    <p>And time and time again, my river ride becomes a thrill, not a spill. Adrenalin brings a smile much more readily these days.</p>
+    <p>Plenty of people talk to themselves consciously. Fewer make a point of talking back regularly from an All-Loving, All-Knowing, All-Powerful perspective. I recommend it. It’s immense…</p>
+    <blockquote><p>Between stimulus and response there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom.― Viktor Frankl</p></blockquote>
+    <p>Most of the time, we have a bit of breathing space between negative emotion and the need to take action about a specific issue. Engaging with an imagined champion helps us to leverage that space.</p>
+    <p>Clients love this approach. So many people have a powerful sense of an inner critic, plaguing them at every turn. The idea of consciously creating an opposite or better is hugely appealing to them and more powerful than even they at first imagine.</p>
+    <p>If you’re interested in giving this a go, you can have plenty of fun creating your own inner mentor.</p>
+    <p>People ask, but what do you do when negative emotion shows up? How does your imaginary champion help then? Isn’t it impossible to use your imagination when you’re feeling afraid or worse?</p>
+    <p>If you’d like a framework for tackling negative emotion with your champion, I’d suggest the following three steps:</p>
+    <p>• Allow your feelings. Acknowledge and name them, without resistance. Focus on feelings rather than storyline wherever possible. (Talking about why we feel the way we do tends perpetuate the emotion rather than clearing it. I’ve come to view the storyline as a big, fat, red herring…) • Align (by writing/talking) with your inner champion. Your champion knows your pain, but also knows how to guide you through it. Leave the problems with your champion and, like a child, simply name the emotions you’d like to feel instead. Spend a few moments talking / writing about the emotions you want. Confidence, clarity, ease… whatever emotional states you want, imagine that she has them all available for you. Connect with how great those emotions feel and how much you’d enjoy feeling them now. Don’t force them. Just align with how much those feelings appeal to you. • Act, to get the body moving. Either take action on the issue, if inspired to do so, or do something completely unrelated. Just making a cup of tea or going for a walk will get you ‘into’ your body. Leave your issue with your Inner Champion. Return when prompted or when necessary. See how it presents itself then.</p>
+    <p>Now, when it comes to adrenalin… I’ve not taken up bungee jumping or white water rafting, don’t get me wrong… but I am navigating life’s currents with unprecedented joy and ease, the turbulent as well as the still; I’m a white-knuckled passenger no more.</p>
+    <p>And I have thoroughly enjoyed a course in kayaking…!</p>
+    <p>If you have already found your higher power, your connection to source, or some other form of reassuring presence, I salute you — we are all in this together, seeking some stability on the rapids of a life well-lived.</p>
+    <p>If you haven’t yet found an approach that works for you, what have you got to lose? Put your imagination to work and see what happens next…</p>
+    <p>With every encouragement,</p>
+    <p>Amanda</p>
+    <p>P.S. If you’re giving this approach a try, I’d love to hear how it goes, drop me a line and let me know!</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>
