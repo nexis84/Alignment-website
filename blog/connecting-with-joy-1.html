@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting with Joy - 3 Practices for Enjoying the Heck out of Life — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.62rem; letter-spacing:0.12em; padding:0.28rem 0.5rem; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Connecting with Joy - 3 Practices for Enjoying the Heck out of Life</h1>
+    <p class="meta">19 December 2020</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <p>So, there I was, this morning, sitting in our Garden Room with tears of joy spilling down my cheeks. Tears of joy. That’s not a common occurrence for me, I can tell you. Not that I’m a misery guts, but I don’t actually cry that often, for any reason and I can’t remember the last time I cried for joy.</p>
+    <p>And what life-changing sight, sound or event had triggered the tears?</p>
+    <p>I’ll tell you.</p>
+    <p>It was the reflection of the trees, the bare branches, in the rose-gold of the Apple logo on the back of my iPad. I’m tearing up a little now, just writing about it.</p>
+    <p>Okay, stay with me, I know I must sound unhinged, right? Menopausal Madwoman Maney?</p>
+    <p>It all started with my morning check-in with Amelie.</p>
+    <p>Today I asked for inspiration - something to uplift, something lovely to share. I’ll take you back to you how my check-in unfolds…</p>
+    <p>………………...</p>
+    <p>It goes like this: I kneel on my beautiful prayer stool (a delicious indulgence indeed) and sound my beautiful Tibetan prayer bowl.</p>
+    <p>So, the sound of the bowl envelops me. I have no words to describe the beauty of it. It folds me round and I can feel it in my cells, shimmering. Mmmm. Now I know where the need to ‘Om’ comes from…</p>
+    <p>And then I just ask my Inner Being: Amelie, my Champion and Number One. Inspiration please? Thank you.</p>
+    <p>I clear my mind for a moment, no big meditation, just a staring into space for a few seconds.</p>
+    <p>And I pick up my pen and write her response in the moment:</p>
+    <p>‘What if you could relax,</p>
+    <p>hand it all over,</p>
+    <p>pick one thing</p>
+    <p>and enjoy the heck out of it?</p>
+    <p>It’s okay, give it a try!’</p>
+    <p>………………...</p>
+    <p>So there I was, with this instant inspiration, as requested, from my DIY Inner Guide.</p>
+    <p>Well, it seemed like an uplifting idea, happy to give it a go, I thought. So, I grabbed a mug of coffee, sat in our Garden Room and wondered what I might pick to enjoy.</p>
+    <p>Before I could give it any serious consideration, my eye was drawn to the slight movement of rose gold reflection: the delicate, filigree tree fronds, dancing in the shining Apple.</p>
+    <p>They weren’t dancing for me, they would dance anyway, whether I noticed them or not. They were dancing because that’s what they do, because bare trees and reflected light and the touch of the wind and the shine of smooth metal are all set up that way. Because beauty is threaded through every atom of What Is.</p>
+    <p>Oh the beauty of that moment! The joy was so intense, the tears just brimmed over. Such exquisiteness.</p>
+    <p>If I’d been sitting slightly to the left or right, or the iPad had been in a different position, I would never have seen it at all.</p>
+    <p>And the deep reminder: Joy is right here. Always. In the simplest of things. It’s written into the fabric of What Is and Who We Truly Are.</p>
+    <p>……………</p>
+    <p>I know there are plenty of things to obscure the view, much of the time. Truly, I do. I am currently working my way back to wellness after a serious bout of burnout. And there has never been a time of greater worry, world wide. But in the midst of heightened challenge, I am noticing huge benefit from three practices in particular just now, that make it easier for me to connect with the confidence at my core. Allow me to share them with you.</p>
+    <p>Number one, in every way, is the creation of and conversation with my Inner Being, my Champion, Amelie. I heartily recommend you make one of these up for yourself. At the risk of sounding like Miranda with her ‘Fruit Friends’, I tell you, Amelie is transforming my world.</p>
+    <p>Then, there’s the Mind the Gap Meditation. I know it’s not news, but I honestly find this the only way to approach meditation - filling the gaps in my mind, through the day with a Buddhist Mantra. This way, the minute one activity ends, and a few moments arise when I’m not focused on something specific, I automatically return to the phrase: ‘Om mani padme hum’.</p>
+    <p>This phrase is deliciously incomprehensible to my conscious mind. I don’t need or want to know its precise meaning, so there’s no attachment, just the gentle resonance of beautiful soul-sounds, to keep my mind from heading off into the bushes…</p>
+    <p>And finally, there’s Savouring Segments - stopping at the end of each segment, for a moment, to savour it fully. This is my solution to the difficulty I’ve had with gratitude practices in the past.</p>
+    <p>Over the years, I have tried and failed to build an appreciation practice at the end of the day. Much to my dismay, I have found that, particularly before I adopted the two practices above, I was too wearied by the toxic stream of disapproval and worry from my Inner Critic to appreciate anything by the end of the day, except the relief offered by the respite of sleep.</p>
+    <p>Now, with my savouring segments practice I stop at each natural break or transition in the day. There and then, I enjoy replaying the best of the moments just experienced and I feast on them fully. I savour them like slices of ripe honeydew melon, allowing the recollections to dribble like sweet juice down my chin.</p>
+    <p>This way, appreciation builds through the day. Now as I settle to sleep, my biggest problem is that I feel so delighted with my day, that I am in danger of not being able to sleep for the joy! That’s a problem I can handle!</p>
+    <p>I wonder what you make of these practices? Perhaps you already do something similar, or maybe you use a different approach to lace your day with loveliness.</p>
+    <p>Whatever your secret to finding more joy, please feel free to share; there’s nothing more delightful in life.</p>
+    <p>Sending every encouragement,</p>
+    <p>with warmest wishes, for ever more joy,</p>
+    <p>from my heart to yours,</p>
+    <p>Amanda</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

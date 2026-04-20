@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Amanda — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--text); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--text); border-color:var(--accent); }
+    nav .links a { color:var(--text); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links { display:flex; align-items:center; }
+  nav .links a:hover { color:var(--text); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.62rem; letter-spacing:0.12em; padding:0.28rem 0.5rem; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .hero { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .hero .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:normal; line-height:1.25; margin-bottom:1rem; color:var(--text); }
+    .hero p.sub { font-size:1rem; color:var(--muted); max-width:480px; margin:0 auto; }
+    .about-section { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .about-section p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .about-section h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    .cta .btn {
+      background: rgba(255,255,255,0.18);
+      color: var(--text);
+      border: none;
+      backdrop-filter: blur(14px) saturate(1.3);
+      -webkit-backdrop-filter: blur(14px) saturate(1.3);
+      box-shadow: 0 2px 16px 0 rgba(60,60,60,0.07);
+    }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  
+    /* -- BACKGROUND CAROUSEL -- */
+    .hero, .cta { position: relative; }
+    .bg-carousel {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .bg-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      filter: saturate(1.28) contrast(1.13) brightness(0.97);
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+    .bg-slide.active { opacity: 1; }
+    .bg-slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.70);
+    }
+    .hero .bg-slide::after { background: rgba(255,255,255,0.66); }
+    .cta .bg-slide::after { background: rgba(255,255,255,0.64); }
+    [data-theme="dusk"] .bg-slide::after { background: rgba(30,28,34,0.78) !important; }
+    .hero > *:not(.bg-carousel),
+    .cta > *:not(.bg-carousel) { position: relative; z-index: 1; }
+    .about-photo { text-align:center; padding:3.5rem 2rem 0; }
+    .about-photo img { width:240px; height:240px; object-fit:cover; border-radius:50%; border:4px solid var(--warm); box-shadow:0 4px 24px rgba(0,0,0,0.10); }
+    @media (max-width:600px) { .about-photo img { width:180px; height:180px; } }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="index.html" class="logo" aria-label="Amanda Maney home"><img src="logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="index.html#process">How It Works</a>
+      <a href="about.html">About Me</a>
+      <a href="work-with-me.html">Work with me</a>
+      <a href="blog.html">Blog</a>
+      <a href="audio-library.html">Audio Library</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="hero">
+  <div class="bg-carousel" aria-hidden="true">
+    <div class="bg-slide" style="background-image:url('images/homepage/hero-1.jpg'); background-position:center 65%;"></div>
+  </div>
+    <h1>About Amanda</h1>
+  </div>
+
+  <div class="about-photo">
+    <img src="images/image-asset.webp" alt="Amanda Maney" />
+  </div>
+
+  <div class="about-section">
+    <p>I am an alignment coach.<br>In other words<br>I help people smile more!</p>
+    <p>Aligning emotions with the Law of Attraction<br>is my specialism, following the teachings of Abraham-Hicks.</p>
+    <p>A Cambridge science graduate, with 30 years' experience in teaching/school leadership, a certified coach since 2007, I am trained in EFT (Emotional Freedom Technique) and Clean Language, Systemic Modelling.</p>
+    <p>My approach to coaching has been forged in the fires of contrast.<br>
+    I left my 30 year career with a body inflamed by stress. ('Burnt out' - literally!)<br>
+    I was sore, lost and worried about money.</p>
+    <p>But I had my darling husband beside me. Together, we'd make it through.</p>
+    <p>Four months later, my soulmate was diagnosed with terminal brain cancer.<br>
+    Four months after that, Michael died, at home, in his favourite room, in October 2021.</p>
+    <p>Grief was the final focuser.<br>
+    I had the theory and training.<br>
+    Bereavement made me do the work.</p>
+    <p>As I focused daily, reaching for relief, I discovered the power of the work.<br>
+    Theory became practice.<br>
+    Hoping became knowing.</p>
+    <p>As I grew my own smile,<br>
+    my body healed,<br>
+    my skills were honed,<br>
+    and clients came to work with me.</p>
+    <p>I worked with the diagnosed depressed,<br>
+    I worked with the dying,<br>
+    I worked with entrepreneurs under pressure.<br>
+    Together, we reached for<br>
+    more enjoyment<br>
+    more confidence,<br>
+    expanding success<br>
+    in alignment with ease...</p>
+    <p>I worked with teachers and parents, widows and coaches...<br>
+    I trained groups to carry the alignment work forward...</p>
+    <p>And now the work continues...<br>
+    founded in joy,<br>
+    soaked in the certainty that<br>
+    wherever we are<br>
+    we are always in<br>
+    the perfect place<br>
+    to reach for<br>
+    <span style="font-size:1.25rem; font-weight:bold; color:var(--text);">A little more joy!</span></p>
+  </div>
+
+  <div class="cta">
+    <div class="bg-carousel" aria-hidden="true">
+      <div class="bg-slide" style="background-image:url('images/homepage/cta-1.jpg'); background-position:center 55%;"></div>
+    </div>
+    <p class="tag">Take the first step</p>
+    <h2>Ready to smile more?</h2>
+    <p>One conversation can change everything.</p>
+    <a href="work-with-me.html" class="btn">Work with me</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/">Instagram</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  
+    document.querySelectorAll('.bg-carousel').forEach(function(carousel) {
+      const slides = Array.from(carousel.querySelectorAll('.bg-slide'));
+      if (!slides.length) return;
+      let current = Math.floor(Math.random() * slides.length);
+      slides[current].classList.add('active');
+      setInterval(function() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 5 * 60 * 1000);
+    });
+  </script>
+</body>
+</html>

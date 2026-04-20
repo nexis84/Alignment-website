@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Problem of Wanting What we Haven’t Got — and How to Alleviate it — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+    nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+    @media (max-width:600px) { nav .logo img { height:40px; } }
+    nav .logo span { color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+    @media (max-width:600px) { nav .links { display:none; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'?'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>The Problem of Wanting What we Haven’t Got — and How to Alleviate it</h1>
+    <p class="meta">20 February 2021</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>Life sucks — when you spend it wanting what you haven’t got —</h3>
+    <p>I relish the anguish in my big brother’s eyes as I prepare my toast ‘soldier’ — the last in the regiment — for its plunge into the runny yoke of my soft boiled egg.</p>
+    <p>My brother has just finished his egg and toast.</p>
+    <p>He can’t eat slowly. He just can’t.</p>
+    <p>He hates to watch me eat when he has nothing left.</p>
+    <p>He’s not allowed to leave the table.</p>
+    <p>So I have him, right where I want him.</p>
+    <p>The torture begins.</p>
+    <p>Payback, for a five-year old, is as simple as training myself to eat very, very slowly…</p>
+    <p>Generating a sense of lack — a method marketers use so well. I learnt how to do this at the age of five, to torment my older brother over the eating of a soft boiled egg. I’m ashamed to say that I delighted in the power I had over my bigger, stronger sibling — driving him crazy with desire for something he couldn’t have.</p>
+    <p>The misery of lack…</p>
+    <p>Alexis de Tocqueville’s observation in 1831, traveling the “new world” of America:</p>
+    <blockquote><p>“I have seen the freest and best educated of men in the happiest circumstances the world can afford; yet it seemed that a cloud hung on their brow and they appeared serious and almost sad […] because they never stopped thinking of the good things they have not yet got.”</p></blockquote>
+    <p>I don’t know about you, but I spent a great many years tortured by seemingly out-of-reach desires. So much so that I couldn’t enjoy any of the things I already had. I have lived a rich and beautiful life: snorkelling, diving, martial arts, writing, teaching, learning, theatre, singing, dance and more, all bathed in the deep abiding love of my husband and my friends.</p>
+    <p>The fact is, there is no worse feeling than the despair of not being able to be, do or have what we want. It may sound like spoiled toddler thinking, but it runs through every moment of human existence. We have desires. Unless we reach Nirvana — ‘extinguishing’ the suffering cycle, we are faced with the reality of restless energy ever seeking more.</p>
+    <p>Addictive and double-edged; when we believe we can fulfil desires, we feel wonderful. Exaltation. Jubilation. Life is exciting. A thrilling ride.</p>
+    <p>But when we don’t believe we can fulfil desires. When those desires feel like needs, when we feel unsafe because of our perceived lack, it‘s torture.</p>
+    <p>The Misery Duo</p>
+    <p>Misery comes from perceived lack + perceived powerlessness.</p>
+    <p>Desire alone doesn’t cause misery, it’s the belief that you can’t have what you want or need that causes all the pain…</p>
+    <p>The perceived lack and powerlessness duo kept me in a degree I hated for three years. Outsmarted by peers for the first time, after an A* school career, I crashed and burned. I was suddenly stupid. Clueless, I decided that learning to play the Deer Hunter theme tune on the guitar would be my best option at uni, as I clearly couldn’t ‘do’ academics.</p>
+    <p>It didn’t occur to me that I could change course. That the degree might not have been a good fit for my actual interests or skills. I felt utterly at the mercy of circumstance. I would have struggled to say what I wanted — I guess, if anyone had asked me, all I would have been able to say is that I wanted to feel smart again.</p>
+    <p>I continued the misery perception into my working life. Feeling a sense of lack turned into the acutest forms of perfectionism. Deadly, right? I lacked perfection. I wanted it and was powerless to achieve it.</p>
+    <p>Running all the traits of imposter syndrome distorted my self evaluation. My standards bar was crazy high, and my negative bias operated as if it were on steroids. No matter how well I performed, it was never good enough. I was drowning in a belief that I was forever lacking, and was utterly powerless to change it. I worked harder, longer, gave far more than was good for me… all to no avail.</p>
+    <p>I didn’t know about imposter syndrome then, or how common it was. With these distortions at play, achievers are genuinely successful, truly accomplished in the eyes of the world, but can only perceive their own performance as a trail of failures.</p>
+    <p>Lack, — failure to feel ‘good enough’, one way or another — plus powerlessness — '‘There’s obviously something wrong with me and there’s nothing I can do about that,’ — and long term misery results.</p>
+    <blockquote><p>“…even Meryl Streep, the most Academy award nominated actor in history, … telling a reporter, “[I] think, &quot;… I don't know how to act anyway, so why am I doing this?&quot; Meryl Streep, for crying out loud! If that doesn't tell you something about how normal and absurd the impostor syndrome is, nothing will.” — Valerie Young, The Secret Thoughts of Successful Women</p></blockquote>
+    <p>For me, the resulting distorted inner talk — decades of it — was brutal. I remember locking up the main gate one evening, 10 years or so in, thinking, “Death must feel better than this.” I was doing a good job. I really was. I just couldn’t reconcile myself with the inevitable lack of complete perfection.</p>
+    <p>The lack + powerlessness combo showed up with my first house. A hovel. It rotted around me. I stayed in the despair of it for over 20 years because I perceived myself to be powerless to move. It was irrational, ridiculous, but utterly unshakeable at the time.</p>
+    <p>For me, the core issue was that I lacked… confidence. So much so, I couldn’t even articulate that confidence was what I lacked. I was just… lacking. This is such a common problem; so many people coming to coaching will ultimately identify this as their main difficulty. If we only had more confidence, we would not feel the anguish of desires we can’t fulfil. We’d get out there and find a way…</p>
+    <blockquote><p>Confidence is a feeling. An emotional state and a state of mind. It’s the perception that you lack nothing. That you are equipped with everything you need, both now and for the future. — Mark Manson</p></blockquote>
+    <p>Manson offers only one route to greater confidence —</p>
+    <blockquote><p>The only way to be truly confident is to simply become comfortable with what you lack. — Mark Manson</p></blockquote>
+    <p>The belief that I was inherently lacking — ‘There’s just something wrong with me,’ — meant that I spent a lot of years, a lot of energy, a lot of life, trying my damnedest to achieve comfort with what I lacked. Not the kind of comfort Manson’s really talking about, I’m sure. I think Manson means truly making peace with our reality as it is. I didn’t get that far. I was just trying to numb the pain of sharply felt need with no flicker of hope.</p>
+    <p>Appreciating life, learning to be comfortable with perceived lack, the first member of our duo, is a worthy aim. Many manage it well and describe themselves as deeply content.</p>
+    <p>But the perception of powerlessness, the second part of the misery double-act, is the real deal-breaker. If you are feeling powerless, you can’t find comfort anywhere.</p>
+    <p>If you are struggling with powerlessness, it’s hard to make peace with lack because you feel unsafe. When you’re not feeling safe, it’s hard to be appreciative. You’re running scared. You’re in the reptilian ‘fight-flight-freeze’ bit of the brain. And then you coat yourself in shame because you know you ‘should’ be grateful…</p>
+    <p>Until recently, I can’t remember a time when I didn’t feel powerless, in terms of the steering of my own life. This powerlessness was not how I showed up in the working world. There, I could and did take charge of situations in front of me. I delivered high quality outcomes for my stakeholders, I wouldn’t rest until the job had been done to the highest of standards. I always found the power to serve others. But I never felt as though I was in control of what happened to me.</p>
+    <p>If you recognise any of this, if you feel powerless in one key area of your life, my heart goes out to you. Perhaps you find yourself suppressing your desires, your awareness of lack so that you won’t be so distressed by having no power to change it. That’s never going to be a very satisfying fix.</p>
+    <p>What if we could release even a bit of perceived powerlessness — what would life be like then?</p>
+    <p>Powerlessness, after all, is a feeling. Feelings are not absolute. We can influence them. Much of my perceived powerlessness was just a story I was telling myself. It wasn’t real. Perhaps some of yours isn’t, either.</p>
+    <p>Each desire from the storyline of life holds the longing for specific emotional states. Taking one example: when my storyline said: “I want a new house,” it wasn’t actually the house I was after but the emotion-state a new house would generate; a feeling of delight. A house in a decent state of decor offered beauty as well as shelter. Beauty brings me home.</p>
+    <p>For various reasons, for many years, I felt completely unable to change the external conditions of my living environment. Hopelessness set in.</p>
+    <p>I believed I had no control over the outside conditions. So I tried to change my thinking. Affirmations were recommended.</p>
+    <p>When affirmations just make things worse…</p>
+    <p>But repeating affirmative statements — present tense statements of the thing I want as if it’s already happened — just activated the misery lack/powerlessness duo for me. I couldn’t get past it. Hopelessness bedded in and had kids — Doom, Gloom and Despair.</p>
+    <p>Affirmations triggered the lack by activating the storyline. If I said — “I love my beautiful new home,” the despair was overwhelming. I could use various techniques I knew to clear this negative kickback, but it was just too hard to sustain. I would make short bursts of progress only to be swallowed up by Hopelessness &amp; co. once more.</p>
+    <p>Alignment Coaching — Learning to Feel Equipped</p>
+    <p>Nowadays, I know better.</p>
+    <p>Nowadays I know that learning to feel equipped is accessible as a feeling state if I align with the word ‘equipped’. Just the word on its own.</p>
+    <p>State-of-being names are more likely to be content-free, clean of connotations; I can access them more easily than phrases with storyline attached.</p>
+    <p>For a long time I struggled with ‘I have all the money I need,’ but repeating the word ‘wealth’, now that I could do. Aligning with the mental/emotional state of wealth, that felt good. That gave me hope. I could take the power back. Hopelessness and her kids could go find lodgings elsewhere.</p>
+    <p>Connecting daily with a state we want to feel doesn’t just align us with that feeling. It aligns us with the version of ourself who feels empowered, equipped, successful and free.</p>
+    <p>The emotion-state word, repeated, activates the parts of the brain we really want to stimulate. These parts hook us up with the people, places and events leading to the storyline improvements we’d love…</p>
+    <p>Going via the emotion rather than the storyline outcome means that goals are formed around the way we want to feel, not the things we want to do or have. And it means we can start to feel successful immediately. Because the emotional states are available now. Long before we’ve achieved the storyline success, we can bathe in the feeling we’d have when we do reach that point. And that sets our brains and bodies up to connect with success more swiftly… and the journey becomes enjoyable in and of itself.</p>
+    <p>Nowadays, my coaching is alignment based. I look at the storyline for the things that are wanted. I clarify the desired emotion-state — the real ‘why’. Repeating the emotion word to align with that feeling is number one action to take. Sometimes it’s the only action for a good while.</p>
+    <p>Because this action always feels good, it feels appealing as a daily practice. It acts as a magnet for appreciation and enjoyment of life.</p>
+    <p>And the misery duo don’t get a look in. When we are aligned and allowing the emotion we want, we already have everything we need. We are truly equipped to enjoy the heck out of life, come what may.</p>
+    <p>Now I’m enjoying the desires I have, no matter what the externals are doing. And I’m confident that it’s all unfolding beautifully. I’m not going to tell you I’m now making 6 figures, radiantly healthy, a best-selling author and then some… because I’m not… yet.</p>
+    <p>But I am enjoying life. And that’s all I ever wanted.</p>
+    <p>An Experiment to Enjoy —</p>
+    <p>If you struggle with a sense of lack, if there’s something you want but believe to be out of reach, try the following approach for 30 days:</p>
+    <p>• Write down what you want. • Make a note of your misery-duo score: out of 10, how acutely do you feel the lack of this desire, and how powerless do you feel yourself to be in terms of getting it? • Write down why you want it. • Write down the name of the emotion-state(s) you want to feel. • Put the paper or notebook away for 30 days. • Put a visual reminder somewhere you will see it many times each day (e.g. a pebble by the sink). • Each time you see the reminder, repeat the name of the emotion-state over and over, enjoying the way it feels. (Success is a great general one to use to get you started.) • Move on with your day. • After 30 days, go back to your written responses and see how things have shifted. You may not have the object of your desire just yet, but how much of the emotion-state have you activated over the days of your practice? • Re-score the misery duo… How acutely, out of 10 do you now feel this lack? How powerless do you now feel yourself to be?</p>
+    <p>Give it a go, why don’t you? You’ve nothing to lose and who knows, you might just find a little magic in the making here…</p>
+    <p>With encouragement,</p>
+    <p>Amanda</p>
+  </div>
+<footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+  </script>
+</body>
+</html>
