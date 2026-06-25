@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duck, Duck, Dare… Finding confidence to play in the snow — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.62rem; letter-spacing:0.12em; padding:0.28rem 0.5rem; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Duck, Duck, Dare… Finding confidence to play in the snow</h1>
+    <p class="meta">22 January 2021</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <p>It was pure comedy: a Tik Tok clip of a flock of 30 ducks or more, pouring out of their shed like noisy molasses, onto the surrounding sloped land, only to discover unexpected snow. To a bird, they responded as one.</p>
+    <p>First, scanning the weirdly white world, heads swivelled in alarm as the flock stood still. They shared a brief ‘What the f**k?!’ moment as they registered the shocking state of affairs.</p>
+    <p>Then, at a three-quarter flap, their fluid formation turned on its communal webbed heel, flowing right back up the little hill and into the safety and warmth of the shelter.</p>
+    <p>The whole thing was over in less than a minute. The birds moved like liquid, all as one, of one mind, with one response to this frozen world of crunchy white.</p>
+    <p>I’m still grinning. It feels like it should be a child’s game, Duck, Duck Dare… But where am I going with this?</p>
+    <p>Well, nearly right back into the shed, in truth.</p>
+    <p>Today is one of those, I-can’t-believe-I-had-the-audacity-to-imagine-I- could-ever-have-anything-to say-worth-writing days. The blank page, like unexpected snow, feels cold this morning and I’m sorely tempted to high tail it back to the safe and warm and dark…</p>
+    <p>In the past I would have gone back to bed.</p>
+    <p>I’m an Enneagram 9, so sleep is a natural ‘go-to’ place for me. (I know a 9 who read the book ‘The Woman Who Went to Bed for a Year,’ and promptly went to bed for a year. I was careful not to read the book, just in case…)</p>
+    <p>But these days it’s different.</p>
+    <p>Today, feeling the dip, I distract myself with Tik Tok ducks on an Instagram feed. I grin awhile and my energy levels rise. These days I don’t give myself a bashing for distraction tactics. ‘Not procrastination, just breaking state,’ my lovely Inner Champion’s reassurance purrs me on... (more of that in a moment.)</p>
+    <p>The micro-break does the trick. I’m back to enjoying the writing moment. I remember that the page has something to say through me, if I listen*. If I make myself small. If I make myself quiet.</p>
+    <p>Attentive, cat-like, now I’m ready to pounce and flow with the idea that runs for my chasing. I’m smiling enough to bring me back to the keyboard.</p>
+    <p>I realise the meaning in this moment: I’m just like the ducks I saw on Tik Tok this morning, At least they made it out of the shed for a moment. I find myself wondering, 'How much have I stayed in the dark in the past, because it was easier to stay inside?' I could become so very sad about that. I’ve been stuck there for so long.</p>
+    <p>There's just so much to fear.</p>
+    <p>I’m not a fan of feeling the fear and doing it anyway. I’m with Abraham (www.abraham-hicks.com) on that. They say, ‘There’s a reason for your fear. You’re not aligned with your desire. If you were, you’d feel good about the action. Get your energy lined up first; bring yourself out of fear and into something that feels positive. Then take action.’</p>
+    <p>I have to say, it took a heck of a long time to free myself up enough to move with any speed from desire, to aligned energy, to action. For some of us it takes longer than others. I think it’s important to know that.</p>
+    <p>The internet and the book shops are full of remarkable stories of people achieving astonishing things. They often seem to happen overnight. Of course, we know that extraordinary success is generally born of huge efforts over an extended period before the apparent transformation. And for some of us, the efforts and time it takes are significantly greater than for others.</p>
+    <p>For a long time, I’ve been a Tik Tok duck. I would come flowing out of my shed, full of optimism and hope, only to feel the sharp bite of ice underfoot and the dizzying shock of all that unexpected white… More often than not, I’d head back to the shed, convinced I wasn’t going to make it ‘out there’…</p>
+    <p>Through all of that muddled experience, I always loved the idea of divine guidance. Despite the love of dear, dear friends, and even with my Beloved at my side, I felt as though I was tackling the snow alone.</p>
+    <p>Acquiring powerful self-help tools did ease the struggle, but even with their assistance, life felt like a cold, hard, slog; with only the shed for respite.</p>
+    <p>What’s different now?</p>
+    <p>These days, I hear an encouraging voice, calling me out of my shed. A voice that never, ever criticises my efforts. A voice that challenges me to look upon myself with appreciation and love.</p>
+    <p>Whose voice? The voice of my Inner Champion, Amelie.</p>
+    <p>Realising, some time back, how much damage my Inner Critic was doing inside me, I decided one spring day to create an Inner Champion, Amelie, to listen to instead. I’d done such a good job of making myself an Inner Critic, why not make up an opposite or better?</p>
+    <p>So I did. And she’s wonderful!</p>
+    <p>With Amelie, I get to play, mess up, take risks and fall flat on my face. I leave all the tricky stuff to her. She is parent, friend, sibling and teacher - all on a good day, and at their very best. She is funny, warm, compassionate and wise.</p>
+    <p>There’s nothing she can’t handle. And she is my number one fan. Even on a bad day. Even at my very worst, she thinks the world of me. Even in chaos, she steers me back to my smile. Somehow she brings me to know that all is well.</p>
+    <p>The fabulous Geoffrey Rush bursts into my mind, as I write this to you. He’s playing Philip Henslowe in 'Shakespeare in Love'. In trouble, his response is, ‘Strangely enough, it all turns out well.'</p>
+    <p>When pushed to explain how, he replies 'I don't know, it's a mystery!'</p>
+    <p>That’s it. A mystery. My Inner Champion gives me confidence and encouragement. How? Why does an imaginary voice, a fictional character give me support and reassurance each day? It’s a mystery. Somehow, Amelie connects me with a deep knowing, that all is well.</p>
+    <p>All is well, even in the face of a world in crisis. All is well.</p>
+    <p>How do I know?</p>
+    <p>It’s a mystery.</p>
+    <p>Having said that, neuroscience is creeping up to give some substance here. We know that the mind seeks out more of what it already knows… The better it gets, the better it gets, and the converse, of course, applies.</p>
+    <p>We know that emotions are chemicals in the body, affecting cell function. If we can find a way to access better feeling emotions, we can make use of more cognitive resources. Unless we are actually facing a bear in the woods, stopping to improve mood really does make a practical difference to our ability to manage life.</p>
+    <p>Optimism works.</p>
+    <p>It’s just a case of finding a way to do more of it, without suppressing reality. Sometimes life really stinks. Sticking a smiley face sticker on that does us no good. We need a steady stream of optimism that can embrace and dissolve the darkness. For me, that must come from something greater than myself.</p>
+    <p>Even though I’ve made my Inner Champion up, I’ve based her on the highest possible teachings and premises. I’ve created, personified and internalised that voice of irrational optimism. And what a difference it makes!</p>
+    <p>The shed looks far less appealing to me now. These days you’ll more likely see me lying spread-eagled in the snow, either by design or disaster, but always accompanied by laughter and with hot chocolate and friendship at hand to pick me up.</p>
+    <p>So, please, whoever you are, if you’re lurking fearfully in your shed, or battling with snow and longing for respite, take heart. There are many ways to find our ski-legs.</p>
+    <p>If you, like me, have longed for connection to a higher self inside, well, it’s attainable. You don’t have to wait for a lightning bolt to strike, or sit on a bench for a year. You don’t have to be special or spiritual, clever or creative.</p>
+    <p>Move your pen with purposeful intent. Script encouragement the way you’d like it to be.</p>
+    <p>Create your own champion, giving her the words to speak and see what grows from there.</p>
+    <p>What if you could?</p>
+    <p>What then?</p>
+    <p>You might just find yourself out there, laughing in the snow…</p>
+    <p>Sending encouragement,</p>
+    <p>Amanda</p>
+    <p>*From beautiful, beautiful Julia Cameron’s ‘Right to Write’;</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

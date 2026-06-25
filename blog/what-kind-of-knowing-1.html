@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Kind of Knowing Keeps Us Upright? — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.62rem; letter-spacing:0.12em; padding:0.28rem 0.5rem; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>What Kind of Knowing Keeps Us Upright?</h1>
+    <p class="meta">5 October 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>And where does that knowing come from?</h3>
+    <p>Where do we find a knowing that gives us sure footing as the waves of change roll in all around us?</p>
+    <blockquote><p>“Breathing in, I calm body and mind. Breathing out, I smile. Dwelling in the present moment I know this is the only moment.” ― Thich Nhat Hanh</p></blockquote>
+    <p>What if all strength and steadiness came from the simple knowing of now?</p>
+    <blockquote><p>“There is a universal, intelligent life force that exists within everyone and everything. It resides within each one of us as a deep wisdom, an inner knowing. We can access this wonderful source of knowledge and wisdom through our intuition, an inner sense that tells us what feels right and true for us at any given moment.” — Shakti Gawain</p></blockquote>
+    <h3>Ask not, ‘Is it true?’ but ‘Does it feel good?’</h3>
+    <p>Do you like the thoughts shared above? Do they strengthen you, inspire you to more? Yes? Then claim them. Make them a home in your heart and cherish them fondly. Enjoy them for they sing in your soul.</p>
+    <p>To choose beliefs and grow them. To know them, unswayed by emotions that come and go. That’s where the solid ground of love and joy is found.</p>
+    <p>You have knowings. They are fundamental. You know when you’ve uncovered them. They are strong and true for you. You don’t question them. You just know. And you know it’s good.</p>
+    <h3>Knowing may not be awash with emotion — it’s generally much calmer than that</h3>
+    <p>I had my first significant ‘knowing’ when I met my soulmate. I wasn’t head over heels in love at the start.</p>
+    <p>Michael ‘knew’ me the minute we met. (He’d dreamed me many years before…)</p>
+    <p>He waited a few days to ask me to marry him! I</p>
+    <p>t was a crazy move to make. And I was the last person to do something so impulsive…</p>
+    <p>But, even after a few days of being around him, as sure I knew my sister was my sister and my brother was my brother, I ‘knew’ Michael was my husband. It was the strangest thing. An absolute knowing. No need to ask anyone’s opinion. It was sure as eggs is eggs…</p>
+    <p>Our love has deepened every day since. Even now he’s translated to non physical, our love continues to grow…</p>
+    <p>This ‘knowing’ was not full of feeling. There were no huge emotions for me. That came a little later…</p>
+    <p>Knowing is like a firmament.</p>
+    <p>Emotions wash through but this firmament, is.</p>
+    <h3>How does this relate to our emotional system?</h3>
+    <p>Here’s my take.</p>
+    <p>The knowing IS you. The whole of you. It’s an experience of connection with the fundamental essence of you.</p>
+    <p>You are expanding and flowing and ever-changing, yes, but there is an essence of you that knows what you are about. When you touch that, you have a ‘knowing’ that’s unshakeable. You just know.</p>
+    <p>You know your alignment with your broader, higher Self. With all that is. With the ocean of love and its loving intent for you in this time-space living of life.</p>
+    <p>You’ve had a lot of ‘knowing’ experiences, for sure. You’ve felt alignment kick in. Not with overwhelming emotion, but more a grounded, pure, positive sense. Like feet on the sand after a wave’s great roiling. The relief of solid ground after sinking…</p>
+    <p>Solid, unshakeable, loving, good. Connection with the isness of you.</p>
+    <p>Emotions can and will flow joyously from knowing. But the knowing is unchanging and calm.</p>
+    <p>Here are some of my current knowings…</p>
+    <p>I know all is well. Fundamentally. All is well.</p>
+    <p>I know what feels good, is good. Nothing matters more than feeling as good as we can.</p>
+    <p>I know that the better it gets, the better it gets…</p>
+    <p>I know that when I ask for guidance, it is given. Every time.</p>
+    <p>I know I have to be feeling good, in order to receive.</p>
+    <p>I know I do that by stopping my storyline, breathing with a still mind, and reaching for relief.</p>
+    <p>I know that joy is an inside job.</p>
+    <h3>What are your knowings?</h3>
+    <p>Make a list of your knowings, if it appeals. Remember these are pure and positive… and they don’t rely on anyone or anything outside yourself. Focus them on your inner state. Your emotions, your thoughts, your beliefs.</p>
+    <p>Remember, we only desire the outer effects because of how they’ll feel in the having of them.</p>
+    <p>If you can’t find any, that’s ok too.</p>
+    <p>I didn’t always have the knowings I’ve listed above. For a long, long time, I lived on a vague sense of optimism: a hope that somehow everything would turn out alright…</p>
+    <p>Most of the knowings that serve me well now are thoughts I’ve deliberately practised.</p>
+    <h3>If you’d like to grow your own knowings, try the following:</h3>
+    <p>• Choose a knowing you’d like to have. A general, positive belief about life on the inside of you. No outer effects… no ‘I know my sweetheart/money/health will come.’ That’s likely too much of a stretch. Instead, go for the inner effects… ‘I am loved and loving.’ Or ‘I am confident and resourceful.’ Or, ‘Everything is working out for me.’ We’ll use the last one as our example… • Write ‘Everything is working out for me,’ on the bottom right of a two page spread in a notebook. • Top left, start with how you really feel or think. If it’s negative, acknowledge it. Validate all emotions that come. Two or three sentences will do it. Allow how it feels right now. • Next, write a sentence to this effect, use these exact words if you like: These are old thoughts and feelings; I choose to think differently now. • Use the following starters to bring yourself closer to the way you’d like to be feeling. Write to fill the space on the left and right pages.</p>
+    <p>I’d really like to know that … everything is working out for me.</p>
+    <p>If I did know that it would be great because…</p>
+    <p>Then, I’d start my day by …</p>
+    <p>I’d be saying things like…</p>
+    <p>And feeling things like…</p>
+    <p>I love the idea that… (e.g. it’s possible to choose your beliefs).</p>
+    <p>If I practised this thought, a little every day, in a few weeks’ time I’d find…</p>
+    <p>When I fully know this, life will look…. sound… feel…</p>
+    <p>When I imagine a future ‘me’ who knows this for sure, she is…… and…. (expand this as much as possible.)</p>
+    <p>I like the idea of practising this knowing because…</p>
+    <p>I can see myself repeating this little exercise every day because…</p>
+    <p>6. Then read your desired ‘knowing’ again. How does it feel to you now? A little closer? Good. You’re on your way.</p>
+    <h3>What inner knowings would serve you best now?</h3>
+    <p>Give yourself the chance to practise the knowing you’d most like, daily, for a week. If it feels good.</p>
+    <p>Then for another week. If it still feels good.</p>
+    <p>What change might occur after a month of this practice?</p>
+    <p>Let me know how you get on!</p>
+    <h3>Can knowings change over time?</h3>
+    <p>My experience? Yes, they can!</p>
+    <p>Sounds a bit contradictory doesn’t it? Go for the firmament of ‘knowing’ but even that may change…</p>
+    <p>The fact is, life is ever-expanding. Desires change. Reality changes. Change is the only constant.</p>
+    <p>So we’re not looking for absolutes here. No. We’re looking for our inner compass. Our calm gyroscope that guides us to know in this moment now.</p>
+    <blockquote><p>This way up.</p></blockquote>
+    <p>That’s it.</p>
+    <p>If we return to the ocean analogy, the waves of emotion sweep the beach, constantly. To enjoy them, we need to know which way is up. We need purchase for our toes in the sand.</p>
+    <p>The sand shifts its contouring daily. Twice. With every tide, new firmament forms.</p>
+    <p>But as long as we can find our footing in this moment, we have all the stability we need.</p>
+    <p>You know how certain books we just ‘knew’ were not for you, years ago, now hold the key to huge awakenings. We are not the same people who opened those books back then. Of course our ‘knowing’ then is different to our ‘knowing’ now!</p>
+    <h3>Be kind to yourself</h3>
+    <p>If you find it hard to access this, chances are you’re working through challenging times. Don’t put pressure on yourself. The last thing you need is more ‘evidence’ that you can’t help yourself.</p>
+    <p>Some of us have a natural tendency for doing the inner work. Others don’t. There’s no right or wrong about it. If your inner world is unfamiliar, it’s tricky to build your knowing.</p>
+    <p>Sometimes, we need a little help along the way. This is what it is to be human. Reach out. Find a buddy to work alongside you.</p>
+    <p>If you like, book me in for a chat. (No charge.)</p>
+    <p>Let’s grow the knowings that will make all the difference. We deserve to enjoy life more. Thank goodness it’s an inside job!</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Rule to Grieving Is... There IS No Rule — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+    nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+    nav .logo { font-size:1rem; letter-spacing:0.12em; color:var(--text); text-transform:uppercase; text-decoration:none; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+    @media (max-width:600px) { nav .logo img { height:40px; } }
+    nav .logo span { color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+    @media (max-width:600px) { nav .links { display:none; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'?'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>The Rule to Grieving Is... There IS No Rule</h1>
+    <p class="meta">17 August 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>Ok, perhaps there’s one — ‘No Clinging’</h3>
+    <p>No clinging to flotsam to stay afloat on the ocean. It’s all going under eventually…</p>
+    <p>A shipwreck in a ruthless storm, that’s a pretty good metaphor for my early experience following the death of my soulmate.</p>
+    <p>I was going to say a ‘killer’ storm, but this storm doesn’t show that much mercy.</p>
+    <p>I don’t die. Much though (at times) I’d like to. The ocean buffets me around like an orca tossing a seal it has no hunger for — I’m grief’s plaything, a cruel amusement…</p>
+    <blockquote><p>“I cannot think too much; I dare not think too deeply, or else I will be defeated, not merely by pain but by a drowning nihilism, a cycle of thinking there’s no point, what’s the point, there’s no point to anything.” — Chimamanda Ngazi Adichie</p></blockquote>
+    <p>Grief is oft described as being adrift in stormy waters. Those waves of emotion hammering us; holding us under; sucking air from our lungs; pounding our limbs. Coiling us round in their primal roiling. There’s no sense of the surface, when you’re the toy of the undertow…</p>
+    <p>But for me, that’s not the whole story.</p>
+    <p>I do bob back up. Eventually. The storm spits me out. Again.</p>
+    <p>Whilst on the one hand it’s the nightmare of all nightmares — the worst storm in history — the end of my world…</p>
+    <p>…On the other hand, swimming at the surface is the greatest joy I’ve known… precisely because of the contrast. The need for pristine focus. The searing need for air when I’m under makes it so much sweeter at the surface. Air, sweet, smiling, lovely air. Glorious, not taken for granted…</p>
+    <p>Time at the surface is extending now and boy do I enjoy it!</p>
+    <p>Even as my feet scrape the sea bed, I know I will find my way back up. I’m getting a sense for how to make the storm sneeze… and then…</p>
+    <p>…Spat out and spluttering at the surface, yes, but bobbing up into relief and joy. Joy when clinging’s not an option. Joy that must come from within.</p>
+    <h3>What do I mean by the No Clinging rule?</h3>
+    <p>I’ve been struck, over these weeks and months, by the scale of my subconscious clinging. My attempts to keep life from changing. Futile clinging to that old illusion of control.</p>
+    <p>These days, clinging shocks me into sharp tears. I’m forced to acknowledge it. To breathe and let go.</p>
+    <p>An example… I took my car in for a service. No problemo. Got myself feeling good. Surface swimming today, easy peasy. Storm? What storm?</p>
+    <p>Having been given the key to a courtesy car, I found it, parked around the corner. I opened its door, sat in the driver’s seat. And started to cry.</p>
+    <p>What?</p>
+    <p>Yes. Tears coursing my cheeks and a panic in my torso told me that I felt suddenly, acutely, completely lost.</p>
+    <p>Lost and alone and drowning again.</p>
+    <p>I’d been clinging to the familiar. Keeping life small. Same car, same house, same daily routine, yes. I’m safe. I’m in control. I can do this.</p>
+    <p>Change one, tiny detail and I’m lost.</p>
+    <p>The waves will have their way.</p>
+    <p>No clinging to flotsam on the surface. You’ve got to find the muscles to swim…</p>
+    <h3>The rule of grief it seems is… there is no rule</h3>
+    <p>As I’m experiencing it, there are no ‘Seven Steps to Grief Completion’. I’m sure the Grief Recovery Programme (my recent research) — and others — do a wonderful job for countless people, but I know that’s not for me.</p>
+    <p>The minute I try to control it, to put it into a process or programme, the waves of my grief wreck the ship afresh. My puppy-dog mind and I, drowning, once more…</p>
+    <p>The tools I know work wonderfully, but only as I’m inspired to use them. I can’t make a regimen out of it. (Oh boy have I tried that one!) No two moments are the same. No two instances require the same responses… nothing but relationship will do.</p>
+    <p>I tried taking my puppy-mind by the scruff of the neck and hauling it out of grief waters but clinging to the illusion of control simply threw us back under.</p>
+    <p>If I can just control these thoughts, my mind will settle, my emotions will lift… What will it take? A Focus Wheel? Some laddering? How do I get myself back on dry land?</p>
+    <p>When will I learn?</p>
+    <p>What does it take then? If it’s not all about the tools, and there’s no stepped process… Is it simply a matter of abandon ship and hope you don’t drown?</p>
+    <p>I think not.</p>
+    <h3>Nothing but relationship is enough</h3>
+    <p>It’s a matter of relationship. Not an outer relationship — with a person, place or thing. Those relationships soothe you but they’re never enough.</p>
+    <p>Don’t get me wrong. Outer relationships are glorious. There is no treasure in the outer world greater than those beautiful people you love.</p>
+    <p>Angels surround me at every turn. I wouldn’t be here without them.</p>
+    <p>My sister is one such angel, for sure. After a happy few days in her company, recently, I’d forgotten the need to swim solo. I’d hitched myself to the lilo of her life. What a breeze life was for that short while! Her loving distraction til I boarded the train headed home was pure tonic. More ice cream by the sea… Oh my!</p>
+    <p>But it was only distraction. Blissful. Blessed. Brief.</p>
+    <p>Then there was just me, the long train ride home, and a worrisome puppy in my mind…</p>
+    <p>What to do, as the fear and doubt and misery creep in?</p>
+    <p>I tried meditation. It’s invaluable. A practice I live by these days. The mind on pause. Puppy in snooze mode.</p>
+    <p>I did as much of that as I could, on that train heading home. But still, I was trying to ‘fix’ my sorrow with meditation. Make the sadness go away. Needless to say, it didn’t work…</p>
+    <p>Back underwater again PDQ…</p>
+    <p>It wasn’t til the following day, around noon, that, the hiatus reached, the words once again reached my lips:</p>
+    <p>“I can’t do this!”</p>
+    <p>The words aren’t important. Where they’re going to, is.</p>
+    <p>Time after time, the pattern repeats. Struggle with the thought-pup. Puppy runs amok. Poop and pee all over the show. Tsunami of emotion hits as a result. Both of us drowning again…</p>
+    <p>The waters evaporate when I call for help. When I imagine a source of love energy around me. It hasn’t come easily. Honestly.</p>
+    <p>I’ve had no Damascus experience. No visceral epiphany. No divine revelations.</p>
+    <p>I don’t have a strong sense of ‘energy’, I’m mostly pretty opaque. Reiki — though I love the stillness it brings — never does anything magical in the moment for me. Some people feel the energy in motion. They sense the power of focus. Not me. Like I say, pretty opaque, me…</p>
+    <p>I’ve listened to Abraham for decades, talking endlessly of Source energy — the term they use for infinite love, infinite power, infinite intelligence. I love the idea. I embrace the concept. Do I feel it? No.</p>
+    <p>But extreme days call for extreme measures.</p>
+    <p>Focus, for me, comes from a realisation that:</p>
+    <p>a) I can’t do this on my own.</p>
+    <p>b) I can’t expect others to fill the void for me, where love and joy have been.</p>
+    <p>c) I am making up 90% of my life’s experiences. Ok, 90% is a guess, but I’m sure it’s not far off — we live most of our moments in the world of our thoughts. Working out what we’ll cook for tea. Imagining our next conversation with a friend, remembering moments gone past. Planning. Figuring. Re-playing… None of it actually ‘real’ in that moment.</p>
+    <p>And I can’t help noticing that when I surrender my struggle and call out for help, imagining source to be real… help comes.</p>
+    <p>Every time.</p>
+    <p>Even with the subtext, as I give the words voice,</p>
+    <p>“In all probability I’m just making you up, but I know I can’t do this alone… Help me out here!”</p>
+    <p>Is it real? I don’t know. But it works.</p>
+    <p>That’s real enough for me.</p>
+    <p>Now, as well as journalling to and from my beloved husband and to my imagined Source energy, I am talking to them in every free slot in my day. Imagining their words back to me.</p>
+    <p>It really helps.</p>
+    <p>I’ve been enjoying the surface for the longest time yet, since I started imagining this conversation in earnest. Day after day of pure enjoyment. Night after night of going to bed, deeply appreciative of the day I have lived.</p>
+    <p>Poignant moments come, for sure, but they’re easy to love back into alignment… because I’m imagining I’m not alone with it now. Far from it, in fact.</p>
+    <p>With every day’s imagining, it gets easier, stronger. I’m used to chatting to my non physical bunch now. I’m getting better and better at tuning into swift answers from the perspective of Love.</p>
+    <h3>Stop asking if it’s real. Ask only how it feels…</h3>
+    <p>I shared the practice of imagining a supportive Source of Love with a client the other day.</p>
+    <p>Her life is wall to wall challenge — contrast in every direction. Hard, hard, hard.</p>
+    <p>Surely a make-believe ‘God’ type concept couldn’t help when health, wealth, home, relationships, all bring distress? All that ‘real’ life experience surely couldn’t be soothed by imagining an infinite source of love?</p>
+    <p>And yet…</p>
+    <p>We considered the last phonecall she’d had before we spoke. The call had brought a shedload more sh*te to contend with. She shared the thought-storm this had triggered. Her puppy-dog mind, in instant feral-monster mode, had jumped straight on the furniture and was pooping everywhere.</p>
+    <p>Costs. Decisions. Disappointments. Exhaustion. Let down AGAIN by workers rebuilding her home. Now faced with new choices, none of them good ones. Forced upon her by incompetence and crookery. What to do?</p>
+    <p>We played with the impact it would have made to refer the call to Source instead of taking it on herself.</p>
+    <p>It wasn’t long before my client was feeling significantly better. Her thoughts took this kind of tack…</p>
+    <p>“I can hand it over. Even if it’s make believe. Just for a while. I can imagine it’s resolved. That I know what to do. That it’s sorted. The sense of handing it over brings relief.”</p>
+    <p>We explored how much it would support her, to practise this kind of thinking wherever possible. Allowing herself to put the whole problem down, imagine handing it over and step into the feeling of relief she’d feel if it were all done for her, that felt good.</p>
+    <p>Was it real? No. Did it feel good? Yes.</p>
+    <p>That was powerful. Imagining relief, finding the words that match it, this is a powerful practice.</p>
+    <p>Wonderful. It’s sorted. What a relief! I never would have thought it could go that well. Fantastic!</p>
+    <p>Making the most of the space before action is necessary to trigger the emotions that would be of most use; that’s not delusion, that’s resourcefulness. Does it matter how you do it?</p>
+    <p>Emotions are chemicals in the body. Consciously stimulating good feelings is pure tonic.</p>
+    <p>They boost our cells. Broaden our vision. Open the field of possibilities.</p>
+    <p>That’s why talking to yourself isn’t crazy. Chatting to Source energy isn’t either.</p>
+    <p>What does it matter how ‘real’ it is?</p>
+    <p>If if feels good, it is good.</p>
+    <p>My client is off to practise for 40 days… I can’t wait to let you know how it goes!</p>
+  </div>
+<footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+  </script>
+</body>
+</html>
