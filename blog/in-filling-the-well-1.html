@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>"In Filling the Well, Think Magic" — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.62rem; letter-spacing:0.12em; padding:0.28rem 0.5rem; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>"In Filling the Well, Think Magic"</h1>
+    <p class="meta">18 May 2022</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <p>What to Do on Your ‘Dry Well’ Days</p>
+    <p>How barren life is at times! How parched the soil! How devoid of hope…</p>
+    <p>Sometimes the well of hope isn’t just dry. It’s full of bloody serpents.</p>
+    <p>I know.</p>
+    <p>You pull up a bucket, lean forward for water and instead you get a full-fanged bite in the face.</p>
+    <p>The last thing we think of then is magic.</p>
+    <p>— — —</p>
+    <p>I am in awe of my clients.</p>
+    <p>Facing pain and adversity, they travel on. Some, under viperous attack, are battered and beleaguered and bloody. All in a day’s existence.</p>
+    <p>No apparent movement forward. Seemingly no point to their pain.</p>
+    <p>And yet… they reach for empowerment. And find it.</p>
+    <p>I’d call that magic. Wouldn’t you?</p>
+    <p>— — —</p>
+    <blockquote><p>“I hate you. I hate you. I hate you. I do hate you. I hate you a million times. I hope you go to hell.”</p></blockquote>
+    <p>A text received by a client from her husband. He’d stormed out. Blamed her for every misfortune in their lives (there are many).</p>
+    <p>She was used to that. She’d been bred as a scapegoat.</p>
+    <p>Since she was a little girl, this woman has been told that she’s to blame, she’s a curse, she’s useless.</p>
+    <p>She’s joined in, with her own brand of self deprecation — There must be something wrong with me, mustn’t there?</p>
+    <p>Why wouldn’t she? It’s all she’s ever known.</p>
+    <p>It’s very comfortable for those living with her. It’s as though she wears a sign around her neck saying —</p>
+    <blockquote><p>“No matter what goes wrong, blame me.”</p></blockquote>
+    <p>Her mother, when she sought advice about how sad her marriage felt, simply said,</p>
+    <blockquote><p>“Well, if he’s not beating you and you’ve enough money to put food on the table, I don’t know what you’re complaining about.”</p></blockquote>
+    <p>Such miserable expectations. No wonder she’s struggling.</p>
+    <p>— — —</p>
+    <p>Where is the well of hope for this woman? Where does she turn to find love?</p>
+    <p>Like most of us, she turns to others, to her nearest and dearest. The ones who have promised to be there for her, in good times and bad.</p>
+    <p>But she’s finding no love in those wells outside her.</p>
+    <p>Where is the magic, when we go to the well and find serpents? What do we do when the well isn’t just dry, but deadly?</p>
+    <p>Moments of misery force life-changing focus.</p>
+    <p>The more acute the misery, the more desperate we are for change. Extreme thirst drives us to find water, come what may.</p>
+    <p>So, what would we do, parched, needing water, if the bucket came up full of serpents?</p>
+    <p>The answer, in metaphor is simple, isn’t it?</p>
+    <p>We’d go elsewhere. Rapidly. Drop the bucket and run, actually.</p>
+    <p>We sometimes try running in reality, don’t we?</p>
+    <p>We become so miserable in one snake-filled scenario that we move away from it, hoping to find a better one elsewhere.</p>
+    <p>The problem is, we take ourselves with us.</p>
+    <p>The hate-filled texts are from my client’s second husband. He’s turning into a copy of her first.</p>
+    <p>What can we do when every well runs dry and then viperous?</p>
+    <p>What if we can’t physically leave an aggressive mate, or parent, or co-worker for that matter? Perhaps finance or health issues bring dependency. It may not be physically viable to launch out on our own.</p>
+    <p>What magic reaches into such distress?</p>
+    <p>— — —</p>
+    <p>What kind of well would serve us always, no matter where we were? Where would we find a limitless supply of love and hope — where do we find magic to live by?</p>
+    <p>What if the problem with our well-seeking is that we’re looking for love in all the wrong places?</p>
+    <p>If we rely on someone else for love — the water in our metaphor — what generally happens next?</p>
+    <p>The fact is, not everyone looks after their well. Heck, no one looks after it perfectly. Even if they know they have a well of love inside them. And lots of people don’t.</p>
+    <p>Isn’t it interesting that we often don’t drop the snake-filled bucket and run? We try to wrestle with the snakes instead. We become super-focused on that snake-filled well and the problems of trying to get water unscathed.</p>
+    <p>We want to eliminate the reptiles. To advise the owner on how to clear their well. So that we can have water from them, reliably, that’s clean and completely snake-free.</p>
+    <p>How does that work out?</p>
+    <p>— — —</p>
+    <p>What about the water in our own well?</p>
+    <p>We know that others have their well of joy, of love, of kindness and laughter. We expect (or rather want) love to come from them. Even when it’s quite clear that it’s not flowing our way.</p>
+    <p>We don’t expect love from ourselves.</p>
+    <p>And yet, there must be a love-well inside us too, mustn’t there? If we’ve ever laughed, hugged, been kind, shown tenderness… that didn’t come from someone else’s well, did it?</p>
+    <p>Self-help teachers tell us, don’t they? You’ve got to love yourself first. That’s pure enraging to one raised to self-loathe.</p>
+    <p>And yet, there’s only one place we’re going to find the love that’s never-ending. The unconditional kind. The ever-compassionate kind.</p>
+    <p>And it’s not outside us.</p>
+    <p>No person, pet, place or possession will be our wellspring for always…</p>
+    <p>— — —</p>
+    <blockquote><p>“Think mystery, not mastery.” — Julia Cameron</p></blockquote>
+    <p>We will not find magic by mastering someone else’s nest of vipers.</p>
+    <p>We find magic in the mystery within.</p>
+    <p>My client found magic after the series of hate texts. How? By journaling her way back to her own well, at midnight.</p>
+    <p>In that instance, magic didn’t feel like rainbows and unicorns. No. It felt like the movement from helplessness to rage.</p>
+    <p>The magic we have is the power to mould emotion. By way of careful crafting of thoughts.</p>
+    <p>It’s not sexy. But it is powerful.</p>
+    <p>Rather than focusing futile energy out there, where the storyline plays, we bring full focus to the emotion in here. Here, inside us, is where our power lies.</p>
+    <p>We acknowledge our emotion. Validate it. Give it voice.</p>
+    <p>We remember, even if we can’t feel it yet, that our emotions are our guides. They call us back to our own well. To our own crystal waters. To our own source of joy, of kindness, of strength.</p>
+    <p>We talk ourselves back into alignment with self.</p>
+    <p>We appreciate the desire signalled by deep distress.</p>
+    <p>When hurtful words are aimed at us, we long for more love.</p>
+    <p>Instead of looking outside us for that love and focusing on the lack of it there, we look to our own wellspring. We lean in to the desire we feel so keenly in the moments of deepest hurt.</p>
+    <p>We feel for those emotions — of love, of appreciation, of joy. We imagine being able to feel that way. We build the possibility of finding relief. We know, we do know — love is an inside job.</p>
+    <p>At midnight, in the heart of fresh hurt, we don’t expect too much of ourselves. We move up the emotional scale** (‘laddering’) as far as it’s possible to go. In this case, moving from despair to anger brought huge relief.</p>
+    <p>No, we’re not feeling joy just yet. Not even close. But we’ve done the deed. We’ve turned attention away from what’s outside us. Away from what can’t be controlled, predicted or wooed into wellness.</p>
+    <p>We’ve brought ourselves back inside, to the source of our power.</p>
+    <p>— — —</p>
+    <p>Here’s the simple text that speaks to me of magic.</p>
+    <blockquote><p>“I laddered at midnight. I felt better.”</p></blockquote>
+    <p>Is my client’s world transformed? No. But she is reclaiming her wellbeing, whether her husband returns to her or not. Whether he’s nice to her or not.</p>
+    <p>Anger is far better than despair. She’ll make better decisions from there. And she did that by herself.</p>
+    <p>Does she stay? Does she leave? These questions will answer themselves in time. The most important thing she can do for herself is make decisions from the best feeling place she can find.</p>
+    <p>She’ll keep going. She’ll focus her energy on the world she knows within. She’ll move from anger up to calm, in time.</p>
+    <p>Then she’ll reach for hopefulness, optimism, ease. And she’ll know she can have those feelings, more and more often. They’ll become her new operating system.</p>
+    <p>It does take time to shift from decades of despair, to a place of happy confidence. Of course. But it can be done. And she’s doing it.</p>
+    <p>That sounds like magic to me.</p>
+    <p>— — —</p>
+    <p>My profound thanks to the client who gave me permission to share her story with you.</p>
+    <p>— — —</p>
+    <p>*My title comes from Julia Cameron’s beautiful book, ‘The Artist’s Way”.</p>
+    <p>**www.abraham-hicks.com</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>

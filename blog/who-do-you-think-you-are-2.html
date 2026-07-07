@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who Do You Think You Are? - How to take on your Inner Critic — Amanda Maney</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root, [data-theme="warm"] { --cream:#f9f6f1;--warm:#e8dfd0;--sage:#8a9e8a;--text:#3a3530;--muted:#7a716a;--accent:#b5855a;--white:#ffffff;--surface:#fffdf9;--surface-soft:#f5ede2; }
+    [data-theme="blush"] { --cream:#fdf6f4;--warm:#f2ddd8;--sage:#c49a98;--text:#3b2927;--muted:#7d5e5b;--accent:#b85c5c;--white:#ffffff;--surface:#fff8f6;--surface-soft:#f8e9e5; }
+    [data-theme="slate"] { --cream:#f2f4f6;--warm:#dde3ea;--sage:#6b88a0;--text:#25303a;--muted:#5a6d7c;--accent:#3d7aa8;--white:#ffffff;--surface:#f7fbff;--surface-soft:#e9f1f8; }
+    [data-theme="moss"]  { --cream:#f3f5f0;--warm:#dde4d8;--sage:#6b8f71;--text:#263028;--muted:#587060;--accent:#4a7c59;--white:#ffffff;--surface:#f8fbf6;--surface-soft:#e9f0e5; }
+    [data-theme="dusk"]  { --cream:#1e1c22;--warm:#2a2730;--sage:#9b89c4;--text:#e8e4f0;--muted:#a89fc0;--accent:#c4a8e8;--white:#2a2730;--surface:#312d39;--surface-soft:#27242e; }
+    [data-theme="teal"]  { --cream:#f2faf9;--warm:#d4eeea;--sage:#3aada0;--text:#1a3532;--muted:#4a7d78;--accent:#1fa89a;--white:#ffffff;--surface:#f6fffd;--surface-soft:#e2f5f1; }
+    [data-theme="beach"] { --cream:#f0f8ff;--warm:#cce9f7;--sage:#5aacce;--text:#1a3040;--muted:#4a7a95;--accent:#2a9fd6;--white:#ffffff;--surface:#f8fcff;--surface-soft:#e5f3fb; }
+    [data-theme="powder"]{ --cream:#eef4fb;--warm:#ddeaf6;--sage:#a8c4dd;--text:#2c3e50;--muted:#7a9ab5;--accent:#8fb8d8;--white:#f7fbff;--surface:#fbfdff;--surface-soft:#edf4fb; }
+    body { font-family:'Georgia',serif; background:var(--cream); color:var(--text); line-height:1.8; }
+  nav { background:var(--cream); padding:1.4rem 2.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--warm); position:sticky; top:0; z-index:100; }
+  nav .brand { display:flex; align-items:center; gap:0.7rem; min-width:0; flex-wrap:nowrap; }
+    nav .logo { text-decoration:none; display:inline-flex; align-items:center; }
+    nav .logo img { height:44px; width:auto; display:block; filter: invert(1); }
+    [data-theme="dusk"] nav .logo img { filter:none; }
+  nav .home-link { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--warm); padding:0.32rem 0.62rem; border-radius:999px; transition:color 0.2s,border-color 0.2s; white-space:nowrap; line-height:1; }
+  nav .home-link:hover { color:var(--accent); border-color:var(--accent); }
+    nav .links a { color:var(--muted); text-decoration:none; font-family:'Arial',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-left:2.2rem; transition:color 0.2s; }
+    nav .links a:hover, nav .links a.active { color:var(--accent); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0.4rem; }
+  .nav-burger span { display:block; width:22px; height:2px; background:var(--muted); border-radius:2px; transition:background 0.2s; }
+  .nav-burger:hover span { background:var(--accent); }
+  @media (max-width:600px) { nav { padding:0.9rem 1.1rem; } nav .links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--warm); padding:1rem 1.1rem; z-index:200; } nav .links.open { display:flex; } nav .links a { margin-left:0; padding:0.6rem 0; border-bottom:1px solid var(--warm); } nav .links a:last-child { border-bottom:none; } nav .home-link { font-size:0.62rem; letter-spacing:0.12em; padding:0.28rem 0.5rem; } nav .logo img { height:34px; } .nav-burger { display:flex; } }
+    .post-header { text-align:center; padding:5rem 2rem 4rem; border-bottom:1px solid var(--warm); }
+    .post-header .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .post-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:normal; line-height:1.25; margin-bottom:1.2rem; color:var(--text); }
+    .post-header .meta { font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; }
+    .post-article { max-width:660px; margin:0 auto; padding:4.5rem 2rem 5rem; }
+    .post-article p { color:var(--muted); margin-bottom:1.4rem; font-size:1.02rem; line-height:1.85; }
+    .post-article h3 { font-size:1.15rem; font-weight:normal; color:var(--text); margin:2.5rem 0 1rem; letter-spacing:0.02em; }
+    .post-article blockquote { border-left:2px solid var(--accent); padding-left:1.4rem; margin:2rem 0; }
+    .post-article blockquote p { font-style:italic; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); text-decoration:none; margin-bottom:3rem; transition:gap 0.2s; }
+    .back-link:hover { gap:0.8rem; }
+    .back-link::before { content:'←'; }
+    .cta { text-align:center; padding:5rem 2rem; border-top:1px solid var(--warm); }
+    .cta .tag { font-family:'Arial',sans-serif; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .cta h2 { font-size:1.5rem; font-weight:normal; color:var(--text); margin-bottom:0.8rem; }
+    .cta p { color:var(--muted); margin-bottom:2rem; }
+    .btn { display:inline-block; background:var(--accent); color:var(--white); padding:0.8rem 2.4rem; text-decoration:none; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; transition:opacity 0.2s; }
+    .btn:hover { opacity:0.8; }
+    footer { background:var(--cream); border-top:1px solid var(--warm); color:var(--muted); text-align:center; padding:2.4rem; font-family:'Arial',sans-serif; font-size:0.75rem; letter-spacing:0.08em; }
+    footer a { color:var(--muted); text-decoration:none; margin:0 1rem; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+    .footer-links { margin-bottom:0.8rem; }
+    .theme-toggle { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; }
+    .theme-toggle-btn { width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); background:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 12px rgba(0,0,0,0.15); transition:transform 0.2s; }
+    .theme-toggle-btn:hover { transform:scale(1.1); }
+    .theme-toggle-btn svg { width:20px; height:20px; }
+    .theme-palette { display:none; flex-direction:column; gap:0.5rem; margin-bottom:0.6rem; align-items:center; }
+    .theme-palette.open { display:flex; }
+    .swatch { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.18); transition:transform 0.15s,border-color 0.15s; position:relative; }
+    .swatch:hover { transform:scale(1.15); }
+    .swatch.active { border-color:var(--text); }
+    .swatch[title]:hover::after { content:attr(title); position:absolute; right:44px; top:50%; transform:translateY(-50%); background:var(--text); color:var(--cream); padding:0.25rem 0.6rem; font-family:'Arial',sans-serif; font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; border-radius:2px; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <div class="theme-palette" id="palette">
+      <div class="swatch active" data-theme="warm"   title="Warm Sand"   style="background:#b5855a" onclick="setTheme('warm',this)"></div>
+      <div class="swatch"        data-theme="blush"  title="Soft Blush"  style="background:#b85c5c" onclick="setTheme('blush',this)"></div>
+      <div class="swatch"        data-theme="slate"  title="Cool Slate"  style="background:#3d7aa8" onclick="setTheme('slate',this)"></div>
+      <div class="swatch"        data-theme="moss"   title="Deep Moss"   style="background:#4a7c59" onclick="setTheme('moss',this)"></div>
+      <div class="swatch"        data-theme="dusk"   title="Twilight"    style="background:#9b89c4" onclick="setTheme('dusk',this)"></div>
+      <div class="swatch"        data-theme="teal"   title="Turquoise"   style="background:#1fa89a" onclick="setTheme('teal',this)"></div>
+      <div class="swatch"        data-theme="beach"  title="Beach Blues" style="background:#2a9fd6" onclick="setTheme('beach',this)"></div>
+      <div class="swatch"        data-theme="powder" title="Powder Blue" style="background:#8fb8d8" onclick="setTheme('powder',this)"></div>
+    </div>
+    <button class="theme-toggle-btn" onclick="togglePalette()" aria-label="Change colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M8 12 A4 4 0 0 1 16 12"/><path d="M12 8 A4 4 0 0 1 12 16"/>
+        <circle cx="12" cy="8"  r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8"  cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav>
+    <div class="brand">
+      <a href="../index.html" class="logo" aria-label="Amanda Maney home"><img src="../logo.png" alt="Amanda Maney Alignment Coaching"></a>
+      <a href="../index.html" class="home-link">Home</a>
+    </div>
+    <div class="links">
+      <a href="../index.html#process">How It Works</a>
+      <a href="../index.html#testimonials">Stories</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <button class="nav-burger" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="post-header">
+    <p class="tag">Blog</p>
+    <h1>Who Do You Think You Are? - How to take on your Inner Critic</h1>
+    <p class="meta">15 March 2021</p>
+  </div>
+
+  <div class="post-article">
+    <a href="../blog.html" class="back-link">Back to Blog</a>
+
+    <h3>What I learnt from discovering, with horror, that self development was doing me in…</h3>
+    <p>Do you find that you make some progress with coaching or therapy, but it’s two steps forward, one step back? Is your pursuit of self development making you feel worse about yourself, not better?</p>
+    <p>As a fellow seeker wrote recently:</p>
+    <blockquote><p>Without doing some internal work and being okay with who you are, self-help can lead you on an endless chase for more.— Will C</p></blockquote>
+    <p>I’m a successful coach, an EFT therapist, a leader in education, an author and a trainer; I’ve helped countless people to build lives with greater joy, abundance and freedom.</p>
+    <p>And yet, here I am, stopped in my tracks as I attempt to write this blog. I stare at my laptop, with all manner of hideous thoughts piling up at my mental door, begging to be let loose.</p>
+    <p>All because I am daring to do something new. Something risky. Daring to write and publish my thoughts. A veritable mind-field of explosives and booby-traps appear as if marshalled in rows between my laptop ad me. All set to stop me in my tracks.</p>
+    <p>“Who do you think you are?” and “You nothing thing, what could you possibly have to say?” and other such loveliness await with pressure triggers, set to explode in my face.</p>
+    <p>Hmmm. Not so long ago, that would have been it. The laptop would be slapped shut with some relief. Then the shame would flood in and I would have slunk off to go and do something pressing, like, um, colour-sorting my winter jumpers.</p>
+    <p>That sounds like a something and nothing event. No big deal, right? But when you are as committed to personal development as I am, when it’s your whole raison d’être, it’s more than just an episode of shame at a missed opportunity. It doesn’t just pass through so you can move on with your life. No, the jumper folding is a distraction from the layer upon layer of self criticism triggered by the chicken-like behaviour, pouring in on top of us, like cement to fill a hole. It threatens to bury us deep. More, with every similar event.</p>
+    <p>Self help subscribers don’t just feel badly about chickening out, they feel badly that they haven’t made more progress in their numerous attempts to stop being such a chicken. They’ve been working on it for so long… More problematically, they feel bad that they are now feeling bad — I mean, we can’t afford a negative thought, now can we, we all know what damage they do….</p>
+    <p>But not any more.</p>
+    <p>Nowadays, things are different. The change, a quiet revolution within, catalysed by a body that finally said ‘Enough’s enough, Amanda, we’re not doing this any more!’ I was humbled to acknowledge the damage I had done, for so long, by listening only to the critical voice within.</p>
+    <p>The Impact of an Inner Critic Run Amok…</p>
+    <p>I had underestimated the power of the constant criticism streaming through me 24/7. It was so familiar, I barely noticed it. Its subtle whispers sapped my energy, dissipated my confidence, wiped out my worthiness.</p>
+    <p>Any of this sound familiar?</p>
+    <p>The Inner Critic experience is such a common phenomenon. I see it in action in so many of my clients. Almost every coaching or therapeutic session involves releasing the client’s negative self talk. The voice of the Inner Critic is such an integral part of our makeup, we don’t see it for what it is — a constant, toxic drip-feed.</p>
+    <p>We tend to think the problem lies outside ourselves — that person, this situation, these aspects of life we cannot change.</p>
+    <p>Actually, for those of us with a pronounced Inner Critic (Enneagram 1s will relate to this, I know,) this critical inner voice is the main cause of our struggles. We may not appreciate, without help, how it dulls the impact of the powerful tools at our disposal. Attempts to feel better, to be better and do better, all are scuppered when our Inner Critic is running amok. Because she runs in moccasins. No matter how hard we try to do right, our Inner Critic makes a misery out of even the most outwardly successful life.</p>
+    <p>With a steady flow of toxic criticism inside, we struggle desperately to be positive. I found this for a good long time. A natural optimist, a born uplifter, I assisted others with ease, but my own joy diminished daily. Each attempt I made to pull myself out of the quagmire of my overly critical mind succeeded in pulling me further into the muck. My health began to crumble.</p>
+    <p>I was the prisoner of my own toxic thinking. And, as you know, we are where we are. We can’t do anything differently — until we can.</p>
+    <p>I remember the day it all changed.</p>
+    <p>I was zumba-cooking — dancing our dinner into the pot — in our primrose-yellow galley kitchen, listening to the teachings of one of the spiritual masters. ‘Dance-while-you-cook’ was a strategy I’d adopted to bring more fun into life. It’s a good strategy. But even with the fun of bopping to the beat, I was grappling, as ever, with my feelings of futility. No matter what I did, it seemed I couldn’t reach the point of enjoying life the way they described it.</p>
+    <p>I heard the teacher highlighting, over and over, as always, the relationship we have with our Inner Being. The message stresses, continuously, that this is THE most important relationship in life. I’d heard this same message countless times before.</p>
+    <p>On this occasion, however, the powerful truth hit me.</p>
+    <p>I didn’t have an Inner Being.</p>
+    <p>There was just me, trying to manage my mind, body and spirit, navigating life’s challenges as best I could.</p>
+    <p>Sure, I’ve had moments of insight, times when I’ve felt a nudge to take action, moments when I’ve felt inspired or ‘in the flow’. I’ve used visualisations, on occasion, to imagine helpful presences: sometimes a future me, or a mentor, other times, a higher self for guidance. These were all useful experiences from which I gained momentary assistance, for sure.</p>
+    <p>But there was no sense of cohesion to the guidance I accessed from within. These moments of internal support floated randomly on an ocean perceived isolation. There was no sense of connection. No awareness of an Inner Being as a constant, consistent source of reassurance and help.</p>
+    <p>It started to sink in. If I didn’t have an Inner Being, how could I possibly have a relationship with it? No wonder I couldn’t get lasting traction from following the advice of coaches and spiritual teachers. Nothing else would work, if a relationship with my Inner Being were the foundation to it all.</p>
+    <p>I knew plenty of people who did have a relationship like that. They might not call it their Inner Being, but they knew they had a constant source of inspiration and guidance. For some, it was part of a religious practice. For others it was part of a more individualised belief in spirit guides or angels.</p>
+    <p>I’d always wanted a sense of connection, a real relationship with the divine. I loved the spiritual core of my religious upbringing and practice. But I’d never felt a relationship with God, with spirit, with the divine. I’d imagined that connection of that kind was something that happened to you. Or didn’t. This many years in to life, it clearly wasn’t happening for me.</p>
+    <p>It was time to take charge!</p>
+    <p>The realisation hit me. I did have a relationship with my pernicious Inner Critic. I didn’t talk to her (I know some people do) but she was with me constantly, feeding me quiet, slicing criticism all day and all night…</p>
+    <p>As so many of us do, I’d subconsciously created this continuous flow of negative commentary. If I’d created this powerful destructive stream, by accident, then I could surely create something better.</p>
+    <p>Notebook in hand, I decided, there and then, that the time had come to create my Inner Being. I wasn’t going to sit around and wait, any longer, for some kind of enlightenment experience.</p>
+    <p>If I’d done such a bloody good job of creating the Inner critic from hell, I was jolly well going to do a mighty fine job of creating its opposite!</p>
+    <p>And so, my Inner Champion was born.</p>
+    <p>I started to journal as a dialogue with my champion within. I wrote my real, in the moment thoughts and feelings. I wrote back to myself from her standpoint. It became a daily practice that has been utterly life-changing. It’s my first focus as I wake and my last focus going to sleep. Amelie (I named her, for ease) accompanies me through thick and thin. She has seen me through waves of terror, fury, anxiety and more. She never fails to bring me home.</p>
+    <h3>There were some parameters:</h3>
+    <p>• My champion will never, EVER criticise me. She isn’t interested in the storyline or the outcomes. She is only interested in showing me how wonderful I am, just for being out here, living life, navigating the ups and downs of it all. • Amelie knows how hard things have been and only wants me to feel as good as I can about life. She has no judgement of what I do or don’t do, think, feel or say. She just wants me to enjoy being here. End of. • Just as my champion will never criticise me, there’s no criticism of others here either. Amelie cannot join me in any form of negative emotion. • Encouragement is all I will receive from Amelie. Honesty, yes, but always steeped in compassion. My champion is filled with appreciation for the magnificent being I am. • My champion calls me back to my best self. She only sees that version of me. • Amelie can’t join me if I’m being hard on myself. I have to move. I have to find my way back to what she knows about me. I have to be willing to be loved by her. • My champion doesn’t just hope for the best, my champion knows that all is well. • Everything hinges on this last point here: my champion always focuses me on my feelings and guides me into steady improvement, because that’s where all the power lies. If I’m low, Amelie works to help me feel better NOW. There’s no trying to map out the next steps to take on practical issues, no focus on the storyline. It’s all about getting access to better feelings. When I feel better, everything improves. That’s what my champion is all about.</p>
+    <p>And oh, how I love her! And how she loves me! She totally rocks my world.</p>
+    <p>With Amelie, I find confidence at my core. Anxieties dissolve in her steady stream of reassurance. Small and large steps can be taken now, with ease.</p>
+    <p>And here I am… instead of folding jumpers in shame, as I would have done, not so long ago, I am reaching out in writing to you. May this blog encourage you to know, for sure, that there is SO much more to life than your Inner Critic would have you believe.</p>
+    <p>Maybe you have already discovered or created your Inner Champion. If so, I’m thrilled for you. But if you haven’t yet done this for yourself, please do it. Do it now! (If you’re not sure where to begin, my FREE Inner Critic Relief Guide will start you off. Click the ‘Contact me’ button and I’ll send it along.)</p>
+    <p>You are so much more powerful than you realise.</p>
+    <p>We all are.</p>
+    <p>I send love to you, Dear One.</p>
+  </div>
+
+  <div class="cta">
+    <p class="tag">Ready to begin?</p>
+    <h2>Let&#8217;s find your alignment together</h2>
+    <p>One conversation can change everything.</p>
+    <a href="../audio-library.html" class="btn">Explore Audio Library</a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/liveyourdreamsalignmentcoaching/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/amandajoymaney/" target="_blank" rel="noopener">Instagram</a>
+      <a href="../audio-library.html">Audio Library</a>
+    </div>
+    <p>&#169; Amanda Maney Alignment Coaching</p>
+  </footer>
+
+  <script>
+    const themes = ['warm','blush','slate','moss','dusk','teal','beach','powder'];
+    function setTheme(name,el){document.documentElement.setAttribute('data-theme',name);document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));if(el)el.classList.add('active');localStorage.setItem('am-theme',name);}
+    function togglePalette(){document.getElementById('palette').classList.toggle('open');}
+    document.addEventListener('click',e=>{if(!e.target.closest('.theme-toggle'))document.getElementById('palette').classList.remove('open');});
+    (function(){const s=localStorage.getItem('am-theme');if(s&&themes.includes(s)){const el=document.querySelector('.swatch[data-theme="'+s+'"]');setTheme(s,el);}})();
+    function toggleNav(){var l=document.querySelector('nav .links'),b=document.querySelector('.nav-burger');var open=l.classList.toggle('open');b&&b.setAttribute('aria-expanded',open);}
+    document.addEventListener('click',function(e){if(!e.target.closest('nav')){var l=document.querySelector('nav .links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.querySelector('.nav-burger');b&&b.setAttribute('aria-expanded','false');}}});
+  </script>
+</body>
+</html>
